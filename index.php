@@ -191,7 +191,7 @@
   </head>
   <body>
 
-  <?php include_once('login.php');?>
+  <?php include_once('forms.php');?>
 
 
     <!-- Header -->
@@ -351,6 +351,58 @@
   
   
   </body>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const registerModal = document.getElementById("registerModal");
+  const loginModal = document.getElementById("loginModal");
+
+  function removeExtraBackdrops() {
+    const backdrops = document.querySelectorAll(".modal-backdrop");
+    if (backdrops.length > 1) {
+      backdrops[0].remove(); // Remove only the extra backdrop
+    }
+  }
+
+  document.querySelector("[data-bs-target='#loginModal']").addEventListener("click", function () {
+    const registerModalInstance = bootstrap.Modal.getInstance(registerModal);
+    if (registerModalInstance) {
+      registerModalInstance.hide();
+      registerModal.addEventListener(
+        "hidden.bs.modal",
+        function () {
+          new bootstrap.Modal(loginModal).show();
+          setTimeout(removeExtraBackdrops, 10); // Ensure correct backdrop handling
+        },
+        { once: true }
+      );
+    } else {
+      new bootstrap.Modal(loginModal).show();
+    }
+  });
+
+  document.querySelector("[data-bs-target='#registerModal']").addEventListener("click", function () {
+    const loginModalInstance = bootstrap.Modal.getInstance(loginModal);
+    if (loginModalInstance) {
+      loginModalInstance.hide();
+      loginModal.addEventListener(
+        "hidden.bs.modal",
+        function () {
+          new bootstrap.Modal(registerModal).show();
+          setTimeout(removeExtraBackdrops, 10);
+        },
+        { once: true }
+      );
+    } else {
+      new bootstrap.Modal(registerModal).show();
+    }
+  });
+
+  // Ensure proper cleanup when a modal is completely closed
+  registerModal.addEventListener("hidden.bs.modal", removeExtraBackdrops);
+  loginModal.addEventListener("hidden.bs.modal", removeExtraBackdrops);
+});
+
+</script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
