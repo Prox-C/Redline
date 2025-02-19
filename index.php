@@ -195,7 +195,7 @@
 
 
     <!-- Header -->
-    <div class="container-fluid">
+    <nav class="container-fluid sticky-top bg-white">
       <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
         <div class="col-md-3 mb-2 mb-md-0">
           <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
@@ -226,7 +226,7 @@
           <button type="button" class="btn btn-bd-primary rounded-3" data-bs-toggle="modal" data-bs-target="#loginModal">Sign in</button>
         </div>
       </header>
-    </div>
+  </nav>
 
     <!-- Main -->
     <section id="home">
