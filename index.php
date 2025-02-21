@@ -204,7 +204,7 @@
         </div>
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#home" class="nav-link px-2 link-secondary">Home</a></li>
+          <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
           <li><a href="#brands" class="nav-link px-2 link-secondary">Our Fleet</a></li>
           <li><a href="#process" class="nav-link px-2 link-secondary ">How it Works</a></li>
           <li><a href="#" class="nav-link px-2 link-secondary ">About</a></li>
@@ -218,7 +218,7 @@
   </nav>
 
     <!-- Main -->
-    <section id="home">
+    <section id="hero">
       <div class="px-4 pt-5 my-5 text-center border-bottom container-fluid">
           <h1 class="display-4 fw-bold text-body-emphasis">Redline Rentals</h1>
           <div class="col-lg-6 mx-auto">
