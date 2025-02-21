@@ -54,7 +54,7 @@
           </div>
           <label for="" class="form-label">Contact Details</label>
           <div class="form-floating mb-3">
-            <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Email" required>
+            <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="Email" required>
             <label for="floatingPassword">Email</label>
           </div>
           <div class="form-floating mb-3">
