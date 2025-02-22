@@ -174,6 +174,12 @@
         right: 6px;
       }
 
+      .status-badge{
+        position: relative;
+        bottom: 1px;
+        left: 2px;
+      }
+
     </style>
     <!-- Custom styles for this template -->
     <link href="modals.css" rel="stylesheet">
@@ -194,12 +200,47 @@
     </div>
 
     <div class="container mt-4">
-      <div class="col-lg-12 d-flex flex-wrap justify-content-center align-items-centergap-2 px-4">
-        <div class="row">
-
+  <div class="col-lg-12 d-flex flex-wrap justify-content-center align-items-center gap-2 px-4">
+    <div class="row">
+      <!-- Card 1 -->
+      <div class="col-12 col-sm-6 col-lg-4 mb-4">
+        <div class="card">
+          <img src="assets/images/cars/Skyline GT-R BNR32.jpg" class="card-img-top" alt="Card image">
+          <div class="card-body">
+            <div class="row bg-danger d-flex align-items-center justify-content-between p-0">
+              <h5 class="bg-info col-8 m-0 p-0 text-algn-left">Nissan Skyline GT-R</h5>
+              <p class="ml-auto col-3 m-0"><span class="badge text-bg-success status-badge">Available</span></p>
+            </div>
+            
+          </div>
         </div>
       </div>
+
+      <!-- Card 2 -->
+      <div class="col-12 col-sm-6 col-lg-4 mb-4">
+        <div class="card">
+          <img src="..." class="card-img-top" alt="Card image">
+          <div class="card-body">
+            <p class="card-text">Card content goes here.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-12 col-sm-6 col-lg-4 mb-4">
+        <div class="card">
+          <img src="..." class="card-img-top" alt="Card image">
+          <div class="card-body">
+            <p class="card-text">Card content goes here.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more cards as needed -->
     </div>
+  </div>
+</div>
+
       
     <?php include_once('components/fab.php');?>
 
