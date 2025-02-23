@@ -180,6 +180,13 @@
         left: 2px;
       }
 
+      .card-text {
+        font-size: 14px;
+      }
+
+      .card-img-top {
+        height: 175px !important;
+      }
     </style>
     <!-- Custom styles for this template -->
     <link href="modals.css" rel="stylesheet">
@@ -200,45 +207,92 @@
     </div>
 
     <div class="container mt-4">
-  <div class="col-lg-12 d-flex flex-wrap justify-content-center align-items-center gap-2 px-4">
-    <div class="row">
-      <!-- Card 1 -->
-      <div class="col-12 col-sm-6 col-lg-4 mb-4">
-        <div class="card">
-          <img src="assets/images/cars/Skyline GT-R BNR32.jpg" class="card-img-top" alt="Card image">
-          <div class="card-body">
-            <div class="row bg-danger d-flex align-items-center justify-content-between p-0">
-              <h5 class="bg-info col-8 m-0 p-0 text-algn-left">Nissan Skyline GT-R</h5>
-              <p class="ml-auto col-3 m-0"><span class="badge text-bg-success status-badge">Available</span></p>
+      <div class="col-lg-12 d-flex flex-wrap justify-content-center align-items-center gap-2 px-4">
+        <div class="row">
+
+          <!-- Card 1 -->
+          <div class="col-12 col-sm-6 col-lg-4 mb-4">
+            <div class="card rounded-4 p-0 overflow-hidden">
+              <div class="card-body px-4">
+                <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
+                  <div class="col-12 m-0 p-0 d-flex align-items-center">
+                    <?php include('assets/svgs/star.php');?>
+                    <p class="m-0">
+                      <span class="text-muted card-text m-1">4.8</span>
+                      <span class="badge text-bg-light fw-normal">Manual</span>
+                      <span class="badge text-bg-light fw-normal mx-1">400hp</span>
+                      <span class="badge text-bg-light fw-normal">300km/h</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <img src="assets/images/cars/Skyline_GT-R_BNR32.png" class="card-img-top m-0 p-0" alt="Card image">
+              <div class="card-body">
+                <div class="row m-0 p-0 mt-1">
+                  <h6 class="col-8 m-0 p-0 text-align-left fw-bold">Skyline GT-R BNR32</h6>
+                  <p class="col-4 m-0 p-0 text-end  fw-semibold text-muted">₱2499/day</p>
+                </div>
+              </div>
             </div>
-            
           </div>
+          
+          <!-- Card 2 -->
+          <div class="col-12 col-sm-6 col-lg-4 mb-4">
+            <div class="card rounded-4 p-0 overflow-hidden">
+              <div class="card-body px-4">
+                <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
+                  <div class="col-12 m-0 p-0 d-flex align-items-center">
+                    <?php include('assets/svgs/star.php');?>
+                    <p class="m-0">
+                      <span class="text-muted card-text m-1">4.8</span>
+                      <span class="badge text-bg-light fw-normal">Manual</span>
+                      <span class="badge text-bg-light fw-normal mx-1">400hp</span>
+                      <span class="badge text-bg-light fw-normal">300km/h</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <img src="assets/images/cars/NSX_NA1.png" class="card-img-top m-0 p-0" alt="Card image">
+              <div class="card-body">
+                <div class="row m-0 p-0 mt-1">
+                  <h6 class="col-8 m-0 p-0 text-align-left fw-bold">NSX NA1</h6>
+                  <p class="col-4 m-0 p-0 text-end  fw-semibold text-muted">₱2999/day</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-12 col-sm-6 col-lg-4 mb-4">
+            <div class="card rounded-4 p-0 overflow-hidden">
+              <div class="card-body px-4">
+                <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
+                  <div class="col-12 m-0 p-0 d-flex align-items-center">
+                    <?php include('assets/svgs/star.php');?>
+                    <p class="m-0">
+                      <span class="text-muted card-text m-1">4.8</span>
+                      <span class="badge text-bg-light fw-normal">Manual</span>
+                      <span class="badge text-bg-light fw-normal mx-1">400hp</span>
+                      <span class="badge text-bg-light fw-normal">300km/h</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <img src="assets/images/cars/supra_mk4.png" class="card-img-top m-0 p-2" alt="Card image">
+              <div class="card-body">
+                <div class="row m-0 p-0 mt-1">
+                  <h6 class="col-8 m-0 p-0 text-align-left fw-bold">Supra Mark 4</h6>
+                  <p class="col-4 m-0 p-0 text-end  fw-semibold text-muted">₱2799/day</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- Add more cards as needed -->
         </div>
       </div>
-
-      <!-- Card 2 -->
-      <div class="col-12 col-sm-6 col-lg-4 mb-4">
-        <div class="card">
-          <img src="..." class="card-img-top" alt="Card image">
-          <div class="card-body">
-            <p class="card-text">Card content goes here.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="col-12 col-sm-6 col-lg-4 mb-4">
-        <div class="card">
-          <img src="..." class="card-img-top" alt="Card image">
-          <div class="card-body">
-            <p class="card-text">Card content goes here.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Add more cards as needed -->
-    </div>
-  </div>
 </div>
 
       
