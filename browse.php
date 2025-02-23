@@ -187,6 +187,23 @@
       .card-img-top {
         height: 175px !important;
       }
+
+      .fab-icon {
+        height: 22px;
+        position: relative;
+        right: 4px;
+      }
+
+      .card {
+        transition: transform 0.2s ease, box-shadow 0.3s ease !important;
+      }
+
+      .card:hover {
+        transform: scale(1.05); /* Scale the card to 110% of its original size */
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow effect */
+      }
+
+
     </style>
     <!-- Custom styles for this template -->
     <link href="modals.css" rel="stylesheet">
