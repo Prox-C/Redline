@@ -11,15 +11,15 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/heroes/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/dist/css/adminlte.min.css?v=3.2.0">
-    <link rel="stylesheet" href="assets/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../assets/dist/css/adminlte.min.css?v=3.2.0">
+    <link rel="stylesheet" href="../assets/plugins/fontawesome-free/css/all.min.css">
 
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Syne:wght@400..800&display=swap" rel="stylesheet">
 
-    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
     h1, h2, h4, h5, h6 {font-family: 'Syne', "sans-serif"; color: #282828}
@@ -195,7 +195,7 @@
       }
 
       .card {
-        transition: transform 0.2s ease, box-shadow 0.3s ease !important;
+        transition: transform 0.3s ease, box-shadow 0.3s ease !important;
       }
 
       .card:hover {
@@ -210,7 +210,7 @@
 
   </head>
   <body>
-    <?php include_once('components/home-nav.php');?>
+    <?php include_once('../components/home-nav.php');?>
     <div class="container">
       <div class="col-lg-12 d-flex flex-wrap justify-content-center align-items-center gap-2">
         <button class="btn btn-light rounded-pill px-4">All</button>
@@ -228,12 +228,12 @@
         <div class="row">
 
           <!-- Card 1 -->
-          <div class="col-12 col-sm-6 col-lg-4 mb-4">
+          <div class="col-12 col-sm-6 col-lg-4 mb-4" onclick="window.location='car.php'">
             <div class="card rounded-4 p-0 overflow-hidden">
               <div class="card-body px-4">
                 <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
                   <div class="col-12 m-0 p-0 d-flex align-items-center">
-                    <?php include('assets/svgs/star.php');?>
+                    <?php include('../assets/svgs/star.php');?>
                     <p class="m-0">
                       <span class="text-muted card-text m-1">4.8</span>
                       <span class="badge text-bg-light fw-normal">Manual</span>
@@ -243,7 +243,7 @@
                   </div>
                 </div>
               </div>
-              <img src="assets/images/cars/Skyline_GT-R_BNR32.png" class="card-img-top m-0 p-0" alt="Card image">
+              <img src="../assets/images/cars/Skyline_GT-R_BNR32.png" class="card-img-top m-0 p-0" alt="Card image">
               <div class="card-body">
                 <div class="row m-0 p-0 mt-1">
                   <h6 class="col-8 m-0 p-0 text-align-left fw-bold">Skyline GT-R BNR32</h6>
@@ -259,7 +259,7 @@
               <div class="card-body px-4">
                 <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
                   <div class="col-12 m-0 p-0 d-flex align-items-center">
-                    <?php include('assets/svgs/star.php');?>
+                    <?php include('../assets/svgs/star.php');?>
                     <p class="m-0">
                       <span class="text-muted card-text m-1">4.8</span>
                       <span class="badge text-bg-light fw-normal">Manual</span>
@@ -269,7 +269,7 @@
                   </div>
                 </div>
               </div>
-              <img src="assets/images/cars/NSX_NA1.png" class="card-img-top m-0 p-0" alt="Card image">
+              <img src="../assets/images/cars/NSX_NA1.png" class="card-img-top m-0 p-0" alt="Card image">
               <div class="card-body">
                 <div class="row m-0 p-0 mt-1">
                   <h6 class="col-8 m-0 p-0 text-align-left fw-bold">NSX NA1</h6>
@@ -285,7 +285,7 @@
               <div class="card-body px-4">
                 <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
                   <div class="col-12 m-0 p-0 d-flex align-items-center">
-                    <?php include('assets/svgs/star.php');?>
+                    <?php include('../assets/svgs/star.php');?>
                     <p class="m-0">
                       <span class="text-muted card-text m-1">4.8</span>
                       <span class="badge text-bg-light fw-normal">Manual</span>
@@ -295,7 +295,7 @@
                   </div>
                 </div>
               </div>
-              <img src="assets/images/cars/supra_mk4.png" class="card-img-top m-0 p-2" alt="Card image">
+              <img src="../assets/images/cars/supra_mk4.png" class="card-img-top m-0 p-2" alt="Card image">
               <div class="card-body">
                 <div class="row m-0 p-0 mt-1">
                   <h6 class="col-8 m-0 p-0 text-align-left fw-bold">Supra Mark 4</h6>
@@ -313,7 +313,7 @@
 </div>
 
       
-    <?php include_once('components/fab.php');?>
+    <?php include_once('../components/fab.php');?>
 
   </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -321,9 +321,9 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 <!-- AdminLTE App -->
-<script src="assets/dist/js/adminlte.min.js?v=3.2.0"></script>
+<script src="../assets/dist/js/adminlte.min.js?v=3.2.0"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="assets/dist/js/demo.js"></script>
+<script src="../assets/dist/js/demo.js"></script>
 
 <!-- FAB -->
 <script>
