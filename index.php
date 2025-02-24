@@ -191,7 +191,7 @@
   </head>
   <body>
 
-  <?php include_once('forms.php');?>
+  <?php include_once('components/forms.php');?>
 
 
     <!-- Header -->
@@ -225,7 +225,7 @@
           <p class="lead mb-4">Where adrenaline meets heritage — a high-octane car rental platform built exclusively for enthusiasts who crave the raw, unfiltered thrill of classic JDM legends.</p>
           <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
             <!-- Primary CTA -->
-          <button onclick="window.location='browse.php'" type="button" class="btn btn-bd-primary btn-lg px-5 me-sm-3 rounded-3">
+          <button onclick="window.location='pages/browse.php'" type="button" class="btn btn-bd-primary btn-lg px-5 me-sm-3 rounded-3">
             Get started 
             <svg class="ms-2 cta-icon" fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"></path></svg>
           </button> 
