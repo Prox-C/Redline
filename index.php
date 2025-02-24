@@ -212,10 +212,10 @@
 
         <div class="col-md-3 text-end">
           <!-- <button type="button" class="btn btn-outline-danger me-2 rounded-pill">Login</button> -->
-          <button type="button" class="btn btn-bd-primary rounded-3" data-bs-toggle="modal" data-bs-target="#loginModal">Sign in</button>
+          <button type="button" class="btn btn-bd-primary rounded-4 px-4" data-bs-toggle="modal" data-bs-target="#loginModal">Sign in</button>
         </div>
       </header>
-  </nav>
+    </nav>
 
     <!-- Main -->
     <section id="hero">
@@ -225,12 +225,12 @@
           <p class="lead mb-4">Where adrenaline meets heritage — a high-octane car rental platform built exclusively for enthusiasts who crave the raw, unfiltered thrill of classic JDM legends.</p>
           <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
             <!-- Primary CTA -->
-          <button onclick="window.location='pages/browse.php'" type="button" class="btn btn-bd-primary btn-lg px-5 me-sm-3 rounded-3">
+          <button onclick="window.location='pages/browse.php'" type="button" class="btn btn-bd-primary btn-lg px-5 me-sm-3 rounded-4">
             Get started 
             <svg class="ms-2 cta-icon" fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"></path></svg>
           </button> 
           <!-- Secondary CTA       -->
-          <button onclick="window.location='about.php'" type="button" class="btn btn-outline-secondary btn-lg px-5 me-sm-3 rounded-3">
+          <button onclick="window.location='about.php'" type="button" class="btn btn-outline-secondary btn-lg px-5 me-sm-3 rounded-4">
             Learn more
             <svg class="ms-2 cta-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"  viewBox="0 0 256 256"><path d="M108,84a16,16,0,1,1,16,16A16,16,0,0,1,108,84Zm128,44A108,108,0,1,1,128,20,108.12,108.12,0,0,1,236,128Zm-24,0a84,84,0,1,0-84,84A84.09,84.09,0,0,0,212,128Zm-72,36.68V132a20,20,0,0,0-20-20,12,12,0,0,0-4,23.32V168a20,20,0,0,0,20,20,12,12,0,0,0,4-23.32Z"></path></svg>
           </button>
