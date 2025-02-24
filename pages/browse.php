@@ -203,6 +203,8 @@
         box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow effect */
       }
 
+      .card-star {height: 16px;}
+
 
     </style>
     <!-- Custom styles for this template -->
@@ -233,7 +235,7 @@
               <div class="card-body px-4">
                 <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
                   <div class="col-12 m-0 p-0 d-flex align-items-center">
-                    <?php include('../assets/svgs/star.php');?>
+                    <?php $className="card-star"; include('../assets/svgs/star.php');?>
                     <p class="m-0">
                       <span class="text-muted card-text m-1">4.8</span>
                       <span class="badge text-bg-light fw-normal">Manual</span>
