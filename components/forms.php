@@ -41,7 +41,7 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-floating mb-3">
-                <input type="email" class="form-control rounded-3" id="floatingInput"placeholder="First name" required>
+                <input type="email" class="form-control rounded-4" id="floatingInput"placeholder="First name" required>
                 <label for="floatingInput">First name</label>
               </div>
             </div>
