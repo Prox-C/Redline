@@ -238,9 +238,9 @@
                     <?php $className="card-star"; include('../assets/svgs/star.php');?>
                     <p class="m-0">
                       <span class="text-muted card-text m-1">4.8</span>
-                      <span class="badge text-bg-light fw-normal">Manual</span>
                       <span class="badge text-bg-light fw-normal mx-1">400hp</span>
                       <span class="badge text-bg-light fw-normal">300km/h</span>
+                      <span class="badge text-bg-light fw-normal">Manual</span>
                     </p>
                   </div>
                 </div>
@@ -321,7 +321,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 <!-- AdminLTE App -->
 <script src="../assets/dist/js/adminlte.min.js?v=3.2.0"></script>
 <!-- AdminLTE for demo purposes -->
@@ -334,6 +333,11 @@
       $('.btn-group-fab').toggleClass('active');
     });
     $('has-tooltip').tooltip();
+  });
+</script>
+<script>
+  $(function () {
+      $('[data-bs-toggle="tooltip"]').tooltip();
   });
 </script>
 </html>
