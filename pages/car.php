@@ -163,16 +163,44 @@
      <div class="container-fluid"> 
         <div class="row gap-0 p-0 border-bottom">
             <div class="col-lg-5 bg-secondary-subtle p-5">
-                <img class="img-fluid car-img" src="../assets/images/cars/NSX_NA1.png" alt="">
+                <img class="img-fluid car-img" src="../assets/images/cars/Skyline_GT-R_BNR32.png" alt="">
             </div>
-            <div class="col-lg-7 bg-white p-5">
-                <div class="row">
+            <div class="col-lg-7 bg-white p-5 d-flex flex-column">
+                <div class="row mb-3">
                     <div class="col-9 d-flex align-items-center justify-content-start">
                         <h2 class="m-0 p-0 fw-bold">Nissan Skyline GT-R</h2>
                     </div>
                     <div class="col-3 d-flex align-items-center justify-content-end">
                         <?php $className="detailsStar"; include("../assets/svgs/star.php");?><h4 style="font-family: 'Space Grotesk'" class="align-middle p-0 m-0 ms-1 fw-normal text-muted">4.8</h4>
                     </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-12">
+                    <h5>Description</h5>
+                    <p>The Nissan Skyline GT-R BNR32, also known as the "Godzilla," is a legendary Japanese sports car that revolutionized performance with its RB26DETT twin-turbo inline-six engine and ATTESA E-TS all-wheel-drive system.</p>                  
+                  </div>
+                  <div class="col-12">
+                    <h5>Technical Specifications</h5>
+                    <div class="col-12 gap-1 align-items-center p-0">
+                      <span class="badge bg-secondary px-3 rounded-pill" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Power">400hp</span>
+                      <span class="badge bg-secondary px-3 rounded-pill" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Top Speed">300km/h</span>
+                      <span class="badge bg-secondary px-3 rounded-pill" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Transmission">Manual</span>
+                      <span class="badge bg-secondary px-3 rounded-pill" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Fuel Type">Gasoline</span>
+                      <span class="badge bg-secondary px-3 rounded-pill" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Seating Capacity">2</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row px-0 d-flex h-100 align-items-end mt-5">
+                  <div class="col-4">
+                    <h5 style="font-family: 'Space Grotesk';" class="fw-semibold">₱2499/day</5>
+                  </div>
+                  <div class="col-8">
+                    <button class="px-4 btn btn-lg btn-bd-primary btn-block rounded-4 m-0 d-flex justify-content-between align-items-center w-100">
+                      <span>Book</span> 
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"></path></svg>
+                    </button>
+                  </div>
                 </div>
             </div>
         </div>
@@ -181,12 +209,16 @@
 
   </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <!-- AdminLTE App -->
 <script src="../assets/dist/js/adminlte.min.js?v=3.2.0"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../assets/dist/js/demo.js"></script>
 
+<script>
+  $(function () {
+      $('[data-bs-toggle="tooltip"]').tooltip();
+  });
+</script>
 </html>
