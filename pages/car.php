@@ -192,10 +192,10 @@
                   </div>
                 </div>
                 <div class="row px-0 d-flex h-100 align-items-end mt-5">
-                  <div class="col-4">
-                    <h5 style="font-family: 'Space Grotesk';" class="fw-semibold">₱2499/day</5>
+                  <div class="col-md-4">
+                    <h5 style="font-family: 'Space Grotesk';" class="fw-semibold">₱2499<span class="fw-normal text-muted">/day</span></5>
                   </div>
-                  <div class="col-8">
+                  <div class="col-md-8 mt-2">
                     <button class="px-4 btn btn-lg btn-bd-primary btn-block rounded-4 m-0 d-flex justify-content-between align-items-center w-100">
                       <span>Book</span> 
                       <svg xmlns="http://www.w3.org/2000/svg" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"></path></svg>

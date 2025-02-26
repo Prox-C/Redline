@@ -301,7 +301,7 @@
               <div class="card-body">
                 <div class="row m-0 p-0 mt-1">
                   <h6 class="col-8 m-0 p-0 text-align-left fw-bold">Supra Mark 4</h6>
-                  <p class="col-4 m-0 p-0 text-end  fw-semibold text-muted">₱2799/day</p>
+                  <p class="col-4 m-0 p-0 text-end  fw-semibold text-muted">₱2799<span class="fw-normal text-muted">/day</span></p>
                 </div>
               </div>
             </div>
