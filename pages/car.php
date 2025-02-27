@@ -136,12 +136,13 @@
     }
 
     .detailsStar {height: 28px;}
+    .card-star {height: 16px;}
 
     </style>
     <!-- Custom styles for this template -->
     <link href="modals.css" rel="stylesheet">
   </head>
-  <body class="bg-light">
+  <body class="bg-light pb-5">
     <?php include_once('../components/forms.php');?>
 
     <!-- Header -->
@@ -203,6 +204,15 @@
                   </div>
                 </div>
             </div>
+        </div>
+        <div class="row d-flex align-items-center p-4 bg-white">
+          <h4 class="m-0">Reviews</h4>
+        </div>
+        <div class="row d-flex align-items-center px-5 bg-white">
+          <div class="col-lg-6 p-2">
+            <?php  include('../components/ratings_chart.php');?>
+          </div>
+          
         </div>
      </div>
 
