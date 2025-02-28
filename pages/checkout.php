@@ -136,7 +136,12 @@
         background-color: #EA4335 !important;
         border-color: #EA4335 !important;
         box-shadow: 0 0 5px #EA4335 !important;
-}
+    }
+
+    .fab-icon{
+        position: relative;
+        bottom: 1px;
+    }
 
 
 
@@ -258,7 +263,7 @@
                 <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
                 </div>
 
-                <div class="col-md-5">
+                <div class="col-md-4">
                 <label for="country" class="form-label">Region</label>
                 <select class="form-select" id="country" required>
                     <option value="" class="d-none">Choose...</option>
@@ -269,7 +274,7 @@
                 </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-5">
                 <label for="state" class="form-label">City/Municipal</label>
                 <select class="form-select" id="state" required>
                     <option value="" class="d-none">Choose...</option>
