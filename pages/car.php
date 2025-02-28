@@ -124,10 +124,6 @@
         display: block !important;
       }
 
-      .fab-icon {
-        position: relative;
-        bottom: 1px;
-      }
 
       .car-img {
         width: 100%; /* Adjust based on container */
@@ -142,8 +138,8 @@
     <!-- Custom styles for this template -->
     <link href="modals.css" rel="stylesheet">
   </head>
-  <body class="bg-light pb-5">
-    <?php include_once('../components/forms.php');?>
+  <body class="bg-light">
+    <?php include_once('../components/book.php');?>
 
     <!-- Header -->
     <nav class="container-fluid sticky-top bg-white p-0">
@@ -197,20 +193,26 @@
                     <h5 style="font-family: 'Space Grotesk';" class="fw-semibold">₱2499<span class="fw-normal text-muted">/day</span></5>
                   </div>
                   <div class="col-md-8 mt-2">
-                    <button class="px-4 btn btn-lg btn-bd-primary btn-block rounded-4 m-0 d-flex justify-content-between align-items-center w-100">
-                      <span>Book</span> 
+                    <button class="px-4 btn btn-lg btn-bd-primary btn-block rounded-4 m-0 d-flex justify-content-between align-items-center w-100" data-bs-toggle="modal" data-bs-target="#bookModal">
+                      <span>Book now</span> 
                       <svg xmlns="http://www.w3.org/2000/svg" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"></path></svg>
                     </button>
                   </div>
                 </div>
             </div>
         </div>
-        <div class="row d-flex align-items-center p-4 bg-white">
-          <h4 class="m-0">Reviews</h4>
-        </div>
-        <div class="row d-flex align-items-center px-5 bg-white">
-          <div class="col-lg-6 p-2">
+
+        <div class="row d-flex align-items-start px-5 pb-5 bg-white">
+          <div class="col-lg-5 pt-5 px-0">
+            <h2 class="mb-4">Ratings</h2>
             <?php  include('../components/ratings_chart.php');?>
+          </div>
+          <div class="col-lg-6 ml-auto pt-5 align-items-center justify-content-center">
+            <h2 class="mb-4">Reviews</h2>
+            <!-- <p class="text-muted fw-normal text-center p-5">
+              Wow, such empty.
+            </p> -->
+            <?php include_once('../components/reviews.php');?>
           </div>
           
         </div>
@@ -225,6 +227,7 @@
 <script src="../assets/dist/js/adminlte.min.js?v=3.2.0"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../assets/dist/js/demo.js"></script>
+
 
 <script>
   $(function () {
