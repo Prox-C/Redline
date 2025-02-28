@@ -131,6 +131,11 @@
         object-fit: contain; /* Ensures the image fills the square without stretching */
     }
 
+    .fab-icon {
+      position: relative;
+      bottom: 1px;
+    }
+
     .detailsStar {height: 28px;}
     .card-star {height: 16px;}
 

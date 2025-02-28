@@ -124,6 +124,21 @@
         display: block !important;
       }
 
+      .txt-pri {color: #EA4335}
+
+      /* Default border color */
+    .form-check-input {
+        border: 2px solid #EA4335 !important;
+    }
+
+    /* Change color when selected */
+    .form-check-input:checked {
+        background-color: #EA4335 !important;
+        border-color: #EA4335 !important;
+        box-shadow: 0 0 5px #EA4335 !important;
+}
+
+
 
     </style>
     <!-- Custom styles for this template -->
@@ -144,10 +159,10 @@
       </header>
     </nav>
 
-    <div class="container">
+    <div class="container p-5">
     <main>
         <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+        <img class="d-block mx-auto mb-4" src="../assets/images/Car rental-pana.svg" alt="" width="230">
         <h2>Your JDM Beast is Ready.</h2>
         <p class="lead">
         Review your details, choose your payment method, and get ready to hit the road—your dream drive is just a few clicks away!
@@ -157,41 +172,41 @@
         <div class="row g-5">
         <div class="col-md-5 col-lg-4 order-md-last">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <span class="text-primary">Your cart</span>
-            <span class="badge bg-primary rounded-pill">3</span>
+            <span class="txt-pri">Rent Summary</span>
+            <!-- <span class="badge bg-primary rounded-pill">3</span> -->
             </h4>
             <ul class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between lh-sm">
                 <div>
-                <h6 class="my-0">Product name</h6>
-                <small class="text-body-secondary">Brief description</small>
+                <h6 class="my-0">Nisssan Skyline GT-R</h6>
+                <small class="text-body-secondary">Car selected</small>
                 </div>
-                <span class="text-body-secondary">$12</span>
+                <span class="text-body-secondary">₱2499</span>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-sm">
                 <div>
-                <h6 class="my-0">Second product</h6>
-                <small class="text-body-secondary">Brief description</small>
+                <h6 class="my-0">Pickup Date</h6>
+                <small class="text-body-secondary">Rent start</small>
                 </div>
-                <span class="text-body-secondary">$8</span>
+                <span class="text-body-secondary">03/20/2025</span>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-sm">
                 <div>
-                <h6 class="my-0">Third item</h6>
-                <small class="text-body-secondary">Brief description</small>
+                <h6 class="my-0">Return Date</h6>
+                <small class="text-body-secondary">Rent end</small>
                 </div>
-                <span class="text-body-secondary">$5</span>
+                <span class="text-body-secondary">03/23/2025</span>
             </li>
-            <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
+            <!-- <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
                 <div class="text-success">
                 <h6 class="my-0">Promo code</h6>
                 <small>EXAMPLECODE</small>
                 </div>
                 <span class="text-success">−$5</span>
-            </li>
+            </li> -->
             <li class="list-group-item d-flex justify-content-between">
-                <span>Total (USD)</span>
-                <strong>$20</strong>
+                <span>Total (PHP)</span>
+                <strong>$7,497</strong>
             </li>
             </ul>
 
@@ -203,7 +218,7 @@
             </form>
         </div>
         <div class="col-md-7 col-lg-8">
-            <h4 class="mb-3">Billing address</h4>
+            <h4 class="mb-3">Billing Information</h4>
             <form class="needs-validation" novalidate>
             <div class="row g-3">
                 <div class="col-sm-6">
@@ -223,18 +238,7 @@
                 </div>
 
                 <div class="col-12">
-                <label for="username" class="form-label">Username</label>
-                <div class="input-group has-validation">
-                    <span class="input-group-text">@</span>
-                    <input type="text" class="form-control" id="username" placeholder="Username" required>
-                <div class="invalid-feedback">
-                    Your username is required.
-                    </div>
-                </div>
-                </div>
-
-                <div class="col-12">
-                <label for="email" class="form-label">Email <span class="text-body-secondary">(Optional)</span></label>
+                <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" placeholder="you@example.com">
                 <div class="invalid-feedback">
                     Please enter a valid email address for shipping updates.
@@ -255,21 +259,26 @@
                 </div>
 
                 <div class="col-md-5">
-                <label for="country" class="form-label">Country</label>
+                <label for="country" class="form-label">Region</label>
                 <select class="form-select" id="country" required>
-                    <option value="">Choose...</option>
-                    <option>United States</option>
+                    <option value="" class="d-none">Choose...</option>
+                    <option>Eastern Visayas (VIII)</option>
                 </select>
                 <div class="invalid-feedback">
-                    Please select a valid country.
+                    Please select a valid required.
                 </div>
                 </div>
 
                 <div class="col-md-4">
-                <label for="state" class="form-label">State</label>
+                <label for="state" class="form-label">City/Municipal</label>
                 <select class="form-select" id="state" required>
-                    <option value="">Choose...</option>
-                    <option>California</option>
+                    <option value="" class="d-none">Choose...</option>
+                    <option>Tacloban City (Capital)</option>
+                    <option>Ormoc City</option>
+                    <option>Baybay City</option>
+                    <option>Jaro</option>
+                    <option>Carigara</option>
+                    <option>Tanauan</option>
                 </select>
                 <div class="invalid-feedback">
                     Please provide a valid state.
@@ -303,16 +312,12 @@
 
             <div class="my-3">
                 <div class="form-check">
-                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                <input id="credit" name="paymentMethod" type="radio" class="form-check-input    " checked required>
                 <label class="form-check-label" for="credit">Credit card</label>
                 </div>
                 <div class="form-check">
-                <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+                <input id="debit" name="paymentMethod" type="radio" class="form-check-input " required>
                 <label class="form-check-label" for="debit">Debit card</label>
-                </div>
-                <div class="form-check">
-                <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
-                <label class="form-check-label" for="paypal">PayPal</label>
                 </div>
             </div>
 
@@ -353,7 +358,7 @@
 
             <hr class="my-4">
 
-            <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+            <button class="w-100 btn btn-bd-primary btn-lg rounded-4" type="submit">Pay $7,497</button>
             </form>
         </div>
     </div>
