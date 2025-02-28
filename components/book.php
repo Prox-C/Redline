@@ -14,21 +14,21 @@
           </div>
 
           <div class="row">
-    <div class="col-lg-6">
-        <label for="pickupDate" class="form-label">Pickup Date:</label>
-        <div class="form-floating mb-3">
-            <input type="date" class="form-control rounded-3" id="pickupDate" name="rentStart">
-            <label for="pickupDate" class="text-muted-subtle">Rent start</label>
+            <div class="col-lg-6">
+                <label for="pickupDate" class="form-label">Pickup Date:</label>
+                <div class="form-floating mb-3">
+                    <input type="date" class="form-control rounded-3" id="pickupDate" name="rentStart" required>
+                    <label for="pickupDate" class="text-muted-subtle">Rent start</label>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <label for="returnDate" class="form-label">Return Date:</label>
+                <div class="form-floating mb-3">
+                    <input type="date" class="form-control rounded-3" id="returnDate" name="rentEnd" required>
+                    <label for="returnDate" class="text-muted-subtle">Rent end</label>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="col-lg-6">
-        <label for="returnDate" class="form-label">Return Date:</label>
-        <div class="form-floating mb-3">
-            <input type="date" class="form-control rounded-3" id="returnDate" name="rentEnd">
-            <label for="returnDate" class="text-muted-subtle">Rent end</label>
-        </div>
-    </div>
-</div>
 
           
           <div class="row">
