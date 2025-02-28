@@ -211,7 +211,7 @@
             </li> -->
             <li class="list-group-item d-flex justify-content-between">
                 <span>Total (PHP)</span>
-                <strong>$7,497</strong>
+                <strong>₱7,497</strong>
             </li>
             </ul>
 
@@ -363,7 +363,7 @@
 
             <hr class="my-4">
 
-            <button class="w-100 btn btn-bd-primary btn-lg rounded-4" type="submit">Pay $7,497</button>
+            <button class="w-100 btn btn-bd-primary btn-lg rounded-4" type="submit">Pay ₱7,497</button>
             </form>
         </div>
     </div>
