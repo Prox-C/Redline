@@ -11,7 +11,7 @@
 <!-- Site wrapper -->
 <div class="wrapper">
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white bg-danger">
+  <nav class="main-header navbar navbar-expand navbar-dark bg-danger">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
