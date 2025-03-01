@@ -20,20 +20,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Syne:wght@400..800&display=swap" rel="stylesheet">
 
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    
     <style>
     h1, h2, h4, h5, h6 {font-family: 'Syne', "sans-serif"; color: #282828}
     h3 {font-family: 'Space Grotesk', "sans-serif";}
     * {font-family: 'Space Grotesk', "sans-serif";}
 
-      .small-box.brand-dark {background: #c5211c; color: #fefefe}
-      .small-box.brand-primary {background: #EA4335; color: #fefefe}
-      .small-box.brand-secondary {background: #f59b65; color: #fefefe}
-      .small-box.brand-tertiary {background: #f7ba79; color: #fefefe}
+      .info-box-icon.brand-dark {background: #B71C1C; color: #fefefe}
+      .info-box-icon.brand-primary {background: #D32F2F; color: #fefefe}
+      .info-box-icon.brand-secondary {background: #F33226; color: #fefefe}
+      .info-box-icon.brand-tertiary {background: #EF5350; color: #fefefe}
 
       .box-icon {height: 70px; fill: #fefefe}
 
-
+      bg-primary{background: #EA4335 !important; color: #fefefe}
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -120,6 +120,10 @@
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
+
+      .car-img-table {
+        height: 22px;
+      }
     </style>
     <!-- Custom styles for this template -->
     <link href="modals.css" rel="stylesheet">
@@ -131,10 +135,10 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <div class="container-fluid">
+        <div class="container-fluid pt-5 px-5">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Dashboard</h1>
+              <h1 class="fw-semibold">Dashboard</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
@@ -148,69 +152,231 @@
 
       <!-- Main content -->
       <section class="content">
-        <div class="container-fluid">
+        <div class="container-fluid px-5">
           <div class="row">
-          <!-- CLIENTS BOX -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box brand-dark rounded-3">
-              <div class="inner">
-                <h3>53</h3>
-
-                <p>Clients</p>
-              </div>
-              <div class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" class="box-icon" viewBox="0 0 256 256"><path d="M234.38,210a123.36,123.36,0,0,0-60.78-53.23,76,76,0,1,0-91.2,0A123.36,123.36,0,0,0,21.62,210a12,12,0,1,0,20.77,12c18.12-31.32,50.12-50,85.61-50s67.49,18.69,85.61,50a12,12,0,0,0,20.77-12ZM76,96a52,52,0,1,1,52,52A52.06,52.06,0,0,1,76,96Z"></path></svg>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- BOOKED BOX -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box brand-primary rounded-3">
-              <div class="inner">
-                <h3>15</h3>
-
-                <p>Booked</p>
-              </div>
-              <div class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" class="box-icon" viewBox="0 0 256 256"><path d="M128,20A108,108,0,1,0,236,128,108.12,108.12,0,0,0,128,20Zm84,108a83.6,83.6,0,0,1-16.75,50.28L77.72,60.75A84,84,0,0,1,212,128ZM44,128A83.6,83.6,0,0,1,60.75,77.72L178.28,195.25A84,84,0,0,1,44,128Z"></path></svg>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- PENDING BOX -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box brand-secondary rounded-3">
-              <div class="inner">
-                <h3>4</h3>
-
-                <p>Pending</p>
-              </div>
-              <div class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" class="box-icon" viewBox="0 0 256 256"><path d="M140,32V64a12,12,0,0,1-24,0V32a12,12,0,0,1,24,0Zm33.25,62.75a12,12,0,0,0,8.49-3.52L204.37,68.6a12,12,0,0,0-17-17L164.77,74.26a12,12,0,0,0,8.48,20.49ZM224,116H192a12,12,0,0,0,0,24h32a12,12,0,0,0,0-24Zm-42.26,48.77a12,12,0,1,0-17,17l22.63,22.63a12,12,0,0,0,17-17ZM128,180a12,12,0,0,0-12,12v32a12,12,0,0,0,24,0V192A12,12,0,0,0,128,180ZM74.26,164.77,51.63,187.4a12,12,0,0,0,17,17l22.63-22.63a12,12,0,1,0-17-17ZM76,128a12,12,0,0,0-12-12H32a12,12,0,0,0,0,24H64A12,12,0,0,0,76,128ZM68.6,51.63a12,12,0,1,0-17,17L74.26,91.23a12,12,0,0,0,17-17Z"></path></svg>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- AVAILABLE BOX -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box brand-tertiary rounded-3">
-              <div class="inner">
-                <h3>22</h3>
-
-                <p>Available</p>
-              </div>
-              <div class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" class="box-icon" viewBox="0 0 256 256"><path d="M176.49,95.51a12,12,0,0,1,0,17l-56,56a12,12,0,0,1-17,0l-24-24a12,12,0,1,1,17-17L112,143l47.51-47.52A12,12,0,0,1,176.49,95.51ZM236,128A108,108,0,1,1,128,20,108.12,108.12,0,0,1,236,128Zm-24,0a84,84,0,1,0-84,84A84.09,84.09,0,0,0,212,128Z"></path></svg>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
             
+            <!-- Info Box -->
+            <div class="col-12 col-lg-3">
+              <div class="info-box rounded-3">
+                <span class="info-box-icon brand-tertiary elevation-1 rounded-3"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#fff" viewBox="0 0 256 256"><path d="M240,104H229.2L201.42,41.5A16,16,0,0,0,186.8,32H69.2a16,16,0,0,0-14.62,9.5L26.8,104H16a8,8,0,0,0,0,16h8v80a16,16,0,0,0,16,16H64a16,16,0,0,0,16-16v-8h96v8a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16V120h8a8,8,0,0,0,0-16ZM80,152H56a8,8,0,0,1,0-16H80a8,8,0,0,1,0,16Zm120,0H176a8,8,0,0,1,0-16h24a8,8,0,0,1,0,16ZM44.31,104,69.2,48H186.8l24.89,56Z"></path></svg></span>
+
+                <div class="info-box-content">
+                  <h3 class="info-box-number mb-0">
+                    22
+                  </h3>
+                  <span class="info-box-text">Cars</span>
+
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            
+            <!-- Info Box -->
+            <div class="col-12 col-lg-3">
+              <div class="info-box rounded-3">
+                <span class="info-box-icon brand-tertiary elevation-1 rounded-3"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#fff" viewBox="0 0 256 256"><path d="M140,32V64a12,12,0,0,1-24,0V32a12,12,0,0,1,24,0Zm33.25,62.75a12,12,0,0,0,8.49-3.52L204.37,68.6a12,12,0,0,0-17-17L164.77,74.26a12,12,0,0,0,8.48,20.49ZM224,116H192a12,12,0,0,0,0,24h32a12,12,0,0,0,0-24Zm-42.26,48.77a12,12,0,1,0-17,17l22.63,22.63a12,12,0,0,0,17-17ZM128,180a12,12,0,0,0-12,12v32a12,12,0,0,0,24,0V192A12,12,0,0,0,128,180ZM74.26,164.77,51.63,187.4a12,12,0,0,0,17,17l22.63-22.63a12,12,0,1,0-17-17ZM76,128a12,12,0,0,0-12-12H32a12,12,0,0,0,0,24H64A12,12,0,0,0,76,128ZM68.6,51.63a12,12,0,1,0-17,17L74.26,91.23a12,12,0,0,0,17-17Z"></path></svg></span>
+
+                <div class="info-box-content">
+                  <h3 class="info-box-number mb-0">
+                    4
+                  </h3>
+                  <span class="info-box-text">Pending</span>
+
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+
+            <!-- Info Box -->
+            <div class="col-12 col-lg-3">
+              <div class="info-box rounded-3">
+                <span class="info-box-icon brand-tertiary elevation-1 rounded-3"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#ffffff" viewBox="0 0 256 256"><path d="M64.12,147.8a4,4,0,0,1-4,4.2H16a8,8,0,0,1-7.8-6.17,8.35,8.35,0,0,1,1.62-6.93A67.79,67.79,0,0,1,37,117.51a40,40,0,1,1,66.46-35.8,3.94,3.94,0,0,1-2.27,4.18A64.08,64.08,0,0,0,64,144C64,145.28,64,146.54,64.12,147.8Zm182-8.91A67.76,67.76,0,0,0,219,117.51a40,40,0,1,0-66.46-35.8,3.94,3.94,0,0,0,2.27,4.18A64.08,64.08,0,0,1,192,144c0,1.28,0,2.54-.12,3.8a4,4,0,0,0,4,4.2H240a8,8,0,0,0,7.8-6.17A8.33,8.33,0,0,0,246.17,138.89Zm-89,43.18a48,48,0,1,0-58.37,0A72.13,72.13,0,0,0,65.07,212,8,8,0,0,0,72,224H184a8,8,0,0,0,6.93-12A72.15,72.15,0,0,0,157.19,182.07Z"></path></svg></span>
+
+                <div class="info-box-content">
+                  <h3 class="info-box-number mb-0">
+                    45
+                  </h3>
+                  <span class="info-box-text">Clients</span>
+
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+
+            <!-- Info Box -->
+            <div class="col-12 col-lg-3">
+              <div class="info-box rounded-3">
+                <span class="info-box-icon brand-tertiary elevation-1 rounded-3"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#ffffff" viewBox="0 0 256 256"><path d="M256,120a8,8,0,0,1-8,8H8a8,8,0,0,1,0-16H35.92l47.5-65.41a16,16,0,0,1,25.31-.72l12.85,14.9.2.23a7.95,7.95,0,0,0,12.44,0l.2-.23,12.85-14.9a16,16,0,0,1,25.31.72L220.08,112H248A8,8,0,0,1,256,120Zm-76,24a36,36,0,0,0-35.77,32H111.77a36,36,0,1,0-1.83,16h36.12A36,36,0,1,0,180,144Z"></path></svg></span>
+
+                <div class="info-box-content">
+                  <h3 class="info-box-number mb-0">
+                    12
+                  </h3>
+                  <span class="info-box-text">Managers</span>
+
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+          </div>
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="card rounded-3 overflow-hidden">
+                <div class="card-header border-1 px-4">
+                  <h3 class="card-title fw-bold">Recent Bookings</h3>
+                  <div class="card-tools px-4">
+                    <a href="">View all</a>
+                  </div>
+                </div>
+                <div class="card-body table-responsive p-0">
+                  <table class="table table-striped table-valign-middle">
+                    <thead>
+                    <tr>
+                      <th style="width: 15%;">RentID</th>
+                      <th>Car Rented</th>
+                      <th>Total</th>
+                      <th style="width: 15%;">Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td>
+                        RNT1
+                      </td>
+                      <td>Honda NSX NA1</td>
+                      <td>
+                        12,500
+                      </td>
+                      <td>
+                      <div class="span badge bg-warning w-100">Pending</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        RNT2
+                      </td>
+                      <td>Nissan Fairlady Z</td>
+                      <td>
+                        7,600
+                      </td>
+                      <td>
+                      <div class="span badge bg-success w-100">Paid</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        RNT3
+                      </td>
+                      <td>Toyota AE86 Trueno</td>
+                      <td>
+                        12,500
+                      </td>
+                      <td>
+                      <div class="span badge bg-warning w-100">Pending</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        RNT4
+                      </td>
+                      <td>Toyota Supra MK4</td>
+                      <td>
+                        12,500
+                      </td>
+                      <td>
+                      <div class="span badge bg-danger w-100">Cancelled</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        RNT5
+                      </td>
+                      <td>Mazda RX7</td>
+                      <td>
+                        12,500
+                      </td>
+                      <td>
+                      <div class="span badge bg-success w-100">Paid</div>
+                      </td>
+                    </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- /.card -->
+            </div>
+            
+            <div class="col-lg-5">
+              <div class="card rounded-3 overflow-hidden">
+                <div class="card-header border-1 px-4">
+                  <h3 class="card-title fw-bold">Latest Cars</h3>
+                  <div class="card-tools px-3">
+                    <a href="">View all</a>
+                  </div>
+                </div>
+                <div class="card-body table-responsive p-0">
+                  <table class="table table-striped table-valign-middle">
+                    <thead>
+                    <tr>
+                      <th>Image</th>
+                      <th>Brand</th>
+                      <th>Model</th>
+                      <th>Rate</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><img class="car-img-table" src="../assets/images/cars/Skyline_GT-R_BNR32.png" alt=""></td>
+                        <td>Nissan</td>
+                        <td>Skyline GT-R</td>
+                        <td>2,499</td>
+                      </tr>
+                      <tr>
+                        <td><img class="car-img-table" src="../assets/images/cars/NSX_NA1.png" alt=""></td>
+                        <td>Honda</td>
+                        <td>NSX NA1</td>
+                        <td>2,999</td>
+                      </tr>
+                      <tr>
+                        <td><img class="car-img-table" src="../assets/images/cars/supra_mk4.png" alt=""></td>
+                        <td>Toyota</td>
+                        <td>Supra MK4</td>
+                        <td>2,799</td>
+                      </tr>
+                      <tr>
+                        <td><img class="car-img-table" src="../assets/images/cars/civic.png" alt=""></td>
+                        <td>Honda</td>
+                        <td>Civic FK8</td>
+                        <td>2,499</td>
+                      </tr>
+                      <tr>
+                        <td><img class="car-img-table" src="../assets/images/cars/RX7.png" alt=""></td>
+                        <td>Mazda</td>
+                        <td>RX7</td>
+                        <td>2,499</td>
+                      </tr>
+                      
+                      
+                  </table>
+                </div>
+                <!-- /.card -->
+              </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- /.content -->
+      </div>
+      <!-- /.content-wrapper -->
           </div>
         </div>
       </section>
