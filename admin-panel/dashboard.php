@@ -25,6 +25,7 @@
     h1, h2, h4, h5, h6 {font-family: 'Syne', "sans-serif"; color: #282828}
     h3 {font-family: 'Space Grotesk', "sans-serif";}
     * {font-family: 'Space Grotesk', "sans-serif";}
+    .txt-pri {color: #EA4335 !important}
 
       .info-box-icon.brand-dark {background: #B71C1C; color: #fefefe}
       .info-box-icon.brand-primary {background: #D32F2F; color: #fefefe}
@@ -123,6 +124,12 @@
 
       .car-img-table {
         height: 22px;
+      }
+
+      .link-icon {
+        height: 12px;
+        position: relative;
+        bottom: 1px;
       }
     </style>
     <!-- Custom styles for this template -->
@@ -228,12 +235,12 @@
             <!-- /.col -->
           </div>
           <div class="row">
-            <div class="col-lg-7">
+            <div class="col-lg-6">
               <div class="card rounded-3 overflow-hidden">
-                <div class="card-header border-1 px-4">
+                <div class="card-header border-1 px-4 pt-3">
                   <h3 class="card-title fw-bold">Recent Bookings</h3>
-                  <div class="card-tools px-4">
-                    <a href="">View all</a>
+                  <div class="card-tools pe-2">
+                    <a href="" class="txt-pri">View all<svg xmlns="http://www.w3.org/2000/svg" class="link-icon m-0 p-0" fill="currentColor" viewBox="0 0 256 256"><path d="M184.49,136.49l-80,80a12,12,0,0,1-17-17L159,128,87.51,56.49a12,12,0,1,1,17-17l80,80A12,12,0,0,1,184.49,136.49Z"></path></svg></a>
                   </div>
                 </div>
                 <div class="card-body table-responsive p-0">
@@ -315,12 +322,12 @@
               <!-- /.card -->
             </div>
             
-            <div class="col-lg-5">
+            <div class="col-lg-6">
               <div class="card rounded-3 overflow-hidden">
-                <div class="card-header border-1 px-4">
+                <div class="card-header border-1 px-4 pt-3">
                   <h3 class="card-title fw-bold">Latest Cars</h3>
-                  <div class="card-tools px-3">
-                    <a href="">View all</a>
+                  <div class="card-tools pe-2">
+                    <a href="" class="txt-pri">View all<svg xmlns="http://www.w3.org/2000/svg" class="link-icon m-0 p-0" fill="currentColor" viewBox="0 0 256 256"><path d="M184.49,136.49l-80,80a12,12,0,0,1-17-17L159,128,87.51,56.49a12,12,0,1,1,17-17l80,80A12,12,0,0,1,184.49,136.49Z"></path></svg></a>
                   </div>
                 </div>
                 <div class="card-body table-responsive p-0">
