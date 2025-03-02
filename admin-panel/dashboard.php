@@ -145,7 +145,7 @@
         <div class="container-fluid pt-5 px-5">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="fw-semibold">Dashboard</h1>
+              <h1 class="fw-semibold">System Overview</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
