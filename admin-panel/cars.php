@@ -215,7 +215,7 @@
           </div>
           <div class="row">
             <div class="col-12 col-sm-6 col-lg-4 mb-3">
-              <button class="car btn btn-lg bg-danger-subtle rounded-4 h-100 w-100 elevation-1">
+              <button onclick="window.location='new-car.php'" class="car btn btn-lg bg-danger-subtle rounded-4 h-100 w-100 elevation-1">
                   <span class="text-white-subtle fw-bold">New<svg xmlns="http://www.w3.org/2000/svg" class="big-cta-icon" fill="currentColor" viewBox="0 0 256 256"><path d="M208,28H48A20,20,0,0,0,28,48V208a20,20,0,0,0,20,20H208a20,20,0,0,0,20-20V48A20,20,0,0,0,208,28Zm-4,176H52V52H204ZM76,128a12,12,0,0,1,12-12h28V88a12,12,0,0,1,24,0v28h28a12,12,0,0,1,0,24H140v28a12,12,0,0,1-24,0V140H88A12,12,0,0,1,76,128Z"></path></svg></span>
               </button>
             </div>
