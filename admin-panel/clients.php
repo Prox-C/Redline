@@ -183,6 +183,8 @@
 
       <section class="content px-5">
         <div class="row">
+
+            <!-- Search Bar -->
             <div class="col-12">
                 <form action="simple-results.html">
                     <div class="input-group rounded-3 overflow-hidden">
@@ -195,6 +197,91 @@
                     </div>
                 </form>
             </div>
+
+            <div class="col-12 mt-4">
+                <div class="card rounded-3 overflow-hidden">
+                    <div class="card-header border-1 px-4 pt-3 d-flex flex-row align-items-center justify-content-between">
+                        <h3 class="card-title fw-bold">Registered Users (12)</h3>
+                        <button class="btn btn-outline-danger btn-sm  ml-auto rounded-3 px-4">Add new</button>
+                    </div>
+                    <div class="card-body table-responsive p-0">
+                    <table class="table table-striped table-valign-middle">
+                        <thead>
+                        <tr>
+                        <th style="width: 15%;">RentID</th>
+                        <th>Car Rented</th>
+                        <th>Total</th>
+                        <th style="width: 15%;">Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                        <td>
+                            RNT1
+                        </td>
+                        <td>Honda NSX NA1</td>
+                        <td>
+                            12,500
+                        </td>
+                        <td>
+                        <div class="span badge bg-warning w-100">Pending</div>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td>
+                            RNT2
+                        </td>
+                        <td>Nissan Fairlady Z</td>
+                        <td>
+                            7,600
+                        </td>
+                        <td>
+                        <div class="span badge bg-success w-100">Paid</div>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td>
+                            RNT3
+                        </td>
+                        <td>Toyota AE86 Trueno</td>
+                        <td>
+                            12,500
+                        </td>
+                        <td>
+                        <div class="span badge bg-warning w-100">Pending</div>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td>
+                            RNT4
+                        </td>
+                        <td>Toyota Supra MK4</td>
+                        <td>
+                            12,500
+                        </td>
+                        <td>
+                        <div class="span badge bg-danger w-100">Cancelled</div>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td>
+                            RNT5
+                        </td>
+                        <td>Mazda RX7</td>
+                        <td>
+                            12,500
+                        </td>
+                        <td>
+                        <div class="span badge bg-success w-100">Paid</div>
+                        </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div>
+
         </div>
       </section>
 
