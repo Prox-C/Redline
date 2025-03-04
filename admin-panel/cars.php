@@ -202,10 +202,10 @@
           <div class="row mb-3">
             <div class="col-12 mb-4">
               <form action="simple-results.html">
-                <div class="input-group rounded-4 overflow-hidden">
-                    <input type="search" class="form-control form-control-lg b rounded-start-4" placeholder="Search by car no, model, or brand">
+                <div class="input-group rounded-3 overflow-hidden">
+                    <input type="search" class="form-control form-control-lg b rounded-start-3" placeholder="Search by car no, model, or brand">
                     <div class="input-group-append">
-                        <button type="submit" class="btn btn-lg btn-danger rounded-end-4">
+                        <button type="submit" class="btn btn-lg btn-danger rounded-end-3">
                         <i class="fa fa-search"></i>
                         </button>
                     </div>
