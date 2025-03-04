@@ -179,9 +179,15 @@
                 <label for="" class="form-label">Brand</label>
                 <select class="form-select form-select-md mb-3 rounded-3" aria-label=".form-select-lg example">
                     <option class="d-none" selected><span class="text-muted">Select brand</span></option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option value="1">Honda</option>
+                    <option value="2">Mazda</option>
+                    <option value="3">Mitsubishi</option>
+                    <option value="4">Nissan</option>
+                    <option value="5">Subaru</option>
+                    <option value="6">Toyota</option>
+
+
+
                 </select>
                 <label for="" class="form-label">Model</label>
                 <input type="text" placeholder="Enter model name" class="form-control rounded-3 mb-3">
@@ -189,7 +195,7 @@
                 <label for="" class="form-label">Description</label>
                 <textarea name="" placeholder="Write a catchy description for the car" id="description" class="form-control flex-grow-1 rounded-3"></textarea>
             </div>
-            <div class="col-lg-4 d-flex flex-column pb-4 justify-content-between">  
+            <div class="col-lg-4 d-flex flex-column p-0 pb-4 justify-content-between">  
                 <div class="row m-0 p-0">
                     <div class="col-4">
                         <label for="" class="form-label">Power</label>
@@ -224,7 +230,7 @@
                 <div class="row m-0 p-0">
                     <div class="col-12">
                         <label for="" class="from-label txt-pri">Rate</label>
-                        <input type="text" class="form-control form-control-lg mb-3 rounded-3" placeholder="Rate per day (PHP)">
+                        <input type="text" class="form-control form-control-lg mb-3 rounded-3" placeholder="Rate per day (PHP )">
                         <a href="" class="btn btn-lg bg-danger rounded-4 btn-block">Add to Fleet</a>
                     </div>
                 </div>
