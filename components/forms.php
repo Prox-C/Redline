@@ -96,7 +96,7 @@
 <div class="modal fade" tabindex="-1" id="addClientModal" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content rounded-4 shadow">
-      <div class="modal-header p-5 pb-4 border-bottom-0">
+      <div class="modal-header px-5 pt-5 pb-0 border-bottom-0">
         <h1 class="fw-bold mb-0 fs-2 text-center">Register a client</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -146,9 +146,10 @@
             <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password" minlength="8" required>
             <label for="floatingPassword">Confirm Password</label>
           </div>
-          <a role="button" href="admin-panel/dashboard.php" class="w-100 mb-2 btn btn-lg rounded-3 btn-bd-primary" type="submit">Register</a>
+          <a role="button" href="admin-panel/dashboard.php" class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-danger" type="submit">Create account</a>
         </form> 
       </div>
     </div>
   </div>
 </div>
+
