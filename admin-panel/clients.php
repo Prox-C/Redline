@@ -156,6 +156,8 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="../modals.css" rel="stylesheet">
+    <link href="../heroes.css" rel="stylesheet">
+
 
   </head>
   <body>
@@ -189,7 +191,7 @@
                     <div class="input-group rounded-3 overflow-hidden">
                         <input type="search" class="form-control form-control-lg b rounded-start-3" placeholder="Search by ID, first name, last name, etc.">
                         <div class="input-group-append">
-                            <button type="submit" class="btn btn-lg btn-danger rounded-end-3">
+                            <button type="submit" class="btn btn-lg btn-dark rounded-end-3">
                             <i class="fa fa-search"></i>
                             </button>
                         </div>
@@ -201,7 +203,7 @@
                 <div class="card rounded-3 overflow-hidden">
                     <div class="card-header border-1 px-4 pt-3 d-flex flex-row align-items-center justify-content-between">
                         <h3 class="card-title fw-bold">Registered Users (35)</h3>
-                        <button data-bs-toggle="modal" data-bs-target="#addClientModal" class="btn btn-outline-danger btn-sm  ml-auto rounded-3 px-3">Add new<svg class="btn-icons" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"></path></svg></button>
+                        <button data-bs-toggle="modal" data-bs-target="#addClientModal" class="btn btn-danger btn-sm  ml-auto rounded-3 px-3">Add new<svg class="btn-icons" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"></path></svg></button>
                     </div>
                     <div class="card-body table-responsive p-0">
                     <table class="table table-valign-middle">
@@ -212,6 +214,7 @@
                           <th>Full Name</th>
                           <th>Age</th>
                           <th>Sex</th>
+                          <th colspan="2" style="width: 5%;">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -221,6 +224,8 @@
                           <td>John Doe</td>
                           <td>27</td>
                           <td>Male</td>
+                          <td><a href="#" class="link-icon text-warning"><i class="fas fa-edit"></i></a></td>
+                          <td><a href="#" class="link-icon text-danger"><i class="fas fa-trash"></i></a></td>
                         </tr>
                         <tr>
                           <td>CL2</td>
@@ -228,6 +233,8 @@
                           <td>Eimi Fukada</td>
                           <td>32</td>
                           <td>Female</td>
+                          <td><a href="#" class="link-icon text-warning"><i class="fas fa-edit"></i></a></td>
+                          <td><a href="#" class="link-icon text-danger"><i class="fas fa-trash"></i></a></td>
                         </tr>
                         <tr>
                           <td>CL3</td>
@@ -235,6 +242,8 @@
                           <td>Igor Stravinsky</td>
                           <td>46</td>
                           <td>Male</td>
+                          <td><a href="#" class="link-icon text-warning"><i class="fas fa-edit"></i></a></td>
+                          <td><a href="#" class="link-icon text-danger"><i class="fas fa-trash"></i></a></td>
                         </tr>
                         <tr>
                           <td>CL4</td>
@@ -242,6 +251,8 @@
                           <td>Andrea Destiny</td>
                           <td>21</td>
                           <td>Prefer not to say</td>
+                          <td><a href="#" class="link-icon text-warning"><i class="fas fa-edit"></i></a></td>
+                          <td><a href="#" class="link-icon text-danger"><i class="fas fa-trash"></i></a></td>
                         </tr>
                         <tr>
                           <td>CL5</td>
@@ -249,6 +260,8 @@
                           <td>Vladimir Makarov</td>
                           <td>58</td>
                           <td>Male</td>
+                          <td><a href="#" class="link-icon text-warning"><i class="fas fa-edit"></i></a></td>
+                          <td><a href="#" class="link-icon text-danger"><i class="fas fa-trash"></i></a></td>
                         </tr>
                         </tbody>
                     </table>
