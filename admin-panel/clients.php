@@ -207,86 +207,71 @@
             <div class="col-12 mt-4">
                 <div class="card rounded-3 overflow-hidden">
                     <div class="card-header border-1 px-4 pt-3 d-flex flex-row align-items-center justify-content-between">
-                        <h3 class="card-title fw-bold">Registered Users (12)</h3>
+                        <h3 class="card-title fw-bold">Registered Users (35)</h3>
                         <button class="btn btn-outline-danger btn-sm  ml-auto rounded-3 px-3">Add new<svg class="btn-icons" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"></path></svg></button>
                     </div>
                     <div class="card-body table-responsive p-0">
-                    <table class="table table-striped table-valign-middle">
+                    <table class="table table-valign-middle">
                         <thead>
                         <tr>
-                        <th style="width: 15%;">RentID</th>
-                        <th>Car Rented</th>
-                        <th>Total</th>
-                        <th style="width: 15%;">Status</th>
+                          <th>ClientID</th>
+                          <th>Email Address</th>
+                          <th>Full Name</th>
+                          <th>Age</th>
+                          <th>Sex</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                        <td>
-                            RNT1
-                        </td>
-                        <td>Honda NSX NA1</td>
-                        <td>
-                            12,500
-                        </td>
-                        <td>
-                        <div class="span badge bg-warning w-100">Pending</div>
-                        </td>
+                          <td>CL1</td>
+                          <td>johndoe@gmail.com</td>
+                          <td>John Doe</td>
+                          <td>27</td>
+                          <td>Male</td>
                         </tr>
                         <tr>
-                        <td>
-                            RNT2
-                        </td>
-                        <td>Nissan Fairlady Z</td>
-                        <td>
-                            7,600
-                        </td>
-                        <td>
-                        <div class="span badge bg-success w-100">Paid</div>
-                        </td>
+                          <td>CL2</td>
+                          <td>fukada_eimi@gmail.com</td>
+                          <td>Eimi Fukada</td>
+                          <td>32</td>
+                          <td>Female</td>
                         </tr>
                         <tr>
-                        <td>
-                            RNT3
-                        </td>
-                        <td>Toyota AE86 Trueno</td>
-                        <td>
-                            12,500
-                        </td>
-                        <td>
-                        <div class="span badge bg-warning w-100">Pending</div>
-                        </td>
+                          <td>CL3</td>
+                          <td>igor.stravinsky@gmail.com</td>
+                          <td>Igor Stravinsky</td>
+                          <td>46</td>
+                          <td>Male</td>
                         </tr>
                         <tr>
-                        <td>
-                            RNT4
-                        </td>
-                        <td>Toyota Supra MK4</td>
-                        <td>
-                            12,500
-                        </td>
-                        <td>
-                        <div class="span badge bg-danger w-100">Cancelled</div>
-                        </td>
+                          <td>CL4</td>
+                          <td>andrea.destiny07@gmail.com</td>
+                          <td>Andrea Destiny</td>
+                          <td>21</td>
+                          <td>Prefer not to say</td>
                         </tr>
                         <tr>
-                        <td>
-                            RNT5
-                        </td>
-                        <td>Mazda RX7</td>
-                        <td>
-                            12,500
-                        </td>
-                        <td>
-                        <div class="span badge bg-success w-100">Paid</div>
-                        </td>
+                          <td>CL5</td>
+                          <td>vladimiiir@gmail.com</td>
+                          <td>Vladimir Makarov</td>
+                          <td>58</td>
+                          <td>Male</td>
                         </tr>
-
                         </tbody>
                     </table>
+                    <div class="card-footer clearfix  px-4 d-flex flex-row align-items-center justify-content-between w-100 bg-white">
+                      <p class="m-0 h-100 text-align-bottom text-muted fw-light">Showing 5 of 35</p>
+                      <ul class="pagination pagination-sm m-0 W-100 float-right m-0 ml-auto">
+                        <li class="page-item"><a class="page-link" href="#">«</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">»</a></li>
+                      </ul>
                     </div>
+                  </div>
                 </div>
-            </div>
+              </div>
 
         </div>
       </section>
