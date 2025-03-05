@@ -275,7 +275,7 @@
                         7,600
                       </td>
                       <td>
-                      <div class="span badge bg-success w-100">Paid</div>
+                      <div class="span badge bg-success w-100">Confirmed</div>
                       </td>
                     </tr>
                     <tr>
@@ -311,7 +311,7 @@
                         12,500
                       </td>
                       <td>
-                      <div class="span badge bg-success w-100">Paid</div>
+                      <div class="span badge bg-success w-100">Confirmed</div>
                       </td>
                     </tr>
 
