@@ -27,14 +27,7 @@
     * {font-family: 'Space Grotesk', "sans-serif";}
     .txt-pri {color: #EA4335 !important}
 
-      .info-box-icon.brand-dark {background: #B71C1C; color: #fefefe}
-      .info-box-icon.brand-primary {background: #D32F2F; color: #fefefe}
-      .info-box-icon.brand-secondary {background: #F33226; color: #fefefe}
-      .info-box-icon.brand-tertiary {background: #EF5350; color: #fefefe}
 
-      .box-icon {height: 70px; fill: #fefefe}
-
-      bg-primary{background: #EA4335 !important; color: #fefefe}
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -160,13 +153,13 @@
 
       .card-star {height: 16px;}
 
-
     </style>
     <!-- Custom styles for this template -->
-    <link href="modals.css" rel="stylesheet">
+    <link href="../modals.css" rel="stylesheet">
 
   </head>
   <body>
+  <?php include_once('../components/forms.php');?>
   <?php include_once('../components/sidebar.php');?>
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -208,7 +201,7 @@
                 <div class="card rounded-3 overflow-hidden">
                     <div class="card-header border-1 px-4 pt-3 d-flex flex-row align-items-center justify-content-between">
                         <h3 class="card-title fw-bold">Registered Users (35)</h3>
-                        <button class="btn btn-outline-danger btn-sm  ml-auto rounded-3 px-3">Add new<svg class="btn-icons" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"></path></svg></button>
+                        <button data-bs-toggle="modal" data-bs-target="#addClientModal" class="btn btn-outline-danger btn-sm  ml-auto rounded-3 px-3">Add new<svg class="btn-icons" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"></path></svg></button>
                     </div>
                     <div class="card-body table-responsive p-0">
                     <table class="table table-valign-middle">
@@ -262,11 +255,11 @@
                     <div class="card-footer clearfix  px-4 d-flex flex-row align-items-center justify-content-between w-100 bg-white">
                       <p class="m-0 h-100 text-align-bottom text-muted fw-light">Showing 5 of 35</p>
                       <ul class="pagination pagination-sm m-0 W-100 float-right m-0 ml-auto">
-                        <li class="page-item"><a class="page-link" href="#">«</a></li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">»</a></li>
+                        <li class="page-item"><a class="page-link text-danger" href="#">«</a></li>
+                        <li class="page-item"><a class="page-link text-danger" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link text-danger" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link text-danger" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link text-danger" href="#">»</a></li>
                       </ul>
                     </div>
                   </div>
