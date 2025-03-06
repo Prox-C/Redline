@@ -8,3 +8,19 @@ secondary #f59b65
 tertiary #f7ba79
 
 Speed through the fast lane with our JDM collection in 3 easy steps:
+
+
+USER (
+user_id int primary_key auto_increment,
+role int, 1 = Admin, 2 = Manager, 3 = Client
+email varchar(256),
+password varchar(256),
+fname text,
+lname text,
+birthdate date,
+sex text,
+profile_pic varchar(256),
+)
+
+
+
