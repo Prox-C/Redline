@@ -1,3 +1,39 @@
+<?php 
+  require_once('../config.php');
+
+  if (isset($_POST['register'])) 
+  {
+      $email = isset($_POST['email']) ? (string) $_POST['email'] : '';
+      $fname = isset($_POST['fname']) ? ucwords((string) $_POST['fname']) : '';
+      $lname = isset($_POST['lname']) ? ucwords((string) $_POST['lname']) : '';
+      $bday = isset($_POST['bday']) && !empty($_POST['bday']) ? date("Y-m-d", strtotime($_POST['bday'])) : null;
+      $sex = isset($_POST['sex']) ? (string) $_POST['sex'] : '';
+      $password = isset($_POST['password']) ? (string) $_POST['password'] : '';
+      $password2 = isset($_POST['password2']) ? (string) $_POST['password2'] : '';
+      
+
+      if($password != $password2)
+      {
+          echo "<script>alert('Passwords do not match.');</script>";
+          echo "<script>location.href='clients.php'</script>"; 
+          exit;
+      }
+  
+      $result = register_user(3, $email, $password, $fname, $lname, $bday, $sex, 'profile.png');
+  
+      if ($result === "email_exists") 
+      {
+          echo "<script>alert('This email is already registered. Please use a different email.');</script>";
+      } 
+      else 
+      {
+        echo "<script>alert('Account Created!');</script>";
+        echo "<script>location.href='clients.php'</script>";
+      }
+  }
+
+  ?>
+
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head><script src="assets/js/color-modes.js"></script>
@@ -206,67 +242,61 @@
                         <button data-bs-toggle="modal" data-bs-target="#addClientModal" class="btn btn-danger ml-auto rounded-4 px-3">Add new<svg class="btn-icons" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"></path></svg></button>
                     </div>
                     <div class="card-body table-responsive p-0">
-                    <table class="table table-valign-middle">
-                        <thead>
-                        <tr>
-                          <th>ID</th>
-                          <th>Email Address</th>
-                          <th>Full Name</th>
-                          <th>Age</th>
-                          <th>Sex</th>
-                          <th colspan="2" style="width: 5%;">Actions</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                          <td>CL1</td>
-                          <td>johndoe@gmail.com</td>
-                          <td>John Doe</td>
-                          <td>27</td>
-                          <td>Male</td>
-                          <td><a href="#" class="link-icon text-warning"><i class="fas fa-edit"></i></a></td>
-                          <td><a href="#" class="link-icon text-danger"><i class="fas fa-trash"></i></a></td>
-                        </tr>
-                        <tr>
-                          <td>CL2</td>
-                          <td>fukada_eimi@gmail.com</td>
-                          <td>Eimi Fukada</td>
-                          <td>32</td>
-                          <td>Female</td>
-                          <td><a href="#" class="link-icon text-warning"><i class="fas fa-edit"></i></a></td>
-                          <td><a href="#" class="link-icon text-danger"><i class="fas fa-trash"></i></a></td>
-                        </tr>
-                        <tr>
-                          <td>CL3</td>
-                          <td>igor.stravinsky@gmail.com</td>
-                          <td>Igor Stravinsky</td>
-                          <td>46</td>
-                          <td>Male</td>
-                          <td><a href="#" class="link-icon text-warning"><i class="fas fa-edit"></i></a></td>
-                          <td><a href="#" class="link-icon text-danger"><i class="fas fa-trash"></i></a></td>
-                        </tr>
-                        <tr>
-                          <td>CL4</td>
-                          <td>andrea.destiny07@gmail.com</td>
-                          <td>Andrea Destiny</td>
-                          <td>21</td>
-                          <td>Prefer not to say</td>
-                          <td><a href="#" class="link-icon text-warning"><i class="fas fa-edit"></i></a></td>
-                          <td><a href="#" class="link-icon text-danger"><i class="fas fa-trash"></i></a></td>
-                        </tr>
-                        <tr>
-                          <td>CL5</td>
-                          <td>vladimiiir@gmail.com</td>
-                          <td>Vladimir Makarov</td>
-                          <td>58</td>
-                          <td>Male</td>
-                          <td><a href="#" class="link-icon text-warning"><i class="fas fa-edit"></i></a></td>
-                          <td><a href="#" class="link-icon text-danger"><i class="fas fa-trash"></i></a></td>
-                        </tr>
-                        </tbody>
-                    </table>
+                      <table class="table table-valign-middle">
+                          <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Email Address</th>
+                            <th>Full Name</th>
+                            <th>Age</th>
+                            <th>Sex</th>
+                            <th colspan="2" style="width: 5%;">Actions</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <?php 
+                            $result = fetch_users();
+                            
+                            if(!empty($result))
+                            {
+                              foreach ($result as $record) 
+                              { 
+                          ?>
+                          <tr>
+                            <td class="align-middle">USR<?php echo $record['user_id'];?></td>
+                            <td class="align-middle"><?php echo $record['email'];?></td>
+                            <td class="align-middle"><img src="../assets/images/users/<?php echo $record['profile_pic'];?>" style="height: 24px; margin-right: 6px" alt=""><?php echo $record['fname'].' '.$record['lname'];?></td>
+                            <td class="align-middle">
+                              <?php 
+                                $birthdate = new DateTime($record['birthdate']); 
+                                $today = new DateTime(); 
+                                $age = $today->diff($birthdate)->y; 
+                                echo $age;
+                              ?>
+                            </td>
+                            <td class="align-middle"><?php echo $record['sex'];?></td>
+                            <td class="align-middle"><a href="#" class="link-icon text-warning"><i class="fas fa-edit"></i></a></td>
+                            <td class="align-middle"><a href="#" class="link-icon text-danger"><i class="fas fa-trash"></i></a></td>
+                          </tr>
+                          <?php
+                              }
+                            } 
+                            else
+                            {
+                          ?>
+                              <tr>
+                                <td colspan="7" class="text-center">No records found</td> 
+                              </tr>
+                              <?php
+                            } 
+                          ?>
+
+                          </tbody>
+                      </table>
+
+                    </div>
                     <div class="card-footer clearfix  px-4 d-flex flex-row align-items-center justify-content-between w-100 bg-white">
-                      <p class="m-0 h-100 text-align-bottom text-muted fw-light">Showing 5 of 35</p>
+                      <p class="m-0 h-100 text-align-bottom text-muted fw-light">Showing 1 to 5 of 35</p>
                       <ul class="pagination pagination-sm m-0 W-100 float-right m-0 ml-auto">
                         <li class="page-item"><a class="page-link text-danger" href="#">«</a></li>
                         <li class="page-item"><a class="page-link text-danger" href="#">1</a></li>
@@ -275,7 +305,6 @@
                         <li class="page-item"><a class="page-link text-danger" href="#">»</a></li>
                       </ul>
                     </div>
-                  </div>
                 </div>
               </div>
 
