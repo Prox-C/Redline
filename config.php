@@ -121,4 +121,16 @@ function update_user($user_id, $email, $password, $fname, $lname, $birthdate, $s
     }
 }
 
+function delete_user($user_id){
+    $conn = connect();
+
+    $query = $conn->prepare("DELETE FROM `users` WHERE user_id = :user_id");
+    $query->bindParam(':user_id', $user_id);
+    
+    $result = $query->execute();
+
+    $conn = null;
+    return $result;
+}
+
 ?>
