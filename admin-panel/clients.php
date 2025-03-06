@@ -65,6 +65,23 @@
       }
   }
 
+  if(isset($_POST['delete']))
+  {
+    $user_id = isset($_POST['delete_user']) ? (int) $_POST['delete_user'] : '';
+    $result = delete_user($user_id);
+
+    if($result)
+    {
+      echo "<script>alert('User deleted.');</script>";
+      echo "<script>location.href='clients.php'</script>";
+    }
+    else
+    {
+      echo "<script>alert('An error occurred.');</script>";
+      echo "<script>location.href='clients.php'</script>";
+    }
+  }
+
 
 
   ?>
@@ -310,8 +327,8 @@
                               ?>
                             </td>
                             <td class="align-middle"><?php echo $record['sex'];?></td>
-                            <td class="align-middle"><a href="#" class="link-icon text-warning"data-bs-toggle="modal" data-bs-target="#updateUserModal_<?php echo $record['user_id'];?>"><i class="fas fa-edit"></i></a></td>
-                            <td class="align-middle"><a href="#" class="link-icon text-danger"><i class="fas fa-trash"></i></a></td>
+                            <td class="align-middle"><a href="#" class="link-icon text-warning" data-bs-toggle="modal" data-bs-target="#updateUserModal_<?php echo $record['user_id'];?>"><i class="fas fa-edit"></i></a></td>
+                            <td class="align-middle"><a href="#" class="link-icon text-danger"><i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#deleteUserModal_<?php echo $record['user_id'];?>"></i></a></td>
                             <!-- Update User Modal -->
                             <div class="modal fade" tabindex="-1" id="updateUserModal_<?php echo $record['user_id'];?>" aria-hidden="true">
                               <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -374,6 +391,25 @@
                                 </div>
                               </div>
                             </div>
+                            <!-- Delete User Modal -->
+                            <div class="modal fade modal-sheet" tabindex="-1" aria-hidden="true"role="dialog" id="deleteUserModal_<?php echo $record['user_id'];?>">
+                              <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content rounded-3 shadow">
+                                  <div class="modal-body p-4 text-center">
+                                    <h5 class="mb-0">Confirm Deletion</h5>
+                                    <p class="mb-0">Are you sure you want to delete this account? This action cannot be undone.</p>
+                                  </div>
+                                  <div class="modal-footer flex-nowrap p-0">
+                                    <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 text-muted border-end" data-bs-dismiss="modal">Cancel</button>
+                                    <form method="POST" action="clients.php">
+                                      <input type="hidden" name="delete_user" value="<?php echo $record['user_id']; ?>">
+                                      <input name="delete" type="submit" role="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 txt-pri" value="Delete">
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
                           </tr>
                           <?php
                               }
