@@ -133,7 +133,7 @@
 
     .fab-icon {
       position: relative;
-      bottom: 1px;
+      bottom: 0px;
     }
 
     .detailsStar {height: 28px;}
