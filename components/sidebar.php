@@ -23,9 +23,9 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-      <div class="dropdown text-end mt-2 d-none d-lg-flex">
+      <div class="dropdown text-end d-lg-flex">
         <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+          <img src="../assets/images/users/profile.png" alt="mdo" width="28" height="28" class="rounded-circle bg-secondary">
         </a>
         <ul class="dropdown-menu dropdown-menu-end text-small">
           <li><a class="dropdown-item" href="#">Settings</a></li>
