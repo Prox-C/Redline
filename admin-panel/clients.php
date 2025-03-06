@@ -285,7 +285,7 @@
                             {
                           ?>
                               <tr>
-                                <td colspan="7" class="text-center">No records found</td> 
+                                <td colspan="7" class="text-center">Wow, such empty.</td> 
                               </tr>
                               <?php
                             } 
