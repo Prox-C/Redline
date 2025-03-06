@@ -244,7 +244,7 @@
                   </div>
                 </div>
                 <div class="card-body table-responsive p-0">
-                  <table class="table table-striped table-valign-middle">
+                  <table class="table table-valign-middle">
                     <thead>
                     <tr>
                       <th style="width: 15%;">RentID</th>
@@ -263,7 +263,7 @@
                         12,500
                       </td>
                       <td>
-                      <div class="span badge bg-warning w-100">Pending</div>
+                      <div class="span badge bg-warning-subtle text-warning w-100">Pending</div>
                       </td>
                     </tr>
                     <tr>
@@ -275,7 +275,7 @@
                         7,600
                       </td>
                       <td>
-                      <div class="span badge bg-success w-100">Confirmed</div>
+                      <div class="span badge bg-success-subtle text-success w-100">Confirmed</div>
                       </td>
                     </tr>
                     <tr>
@@ -287,7 +287,7 @@
                         12,500
                       </td>
                       <td>
-                      <div class="span badge bg-warning w-100">Pending</div>
+                      <div class="span badge bg-warning-subtle text-warning w-100">Pending</div>
                       </td>
                     </tr>
                     <tr>
@@ -299,7 +299,7 @@
                         12,500
                       </td>
                       <td>
-                      <div class="span badge bg-danger w-100">Cancelled</div>
+                      <div class="span badge bg-danger-subtle text-danger w-100">Cancelled</div>
                       </td>
                     </tr>
                     <tr>
@@ -311,7 +311,7 @@
                         12,500
                       </td>
                       <td>
-                      <div class="span badge bg-success w-100">Confirmed</div>
+                      <div class="span badge bg-success-subtle text-success w-100">Confirmed</div>
                       </td>
                     </tr>
 
