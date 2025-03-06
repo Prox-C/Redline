@@ -200,16 +200,16 @@
             </div>
 
             <div class="col-12 mt-4">
-                <div class="card rounded-3 overflow-hidden">
-                    <div class="card-header border-1 px-4 pt-3 d-flex flex-row align-items-center justify-content-between">
+                <div class="card rounded-4 overflow-hidden">
+                    <div class="card-header border-1 px-4 py-3 d-flex flex-row align-items-center justify-content-between">
                         <h3 class="card-title fw-bold">Registered Users (35)</h3>
-                        <button data-bs-toggle="modal" data-bs-target="#addClientModal" class="btn btn-danger btn-sm  ml-auto rounded-3 px-3">Add new<svg class="btn-icons" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"></path></svg></button>
+                        <button data-bs-toggle="modal" data-bs-target="#addClientModal" class="btn btn-danger ml-auto rounded-4 px-3">Add new<svg class="btn-icons" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"></path></svg></button>
                     </div>
                     <div class="card-body table-responsive p-0">
                     <table class="table table-valign-middle">
                         <thead>
                         <tr>
-                          <th>ClientID</th>
+                          <th>ID</th>
                           <th>Email Address</th>
                           <th>Full Name</th>
                           <th>Age</th>
