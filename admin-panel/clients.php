@@ -32,6 +32,41 @@
       }
   }
 
+  
+  if (isset($_POST['update'])) 
+  {
+      $user_id = isset($_POST['update_user']) ? (int) $_POST['update_user'] : '';
+      $email = isset($_POST['email']) ? (string) $_POST['email'] : '';
+      $fname = isset($_POST['fname']) ? ucwords((string) $_POST['fname']) : '';
+      $lname = isset($_POST['lname']) ? ucwords((string) $_POST['lname']) : '';
+      $bday = isset($_POST['bday']) && !empty($_POST['bday']) ? date("Y-m-d", strtotime($_POST['bday'])) : null;
+      $sex = isset($_POST['sex']) ? (string) $_POST['sex'] : '';
+      $password = isset($_POST['password']) ? (string) $_POST['password'] : '';
+      $password2 = isset($_POST['password2']) ? (string) $_POST['password2'] : '';
+      
+
+      if($password != $password2)
+      {
+          echo "<script>alert('Passwords do not match.');</script>";
+          echo "<script>location.href='clients.php'</script>"; 
+          exit;
+      }
+  
+      $result = update_user($user_id, $email, $password, $fname, $lname, $bday, $sex);
+  
+      if ($result === "email_exists") 
+      {
+          echo "<script>alert('This email is already being used. Please use a different email.');</script>";
+      } 
+      else 
+      {
+        echo "<script>alert('Changes saved!');</script>";
+        echo "<script>location.href='clients.php'</script>";
+      }
+  }
+
+
+
   ?>
 
 <!doctype html>
@@ -275,8 +310,70 @@
                               ?>
                             </td>
                             <td class="align-middle"><?php echo $record['sex'];?></td>
-                            <td class="align-middle"><a href="#" class="link-icon text-warning"><i class="fas fa-edit"></i></a></td>
+                            <td class="align-middle"><a href="#" class="link-icon text-warning"data-bs-toggle="modal" data-bs-target="#updateUserModal_<?php echo $record['user_id'];?>"><i class="fas fa-edit"></i></a></td>
                             <td class="align-middle"><a href="#" class="link-icon text-danger"><i class="fas fa-trash"></i></a></td>
+                            <!-- Update User Modal -->
+                            <div class="modal fade" tabindex="-1" id="updateUserModal_<?php echo $record['user_id'];?>" aria-hidden="true">
+                              <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content rounded-4 shadow">
+                                  <div class="modal-header px-5 pt-5 pb-0 border-bottom-0">
+                                    <h1 class="fw-bold mb-0 fs-2 text-center">Udpate information</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  </div>
+                                  <div class="modal-body p-5 pt-0">
+                                    <form method="POST" action="../admin-panel/clients.php">
+                                      <label class="form-label">Personal Information</label>
+                                      <div class="row">
+                                        <div class="col-md-6">
+                                          <div class="form-floating mb-3">
+                                            <input value="<?php echo $record['fname'];?>" name="fname" type="text" class="form-control rounded-3" id="floatingInput"placeholder="First name" required>
+                                            <label for="floatingInput">First name</label>
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-floating mb-3">
+                                            <input value="<?php echo $record['lname'];?>" name="lname" type="text" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com" required>
+                                            <label for="floatingInput">Last name</label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-md-6">
+                                          <div class="form-floating mb-3">
+                                            <input value="<?php echo $record['birthdate'];?>" name="bday" type="date" class="form-control rounded-3" id="pickupDate" required>
+                                            <label for="pickupDate" class="text-muted-subtle">Date of Birth</label>
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6 pb-3">
+                                        <select name="sex" class="form-select form-select-md mb-3 rounded-3 h-100 m-0" aria-label=".form-select-lg example" required>
+                                            <option value="" class="d-none" disabled <?php echo empty($record['sex']) ? 'selected' : ''; ?>>Sex</option>
+                                            <option value="Male" <?php echo ($record['sex'] == 'Male') ? 'selected' : ''; ?>>Male</option>
+                                            <option value="Female" <?php echo ($record['sex'] == 'Female') ? 'selected' : ''; ?>>Female</option>
+                                            <option value="Prefer not to say" <?php echo ($record['sex'] == 'Prefer not to say') ? 'selected' : ''; ?>>Prefer not to say</option>
+                                        </select>
+
+                                        </div>
+                                      </div>
+                                      <label for="" class="form-label">Contact Details</label>
+                                      <div class="form-floating mb-3">
+                                        <input value="<?php echo $record['email'];?>" name="email" type="email" class="form-control rounded-3" id="floatingInput" placeholder="Email" required>
+                                        <label for="floatingPassword">Email</label>
+                                      </div>
+                                      <div class="form-floating mb-3">
+                                        <input name="password" type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password" minlength="8">
+                                        <label for="floatingPassword">New Password</label>
+                                      </div>
+                                      <div class="form-floating mb-3">
+                                        <input name="password2" type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password" minlength="8">
+                                        <label for="floatingPassword">Confirm Password</label>
+                                      </div>
+                                      <input type="hidden" name="update_user" value="<?php echo $record['user_id']; ?>">
+                                      <input name="update" role="button" href="admin-panel/dashboard.php" class="w-100 mb-2 btn btn-lg rounded-4 btn-outline-danger" type="submit" value="Save changes">
+                                    </form> 
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </tr>
                           <?php
                               }
