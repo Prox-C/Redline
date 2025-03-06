@@ -85,4 +85,40 @@ function fetch_users(){
     return $result;
 }
 
+function update_user($user_id, $email, $password, $fname, $lname, $birthdate, $sex){
+    $conn = connect();
+
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+    $query = $conn->prepare("
+    UPDATE `users` SET 
+    email = :email, 
+    password = :password,
+    fname = :fname,
+    lname = :lname,
+    birthdate = :birthdate,
+    sex = :sex
+    WHERE user_id = :user_id;"
+    ); 
+
+    $query->bindParam(':email', $email);
+    $query->bindParam(':password', $hashed_password);
+    $query->bindParam(':fname', $fname);
+    $query->bindParam(':lname', $lname);
+    $query->bindParam(':birthdate', $birthdate);
+    $query->bindParam(':sex', $sex);
+    $query->bindParam(':user_id', $user_id);
+
+    $response = $query->execute();
+
+    if ($response) {
+        $id = $conn->lastInsertId();
+        $conn = null;
+        return $id;
+    } else {
+        $conn = null;
+        return FALSE;
+    }
+}
+
 ?>
