@@ -394,7 +394,7 @@
                             <!-- Delete User Modal -->
                             <div class="modal fade modal-sheet" tabindex="-1" aria-hidden="true"role="dialog" id="deleteUserModal_<?php echo $record['user_id'];?>">
                               <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content rounded-3 shadow">
+                                <div class="modal-content rounded-4 shadow">
                                   <div class="modal-body p-4 text-center">
                                     <h5 class="mb-0">Confirm Deletion</h5>
                                     <p class="mb-0">Are you sure you want to delete this account? This action cannot be undone.</p>
