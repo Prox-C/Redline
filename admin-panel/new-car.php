@@ -132,11 +132,6 @@
         object-fit: contain; /* Ensures the image fills the square without stretching */
     }
 
-    .fab-icon {
-      position: relative;
-      bottom: 1px;
-    }
-
     .preview {
     height:240px;
     object-fit: contain;
