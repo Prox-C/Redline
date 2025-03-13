@@ -400,7 +400,7 @@
                                     <p class="mb-0">Are you sure you want to delete this account? This action cannot be undone.</p>
                                   </div>
                                   <div class="modal-footer flex-nowrap p-0">
-                                    <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 text-muted border-end" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 bg-secondary-subtle text-dark border-end" data-bs-dismiss="modal">Cancel</button>
                                     <form method="POST" action="clients.php">
                                       <input type="hidden" name="delete_user" value="<?php echo $record['user_id']; ?>">
                                       <input name="delete" type="submit" role="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 txt-pri" value="Delete">
