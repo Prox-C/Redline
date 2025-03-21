@@ -77,10 +77,10 @@
             <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password" minlength="8" required>
             <label for="floatingPassword">Password</label>
           </div>
-          <div class="form-floating mb-3">
+          <!-- <div class="form-floating mb-3">
             <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password" minlength="8" required>
             <label for="floatingPassword">Confirm Password</label>
-          </div>
+          </div> -->
           <a role="button" href="admin-panel/dashboard.php" class="w-100 mb-2 btn btn-lg rounded-3 btn-bd-primary" type="submit">Register</a>
           <small class="text-body-secondary text-center d-block">
             Already have an account? 
@@ -142,10 +142,10 @@
             <input name="password" type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password" minlength="8" required>
             <label for="floatingPassword">Password</label>
           </div>
-          <div class="form-floating mb-3">
+          <!-- <div class="form-floating mb-3">
             <input name="password2" type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password" minlength="8" required>
             <label for="floatingPassword">Confirm Password</label>
-          </div>
+          </div> -->
           <input name="register" role="button" href="admin-panel/dashboard.php" class="w-100 mb-2 btn btn-lg rounded-4 btn-danger" type="submit" value="Create account">
         </form> 
       </div>
