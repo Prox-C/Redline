@@ -202,7 +202,7 @@
                     </div>
                     <div class="col-4">
                         <label for="" class="form-label">Seats</label>
-                        <input type="number" class="form-control rounded-3" placeholder="(no.)">
+                        <input type="number" class="form-control rounded-3" placeholder="(no.)" min="0">
                     </div>
                     <div class="col-6 mt-3">
                         <label for="" class="form-label">Transmission</label>
