@@ -9,15 +9,15 @@
       $bday = isset($_POST['bday']) && !empty($_POST['bday']) ? date("Y-m-d", strtotime($_POST['bday'])) : null;
       $sex = isset($_POST['sex']) ? (string) $_POST['sex'] : '';
       $password = isset($_POST['password']) ? (string) $_POST['password'] : '';
-      $password2 = isset($_POST['password2']) ? (string) $_POST['password2'] : '';
+      // $password2 = isset($_POST['password2']) ? (string) $_POST['password2'] : '';
       
 
-      if($password != $password2)
-      {
-          echo "<script>alert('Passwords do not match.');</script>";
-          echo "<script>location.href='clients.php'</script>"; 
-          exit;
-      }
+      // if($password != $password2)
+      // {
+      //     echo "<script>alert('Passwords do not match.');</script>";
+      //     echo "<script>location.href='clients.php'</script>"; 
+      //     exit;
+      // }
   
       $result = register_user(3, $email, $password, $fname, $lname, $bday, $sex, 'profile.png');
   
@@ -42,15 +42,15 @@
       $bday = isset($_POST['bday']) && !empty($_POST['bday']) ? date("Y-m-d", strtotime($_POST['bday'])) : null;
       $sex = isset($_POST['sex']) ? (string) $_POST['sex'] : '';
       $password = isset($_POST['password']) ? (string) $_POST['password'] : '';
-      $password2 = isset($_POST['password2']) ? (string) $_POST['password2'] : '';
+      // $password2 = isset($_POST['password2']) ? (string) $_POST['password2'] : '';
       
 
-      if($password != $password2)
-      {
-          echo "<script>alert('Passwords do not match.');</script>";
-          echo "<script>location.href='clients.php'</script>"; 
-          exit;
-      }
+      // if($password != $password2)
+      // {
+      //     echo "<script>alert('Passwords do not match.');</script>";
+      //     echo "<script>location.href='clients.php'</script>"; 
+      //     exit;
+      // }
   
       $result = update_user($user_id, $email, $password, $fname, $lname, $bday, $sex);
   
@@ -288,10 +288,10 @@
             </div>
 
             <div class="col-12 mt-4">
-                <div class="card rounded-4 overflow-hidden">
+                <div class="card rounded-3 overflow-hidden">
                     <div class="card-header border-1 px-4 py-3 d-flex flex-row align-items-center justify-content-between">
                         <h3 class="card-title fw-bold">Registered Users (35)</h3>
-                        <button data-bs-toggle="modal" data-bs-target="#addClientModal" class="btn btn-danger ml-auto rounded-4 px-3">Add new<svg class="btn-icons" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"></path></svg></button>
+                        <button data-bs-toggle="modal" data-bs-target="#addClientModal" class="btn btn-danger btn-sm ml-auto rounded-3 px-3">Add new<svg class="btn-icons" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"></path></svg></button>
                     </div>
                     <div class="card-body table-responsive p-0">
                       <table class="table table-valign-middle">
@@ -380,10 +380,10 @@
                                         <input name="password" type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password" minlength="8">
                                         <label for="floatingPassword">New Password</label>
                                       </div>
-                                      <div class="form-floating mb-3">
+                                      <!-- <div class="form-floating mb-3">
                                         <input name="password2" type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password" minlength="8">
                                         <label for="floatingPassword">Confirm Password</label>
-                                      </div>
+                                      </div> -->
                                       <input type="hidden" name="update_user" value="<?php echo $record['user_id']; ?>">
                                       <input name="update" role="button" href="admin-panel/dashboard.php" class="w-100 mb-2 btn btn-lg rounded-4 btn-outline-danger" type="submit" value="Save changes">
                                     </form> 
