@@ -34,7 +34,7 @@
 
 
 
-      link-secondary:hover {
+      .link-secondary:hover {
        color: #EA4335 !important; 
       }
 
@@ -200,8 +200,11 @@
     <link href="modals.css" rel="stylesheet">
 
   </head>
-  <?php $this->load->view('templates/forms'); ?>
+
   <body>
+    <!-- Forms -->
+    <?php $this->load->view('templates/forms'); ?>
+
     <!-- Header -->
     <?php $this->load->view('templates/header'); ?>
 
