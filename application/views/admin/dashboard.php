@@ -23,17 +23,17 @@
     <link  href="<?= base_url('assets/css/bootstrap.min.css') ?>">
     
     <style>
+      
     h1, h2, h4, h5, h6 {font-family: 'Syne', "sans-serif"; color: #282828;}
     h3 {font-family: 'Space Grotesk', "sans-serif";}
     * {font-family: 'Space Grotesk', "sans-serif";}
     .txt-pri {color: #EA4335 !important}
 
       .info-box-icon.brand-dark {background: #B71C1C; color: #fefefe}
-      .info-box-icon.brand-primary {background: #D32F2F; color: #fefefe}
+      .small-box.brand-primary {background: #EA4335; color: #fefefe}
       .info-box-icon.brand-secondary {background: #F33226; color: #fefefe}
       .info-box-icon.brand-tertiary {background: #EF5350; color: #fefefe}
 
-      .box-icon {height: 70px; fill: #fefefe}
 
       bg-primary{background: #EA4335 !important; color: #fefefe}
       .bd-placeholder-img {
@@ -132,6 +132,11 @@
         position: relative;
         bottom: 1px;
       }
+
+      .box-icon {
+        height: 60PX;
+        color: #fff;
+      }
     </style>
     <!-- Custom styles for this template -->
     <link href="modals.css" rel="stylesheet">
@@ -162,78 +167,71 @@
       <section class="content">
         <div class="container-fluid px-5">
           <div class="row">
-            
-            <!-- Info Box -->
-            <div class="col-12 col-lg-3">
-              <div class="info-box rounded-3">
-                <span class="info-box-icon brand-tertiary elevation-1 rounded-3"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#fff" viewBox="0 0 256 256"><path d="M240,104H229.2L201.42,41.5A16,16,0,0,0,186.8,32H69.2a16,16,0,0,0-14.62,9.5L26.8,104H16a8,8,0,0,0,0,16h8v80a16,16,0,0,0,16,16H64a16,16,0,0,0,16-16v-8h96v8a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16V120h8a8,8,0,0,0,0-16ZM80,152H56a8,8,0,0,1,0-16H80a8,8,0,0,1,0,16Zm120,0H176a8,8,0,0,1,0-16h24a8,8,0,0,1,0,16ZM44.31,104,69.2,48H186.8l24.89,56Z"></path></svg></span>
 
-                <div class="info-box-content">
-                  <h3 class="info-box-number mb-0">
-                    22
-                  </h3>
-                  <span class="info-box-text">Cars</span>
-
-                </div>
-                <!-- /.info-box-content -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box brand-primary rounded-3 overflow-hidden">
+              <div class="inner px-3">
+                <h3>22</h3>
+                <p>Cars</p>
               </div>
-              <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-            
-            <!-- Info Box -->
-            <div class="col-12 col-lg-3">
-              <div class="info-box rounded-3">
-                <span class="info-box-icon brand-tertiary elevation-1 rounded-3"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#fff" viewBox="0 0 256 256"><path d="M140,32V64a12,12,0,0,1-24,0V32a12,12,0,0,1,24,0Zm33.25,62.75a12,12,0,0,0,8.49-3.52L204.37,68.6a12,12,0,0,0-17-17L164.77,74.26a12,12,0,0,0,8.48,20.49ZM224,116H192a12,12,0,0,0,0,24h32a12,12,0,0,0,0-24Zm-42.26,48.77a12,12,0,1,0-17,17l22.63,22.63a12,12,0,0,0,17-17ZM128,180a12,12,0,0,0-12,12v32a12,12,0,0,0,24,0V192A12,12,0,0,0,128,180ZM74.26,164.77,51.63,187.4a12,12,0,0,0,17,17l22.63-22.63a12,12,0,1,0-17-17ZM76,128a12,12,0,0,0-12-12H32a12,12,0,0,0,0,24H64A12,12,0,0,0,76,128ZM68.6,51.63a12,12,0,1,0-17,17L74.26,91.23a12,12,0,0,0,17-17Z"></path></svg></span>
-
-                <div class="info-box-content">
-                  <h3 class="info-box-number mb-0">
-                    4
-                  </h3>
-                  <span class="info-box-text">Pending</span>
-
-                </div>
-                <!-- /.info-box-content -->
+              <div class="icon">
+                <i class="ion ion-stats-bars">
+                <svg xmlns="http://www.w3.org/2000/svg" class="box-icon" fill="currentColor" viewBox="0 0 256 256"><path d="M240,104H229.2L201.42,41.5A16,16,0,0,0,186.8,32H69.2a16,16,0,0,0-14.62,9.5L26.8,104H16a8,8,0,0,0,0,16h8v80a16,16,0,0,0,16,16H64a16,16,0,0,0,16-16v-8h96v8a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16V120h8a8,8,0,0,0,0-16ZM80,152H56a8,8,0,0,1,0-16H80a8,8,0,0,1,0,16Zm120,0H176a8,8,0,0,1,0-16h24a8,8,0,0,1,0,16ZM44.31,104,69.2,48H186.8l24.89,56Z"></path></svg>
+                </i>
               </div>
-              <!-- /.info-box -->
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-            <!-- /.col -->
+          </div>
 
-            <!-- Info Box -->
-            <div class="col-12 col-lg-3">
-              <div class="info-box rounded-3">
-                <span class="info-box-icon brand-tertiary elevation-1 rounded-3"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#ffffff" viewBox="0 0 256 256"><path d="M64.12,147.8a4,4,0,0,1-4,4.2H16a8,8,0,0,1-7.8-6.17,8.35,8.35,0,0,1,1.62-6.93A67.79,67.79,0,0,1,37,117.51a40,40,0,1,1,66.46-35.8,3.94,3.94,0,0,1-2.27,4.18A64.08,64.08,0,0,0,64,144C64,145.28,64,146.54,64.12,147.8Zm182-8.91A67.76,67.76,0,0,0,219,117.51a40,40,0,1,0-66.46-35.8,3.94,3.94,0,0,0,2.27,4.18A64.08,64.08,0,0,1,192,144c0,1.28,0,2.54-.12,3.8a4,4,0,0,0,4,4.2H240a8,8,0,0,0,7.8-6.17A8.33,8.33,0,0,0,246.17,138.89Zm-89,43.18a48,48,0,1,0-58.37,0A72.13,72.13,0,0,0,65.07,212,8,8,0,0,0,72,224H184a8,8,0,0,0,6.93-12A72.15,72.15,0,0,0,157.19,182.07Z"></path></svg></span>
-
-                <div class="info-box-content">
-                  <h3 class="info-box-number mb-0">
-                    45
-                  </h3>
-                  <span class="info-box-text">Clients</span>
-
-                </div>
-                <!-- /.info-box-content -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box brand-primary rounded-3 overflow-hidden">
+              <div class="inner px-3">
+                <h3>106</h3>
+                <p>Bookings</p>
               </div>
-              <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-
-            <!-- Info Box -->
-            <div class="col-12 col-lg-3">
-              <div class="info-box rounded-3">
-                <span class="info-box-icon brand-tertiary elevation-1 rounded-3"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#ffffff" viewBox="0 0 256 256"><path d="M256,120a8,8,0,0,1-8,8H8a8,8,0,0,1,0-16H35.92l47.5-65.41a16,16,0,0,1,25.31-.72l12.85,14.9.2.23a7.95,7.95,0,0,0,12.44,0l.2-.23,12.85-14.9a16,16,0,0,1,25.31.72L220.08,112H248A8,8,0,0,1,256,120Zm-76,24a36,36,0,0,0-35.77,32H111.77a36,36,0,1,0-1.83,16h36.12A36,36,0,1,0,180,144Z"></path></svg></span>
-
-                <div class="info-box-content">
-                  <h3 class="info-box-number mb-0">
-                    12
-                  </h3>
-                  <span class="info-box-text">Managers</span>
-
-                </div>
-                <!-- /.info-box-content -->
+              <div class="icon">
+                <i class="ion ion-stats-bars">
+                <svg xmlns="http://www.w3.org/2000/svg" class="box-icon" fill="currentColor" viewBox="0 0 256 256"><path d="M184,32H72A16,16,0,0,0,56,48V224a8,8,0,0,0,12.24,6.78L128,193.43l59.77,37.35A8,8,0,0,0,200,224V48A16,16,0,0,0,184,32Z"></path></svg>
+                </i>
               </div>
-              <!-- /.info-box -->
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-            <!-- /.col -->
+          </div>
+
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box brand-primary rounded-3 overflow-hidden">
+              <div class="inner px-3">
+                <h3>47</h3>
+                <p>Clients</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars">
+                <svg xmlns="http://www.w3.org/2000/svg" class="box-icon" fill="currentColor" viewBox="0 0 256 256"><path d="M230.93,220a8,8,0,0,1-6.93,4H32a8,8,0,0,1-6.92-12c15.23-26.33,38.7-45.21,66.09-54.16a72,72,0,1,1,73.66,0c27.39,8.95,50.86,27.83,66.09,54.16A8,8,0,0,1,230.93,220Z"></path></svg>                </i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box brand-primary rounded-3 overflow-hidden">
+              <div class="inner px-3">
+                <h3>12</h3>
+                <p>Managers</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars">
+                <svg xmlns="http://www.w3.org/2000/svg" class="box-icon" fill="currentColor" viewBox="0 0 256 256"><path d="M256,120a8,8,0,0,1-8,8H8a8,8,0,0,1,0-16H35.92l47.5-65.41a16,16,0,0,1,25.31-.72l12.85,14.9.2.23a7.95,7.95,0,0,0,12.44,0l.2-.23,12.85-14.9a16,16,0,0,1,25.31.72L220.08,112H248A8,8,0,0,1,256,120Zm-76,24a36,36,0,0,0-35.77,32H111.77a36,36,0,1,0-1.83,16h36.12A36,36,0,1,0,180,144Z"></path></svg>
+                </i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+
+
           </div>
           <div class="row">
             <div class="col-lg-6">
