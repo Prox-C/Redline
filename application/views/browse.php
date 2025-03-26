@@ -122,6 +122,57 @@
         display: block !important;
       }
 
+      .btn-group-fab {
+        position: fixed;
+        width: 50px;
+        height: auto;
+        right: 20px; bottom: 20px;
+      }
+      .btn-group-fab div {
+        position: relative; width: 100%;
+        height: auto;
+      }
+      .btn-group-fab .btn {
+        position: absolute;
+        bottom: 0;
+        border-radius: 50%;
+        display: block;
+        margin-bottom: 4px;
+        width: 40px; height: 40px;
+        margin: 4px auto;
+      }
+      .btn-group-fab .btn-main {
+        width: 50px; height: 50px;
+        right: 50%; margin-right: -25px;
+        z-index: 20;
+      }
+      .btn-group-fab .btn-sub {
+        bottom: 0; z-index: 8;
+        right: 50%;
+        margin-right: -20px;
+        -webkit-transition: all 2s;
+        transition: all 0.5s;
+      }
+      .btn-group-fab.active .btn-sub:nth-child(2) {
+        bottom: 60px;
+      }
+      .btn-group-fab.active .btn-sub:nth-child(3) {
+        bottom: 110px;
+      }
+      .btn-group-fab.active .btn-sub:nth-child(4) {
+        bottom: 160px;
+      }
+      .btn-group-fab .btn-sub:nth-child(5) {
+        bottom: 210px;
+      }
+
+      .fab-icon {
+        height: 22px;
+        position: relative;
+        right: 4px;
+      }
+
+
       .car-img-table {
         height: 22px;
       }
@@ -183,7 +234,7 @@
   <?php $this->load->view('templates/forms'); ?>
   <?php $this->load->view('templates/top-nav'); ?>
 
-  <div class="container px-4 px-lg-0">
+  <div class="container px-4">
 
     <!-- Search -->
     <div class="card p-3 rounded-3">
@@ -220,11 +271,95 @@
         <button class="btn btn-light rounded-pill px-4"><svg role="img" viewBox="0 0 24 24" fill="currentColor" class="logo-tag" xmlns="http://www.w3.org/2000/svg"><title>Mitsubishi</title><path d="M8 22.38H0l4-6.92h8zm8 0h8l-4-6.92h-8zm0-13.84l-4-6.92-4 6.92 4 6.92Z"/></svg>Mitshubishi</button>
     </div>
 
+    <div class="col-lg-12 d-flex flex-wrap justify-content-center align-items-center gap-2 mt-4 px-0">
+        <div class="row">
+          
+          <!-- Card 1 -->
+          <div class="col-12 col-sm-6 col-lg-4 mb-4" onclick="">
+            <div class="car card rounded-4 p-0 overflow-hidden">
+              <div class="card-body px-4">
+                <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
+                  <div class="col-12 m-0 p-0 d-flex align-items-center">
+                  <?php $this->load->view('templates/card-star'); ?>
+                    <p class="m-0">
+                      <span class="text-muted card-text m-1">4.8</span>
+                      <span class="badge text-bg-light fw-normal mx-1">400hp</span>
+                      <span class="badge text-bg-light fw-normal">300km/h</span>
+                      <span class="badge text-bg-light fw-normal">Manual</span>
+                    </p>
+                  </div>
+                </div>          
+              </div>
+              <img src="<?= base_url('assets/images/cars/SKyline_GT-R_BNR32.png') ?>" class="card-img-top m-0 p-0" alt="Card image">
+              <div class="card-body">
+                <div class="row m-0 p-0 mt-1">
+                  <h6 class="col-8 m-0 p-0 text-align-left fw-bold">Skyline GT-R BNR32</h6>
+                  <p class="col-4 m-0 p-0 text-end  fw-semibold text-muted">₱2499<span class="fw-thin">/day</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                    <!-- Card 1 -->
+                    <div class="col-12 col-sm-6 col-lg-4 mb-4" onclick="">
+            <div class="car card rounded-4 p-0 overflow-hidden">
+              <div class="card-body px-4">
+                <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
+                  <div class="col-12 m-0 p-0 d-flex align-items-center">
+                  <?php $this->load->view('templates/card-star'); ?>
+                    <p class="m-0">
+                      <span class="text-muted card-text m-1">4.8</span>
+                      <span class="badge text-bg-light fw-normal mx-1">400hp</span>
+                      <span class="badge text-bg-light fw-normal">300km/h</span>
+                      <span class="badge text-bg-light fw-normal">Manual</span>
+                    </p>
+                  </div>
+                </div>          
+              </div>
+              <img src="<?= base_url('assets/images/cars/SKyline_GT-R_BNR32.png') ?>" class="card-img-top m-0 p-0" alt="Card image">
+              <div class="card-body">
+                <div class="row m-0 p-0 mt-1">
+                  <h6 class="col-8 m-0 p-0 text-align-left fw-bold">Skyline GT-R BNR32</h6>
+                  <p class="col-4 m-0 p-0 text-end  fw-semibold text-muted">₱2499<span class="fw-thin">/day</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                    <!-- Card 1 -->
+                    <div class="col-12 col-sm-6 col-lg-4 mb-4" onclick="">
+            <div class="car card rounded-4 p-0 overflow-hidden">
+              <div class="card-body px-4">
+                <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
+                  <div class="col-12 m-0 p-0 d-flex align-items-center">
+                  <?php $this->load->view('templates/card-star'); ?>
+                    <p class="m-0">
+                      <span class="text-muted card-text m-1">4.8</span>
+                      <span class="badge text-bg-light fw-normal mx-1">400hp</span>
+                      <span class="badge text-bg-light fw-normal">300km/h</span>
+                      <span class="badge text-bg-light fw-normal">Manual</span>
+                    </p>
+                  </div>
+                </div>          
+              </div>
+              <img src="<?= base_url('assets/images/cars/SKyline_GT-R_BNR32.png') ?>" class="card-img-top m-0 p-0" alt="Card image">
+              <div class="card-body">
+                <div class="row m-0 p-0 mt-1">
+                  <h6 class="col-8 m-0 p-0 text-align-left fw-bold">Skyline GT-R BNR32</h6>
+                  <p class="col-4 m-0 p-0 text-end  fw-semibold text-muted">₱2499<span class="fw-thin">/day</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+    </div>
+
   </div>
 
 
 
-
+  <?php $this->load->view('templates/fab');?>
   </body>
 <!-- JQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -236,6 +371,21 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <!-- AdminLTE App -->
 <script src="<?= base_url('assets/dist/js/adminlte.min.js?v=3.2.0') ?>"></script>
+
+<!-- FAB -->
+<script>
+  $(function() {
+    $('.btn-group-fab').on('click', '.btn', function() {
+      $('.btn-group-fab').toggleClass('active');
+    });
+    $('has-tooltip').tooltip();
+  });
+</script>
+<script>
+  $(function () {
+      $('[data-bs-toggle="tooltip"]').tooltip();
+  });
+</script>
 
 </html>
 
