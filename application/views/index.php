@@ -221,7 +221,7 @@
             An exclusive high-octane car rental platform for enthusiasts who crave the raw, unfiltered thrill of classic JDM legends.
             </p>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-              <button type="button" onclick="window.location='pages/browse'" class="btn btn-bd-primary btn-lg px-4 me-md-2 rounded-4">
+              <button type="button" onclick="window.location='home'" class="btn btn-bd-primary btn-lg px-4 me-md-2 rounded-4">
                 Get started
                 <svg class="ms-2 cta-icon" fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"></path></svg>
               </button>
