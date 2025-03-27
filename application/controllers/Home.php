@@ -7,6 +7,6 @@ class Home extends CI_Controller {
     }
 
     public function browse() {
-        $this->load->view('browse');
+        $this->load->view('pages/browse');
     }
 }
