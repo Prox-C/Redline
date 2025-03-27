@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head><script src="assets/js/color-modes.js"></script>
+  <head><script src="<?= base_url('assets/js/color-modes.js') ?>"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,18 +9,16 @@
     <meta name="generator" content="Hugo 0.122.0">
     <title>Redline</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/heroes/">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="<?= base_url('assets/dist/css/adminlte.min.css?v=3.2.0') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/dist/css/bootstrap.min.css?v=3.2.0') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/plugins/fontawesome-free/css/all.min.css') ?>"> 
 
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    
 
-   
-    <link  href="<?= base_url('assets/css/bootstrap.min.css') ?>">
     
     <style>
     h1, h2, h4, h5, h6 {font-family: 'Syne', "sans-serif"; color: #282828;}
@@ -92,27 +90,38 @@
       }
 
       .btn-bd-primary {
-        --bd-primary-bg: #EA4335; /* Base color */
-        --bd-primary-rgb: 234, 67, 53; /* RGB values */
+    --bd-primary-bg: #EA4335; /* Base color */
+    --bd-primary-rgb: 234, 67, 53; /* RGB values */
 
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white); /* White text */
-        --bs-btn-bg: var(--bd-primary-bg); /* Base background color */
-        --bs-btn-border-color: var(--bd-primary-bg); /* Base border color */
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white); /* White text */
+    --bs-btn-bg: var(--bd-primary-bg); /* Base background color */
+    --bs-btn-border-color: var(--bd-primary-bg); /* Base border color */
 
-        /* Hover state */
-        --bs-btn-hover-color: var(--bs-white); /* White text on hover */
-        --bs-btn-hover-bg: #D63A2D; /* Darker background on hover */
-        --bs-btn-hover-border-color: #D63A2D; /* Darker border on hover */
+    /* Hover state */
+    --bs-btn-hover-color: var(--bs-white); /* White text on hover */
+    --bs-btn-hover-bg: #D63A2D !important; /* Darker background on hover */
+    --bs-btn-hover-border-color: #D63A2D !important; /* Darker border on hover */
 
-        /* Focus state */
-        --bs-btn-focus-shadow-rgb: var(--bd-primary-rgb); /* Focus shadow using RGB */
+    /* Focus state */
+    --bs-btn-focus-shadow-rgb: var(--bd-primary-rgb); /* Focus shadow using RGB */
 
-        /* Active state */
-        --bs-btn-active-color: var(--bs-btn-hover-color); /* Same as hover text */
-        --bs-btn-active-bg: #C23125; /* Even darker background on active */
-        --bs-btn-active-border-color: #C23125; /* Even darker border on active */
-     }
+    /* Active (Pressed) state */
+    --bs-btn-active-color: var(--bs-btn-hover-color) !important; /* White text */
+    --bs-btn-active-bg: #C23125 !important; /* Even darker background on active */
+    --bs-btn-active-border-color: #C23125 !important; /* Even darker border on active */
+}
+
+/* Ensure Bootstrap's default active styles are overridden */
+.btn-bd-primary:active,
+.btn-bd-primary:focus,
+.btn-bd-primary:focus-visible {
+    background-color: #C23125 !important;
+    border-color: #C23125 !important;
+    color: #fff !important;
+    box-shadow: none !important;
+}
+
 
       .bd-mode-toggle {
         z-index: 1500;
@@ -121,6 +130,57 @@
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
+
+      .btn-group-fab {
+        position: fixed;
+        width: 50px;
+        height: auto;
+        right: 20px; bottom: 20px;
+      }
+      .btn-group-fab div {
+        position: relative; width: 100%;
+        height: auto;
+      }
+      .btn-group-fab .btn {
+        position: absolute;
+        bottom: 0;
+        border-radius: 50%;
+        display: block;
+        margin-bottom: 4px;
+        width: 40px; height: 40px;
+        margin: 4px auto;
+      }
+      .btn-group-fab .btn-main {
+        width: 50px; height: 50px;
+        right: 50%; margin-right: -25px;
+        z-index: 20;
+      }
+      .btn-group-fab .btn-sub {
+        bottom: 0; z-index: 8;
+        right: 50%;
+        margin-right: -20px;
+        -webkit-transition: all 2s;
+        transition: all 0.5s;
+      }
+      .btn-group-fab.active .btn-sub:nth-child(2) {
+        bottom: 60px;
+      }
+      .btn-group-fab.active .btn-sub:nth-child(3) {
+        bottom: 110px;
+      }
+      .btn-group-fab.active .btn-sub:nth-child(4) {
+        bottom: 160px;
+      }
+      .btn-group-fab .btn-sub:nth-child(5) {
+        bottom: 210px;
+      }
+
+      .fab-icon {
+        height: 22px;
+        position: relative;
+        right: 4px;
+      }
+
 
       .car-img-table {
         height: 22px;
@@ -159,9 +219,22 @@
       }
 
       .card-star {height: 16px;}
+
+      @font-face {
+        font-family: 'NikkyouSans';
+        src: url('assets/fonts/NikkyouSans-mLKax.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .logo-tag {
+        height: 16px; 
+        position: relative;
+        bottom: 1px;
+        right: 6px;
+      }
+      
     </style>
-    <!-- Custom styles for this template -->
-    <link href="modals.css" rel="stylesheet">
 
   </head>
   <body>
