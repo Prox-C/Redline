@@ -246,19 +246,25 @@
     <!-- Search -->
     <div class="card p-3 rounded-3">
         <div class="row g-lg-3">
-            <div class="col-lg-5 col-12 mb-3 mb-lg-0">
+            <div class="col-lg-3 col-12 mb-3 mb-lg-0">
+                <div class="form-floating">
+                  <input name="email" type="text" class="form-control rounded-3" placeholder="Email" required>
+                  <label class="text-muted-subtle fw-normal">Search Car</label>
+                </div>
+            </div>
+            <div class="col-lg-3 col-12 mb-3 mb-lg-0">
                 <div class="form-floating">
                     <input type="date" class="form-control rounded-3" id="pickupDate" name="rentEnd" required>
-                    <label for="returnDate" class="text-muted-subtle">Pickup Date</label>
+                    <label for="returnDate" class="text-muted-subtle fw-normal">Pickup</label>
                 </div>
             </div>
-            <div class="col-lg-5 col-12 mb-3 mb-lg-0">
+            <div class="col-lg-3 col-12 mb-3 mb-lg-0">
                 <div class="form-floating">
                     <input type="date" class="form-control rounded-3" id="dropoffDate" name="rentEnd" required>
-                    <label for="returnDate" class="text-muted-subtle">Drop off</label>
+                    <label for="returnDate" class="text-muted-subtle fw-normal">Dropoff</label>
                 </div>
             </div>
-            <div class="col-lg-2 col-12 mb-3 mb-lg-0">
+            <div class="col-lg-3 col-12 mb-3 mb-lg-0">
                 <button class="btn btn-primary btn-block rounded-4 btn-bd-primary h-100">
                     Search
                     <svg style="position: relative; bottom: 1px" xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M232.49,215.51,185,168a92.12,92.12,0,1,0-17,17l47.53,47.54a12,12,0,0,0,17-17ZM44,112a68,68,0,1,1,68,68A68.07,68.07,0,0,1,44,112Z"></path></svg>
@@ -287,12 +293,16 @@
               <div class="card-body px-4">
                 <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
                   <div class="col-12 m-0 p-0 d-flex align-items-center">
-                  <?php $this->load->view('templates/card-star'); ?>
-                    <p class="m-0">
-                      <span class="text-muted card-text m-1">4.8</span>
+
+                    <p class="my-0">
                       <span class="badge text-bg-light fw-normal mx-1">400hp</span>
                       <span class="badge text-bg-light fw-normal">300km/h</span>
                       <span class="badge text-bg-light fw-normal">Manual</span>
+                    </p>
+
+                    <p class="my-0 ml-auto d-flex align-items-center gap-1"> 
+                      <?php $this->load->view('templates/card-star'); ?>
+                      <span class="text-muted card-text">4.8</span>
                     </p>
                   </div>
                 </div>          
@@ -301,7 +311,7 @@
               <div class="card-body">
                 <div class="row m-0 p-0 mt-1">
                   <h6 class="col-8 m-0 p-0 text-align-left fw-bold">Skyline GT-R BNR32</h6>
-                  <p class="col-4 m-0 p-0 text-end  fw-semibold text-muted">₱2499<span class="fw-thin">/day</span></p>
+                  <p class="col-4 m-0 p-0 text-end fw-semibold txt-pri">₱2499<span class="fw-normal text-muted">/day</span></p>
                 </div>
               </div>
             </div>
