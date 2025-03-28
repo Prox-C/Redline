@@ -216,15 +216,17 @@
                                 <div class="span d-none d-lg-flex">Pending</div>
                             </button>
                             <button class="btn bg-light-subtle btn-sm border-dark-subtle rounded-pill px-lg-3 d-flex flex-direction-column align-items-center gap-1 text-success">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="status-tag" fill="currentColor" viewBox="0 0 256 256"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>
-                                <div class="span d-none d-lg-flex">Confirmed</div>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="status-tag" fill="currentColor" viewBox="0 0 256 256"><path d="M184,28H72A20,20,0,0,0,52,48V224a12,12,0,0,0,18.36,10.18l57.63-36,57.65,36A12,12,0,0,0,204,224V48A20,20,0,0,0,184,28Zm-4,174.35-45.65-28.53a12,12,0,0,0-12.72,0L76,202.35V52H180Z"></path></svg>
+                            <div class="span d-none d-lg-flex">Confirmed</div>
                             </button>
                             <button class="btn bg-light-subtle btn-sm border-dark-subtle rounded-pill px-lg-3 d-flex flex-direction-column align-items-center gap-1 text-danger">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="status-tag" fill="currentColor" viewBox="0 0 256 256"><path d="M208.49,191.51a12,12,0,0,1-17,17L128,145,64.49,208.49a12,12,0,0,1-17-17L111,128,47.51,64.49a12,12,0,0,1,17-17L128,111l63.51-63.52a12,12,0,0,1,17,17L145,128Z"></path></svg>                                
                                 <div class="span d-none d-lg-flex">Cancelled</div>
                             </button>
-                            
-
+                            <button class="btn bg-light-subtle btn-sm border-dark-subtle rounded-pill px-lg-3 d-flex flex-direction-column align-items-center gap-1 text-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="status-tag" fill="currentColor" viewBox="0 0 256 256"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>
+                                <div class="span d-none d-lg-flex">Completed</div>
+                            </button>
                         </div>
                     </div>
                     <div class="card-body table-responsive p-0">
