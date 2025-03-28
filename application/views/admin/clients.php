@@ -194,7 +194,7 @@
             <div class="col-12">
                 <form action="simple-results.html">
                     <div class="input-group rounded-3 overflow-hidden px-2">
-                        <input type="search" class="form-control form-control b rounded-3" placeholder="Search by ID, first name, last name, etc.">
+                        <input type="search" class="form-control form-control b rounded-3" placeholder="Search">
                 </form>
             </div>
 
@@ -357,6 +357,7 @@
                     </div>
                 </div>
               </div>
+            </div>
 
         </div>
       </section>
