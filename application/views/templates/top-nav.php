@@ -6,7 +6,7 @@
 
         <div class="dropdown text-end d-flex align-items-center"> 
             <a href="#" class="d-block link-body-emphasis text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="<?=base_url('/assets/images/users/profile.png')?>" alt="mdo" width="32" height="32" class="rounded-circle bg-dark border border-2 border-white">
+                <img src="<?=base_url('/assets/images/users/profile.png')?>" alt="mdo" height="30" class="rounded-circle bg-dark border border-2 border-white">
             </a>
             <ul class="dropdown-menu text-small">
                 <li><a class="dropdown-item" href="#">Notifications</a></li>

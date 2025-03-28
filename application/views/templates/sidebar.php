@@ -22,7 +22,7 @@
     </ul>
 
     <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ml-auto me-2">
     <div class="dropdown text-end d-flex align-items-center"> 
             <a href="#" class="d-block link-body-emphasis text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="<?=base_url('/assets/images/users/profile.png')?>" alt="mdo" height="26" class="rounded-circle bg-dark border border-2 border-white">
@@ -62,7 +62,7 @@
             </li>
             <!-- Menu2 -->
             <li class="nav-item">
-                <a href="cars.php" class="nav-link">
+                <a href="cars" class="nav-link">
                 <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" fill="currentColor" viewBox="0 0 256 256"><path d="M240,104H229.2L201.42,41.5A16,16,0,0,0,186.8,32H69.2a16,16,0,0,0-14.62,9.5L26.8,104H16a8,8,0,0,0,0,16h8v80a16,16,0,0,0,16,16H64a16,16,0,0,0,16-16v-8h96v8a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16V120h8a8,8,0,0,0,0-16ZM80,152H56a8,8,0,0,1,0-16H80a8,8,0,0,1,0,16Zm120,0H176a8,8,0,0,1,0-16h24a8,8,0,0,1,0,16ZM44.31,104,69.2,48H186.8l24.89,56Z"></path></svg>
                 <p style="position: relative; top: 2px">Cars</p>
                 </a>
