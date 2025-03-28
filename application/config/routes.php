@@ -53,8 +53,13 @@ $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['admin'] = 'Admin/dashboard';
 $route['home'] = 'Home/browse';
 
-$route['clients'] = 'Users/clients';
 
+/* Admin Panel */
+
+$route['admin'] = 'Admin/dashboard';
+
+$route['clients'] = 'User/getClients';
+
+$route['bookings'] = 'Book/getBookings';
