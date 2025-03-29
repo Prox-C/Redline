@@ -288,7 +288,7 @@
         <div class="row">
           
           <!-- Card 1 -->
-          <div class="col-12 col-sm-6 col-lg-4 mb-4" onclick="">
+          <div class="col-12 col-sm-6 col-lg-4 mb-4" onclick="window.location='view'">
             <div class="car card rounded-4 p-0 overflow-hidden">
               <div class="card-body px-4">
                 <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
@@ -317,8 +317,8 @@
             </div>
           </div>
 
-                    <!-- Card 1 -->
-                    <div class="col-12 col-sm-6 col-lg-4 mb-4" onclick="">
+          <!-- Card 2 -->
+          <div class="col-12 col-sm-6 col-lg-4 mb-4" onclick="">
             <div class="car card rounded-4 p-0 overflow-hidden">
               <div class="card-body px-4">
                 <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
@@ -343,8 +343,8 @@
             </div>
           </div>
 
-                    <!-- Card 1 -->
-                    <div class="col-12 col-sm-6 col-lg-4 mb-4" onclick="">
+          <!-- Card 3 -->
+          <div class="col-12 col-sm-6 col-lg-4 mb-4" onclick="">
             <div class="car card rounded-4 p-0 overflow-hidden">
               <div class="card-body px-4">
                 <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
