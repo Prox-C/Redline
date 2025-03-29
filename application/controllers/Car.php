@@ -9,4 +9,8 @@ class Car extends CI_Controller {
     public function newCar() {
         $this->load->view('admin/new-car');
     }
+
+    public function viewCar() {
+        $this->load->view('pages/view');
+    }
 }
