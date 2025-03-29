@@ -203,7 +203,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row m-0 px-2">
 
             <div class="col-12 col-sm-6 col-lg-4 mt-3">
                 <button onclick="window.location='new-car'" class="car btn btn-lg bg-dark-subtle rounded-4 h-100 w-100 elevation-1">
@@ -212,7 +212,7 @@
             </div>
 
             <!-- Card 1 -->
-            <div class="col-12 col-sm-6 col-lg-4 mt-3" onclick="">
+            <div class="col-12 col-sm-6 col-lg-4 mt-3 w-100" onclick="">
                 <div class="car card rounded-4 p-0 overflow-hidden h-100">
                 <div class="card-body px-4">
                     <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
