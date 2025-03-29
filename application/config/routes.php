@@ -63,6 +63,7 @@ $route['admin'] = 'Admin/dashboard';
 $route['clients'] = 'User/getClients';
 
 $route['bookings'] = 'Book/getBookings';
+$route['checkout'] = 'Book/checkout';
 
 $route['cars'] = 'Car/getCars';
 $route['new-car'] = 'Car/newCar';

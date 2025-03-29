@@ -5,4 +5,8 @@ class Book extends CI_Controller {
     public function getBookings() {
         $this->load->view('admin/bookings');
     }
+
+    public function checkout() {
+        $this->load->view('pages/checkout');
+    }
 }
