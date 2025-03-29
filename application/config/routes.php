@@ -66,3 +66,4 @@ $route['bookings'] = 'Book/getBookings';
 
 $route['cars'] = 'Car/getCars';
 $route['new-car'] = 'Car/newCar';
+$route['view'] = 'Car/viewCar';
