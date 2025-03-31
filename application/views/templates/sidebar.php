@@ -9,7 +9,7 @@
 </style>
 
 
-<body class="hold-transition sidebar-mini sidebar-collapse">
+<body class="hold-transition sidebar-mini sidebar-collapse layout-fixed layout-navbar-fixed layout-footer-fixed">
 <!-- Site wrapper -->
 <div class="wrapper">
   <!-- Navbar -->
@@ -41,9 +41,9 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary bg-black elevation-5">
+  <aside class="main-sidebar sidebar-dark-primary bg-black elevation-5 fixed">
     <!-- Brand Logo -->
-    <a href="" class="brand-link">
+    <a href="" class="brand-link bg-black">
       <img src="<?= base_url('assets/images/redline_logo.svg') ?>" alt="RR" class="brand-image elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Redline Rentals</span>
     </a>
