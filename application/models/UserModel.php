@@ -1,8 +1,10 @@
 <?php
 class UserModel extends CI_Model {
     public function __construct() {
-        $this->load->database();
+        parent::__construct(); 
+        $this->load->database(); 
     }
+    
 
     public function getClients() {
         $query = $this->db->get('users');

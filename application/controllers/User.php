@@ -9,7 +9,7 @@ class User extends CI_Controller {
     }
 
     public function getClients() {
-        $data['clients'] = $this->UserModel->getClients();
+        $data['cl'] = $this->UserModel->getClients();
         $this->load->view('admin/clients', $data); 
     }  
 }
