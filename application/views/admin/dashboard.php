@@ -156,7 +156,7 @@
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item active">Admin</li>
-                <li class="breadcrumb-item">Dashboard</li>
+                <li class="breadcrumb-item">Home</li>
               </ol>
             </div>
           </div>

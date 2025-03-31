@@ -55,7 +55,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Menu1 -->
             <li class="nav-item">
-                <a href="admin" class="nav-link">
+                <a href="home" class="nav-link">
                 <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" fill="currentColor" viewBox="0 0 256 256"><path d="M120,56v48a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V56A16,16,0,0,1,56,40h48A16,16,0,0,1,120,56Zm80-16H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm-96,96H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm96,0H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Z"></path></svg> 
                 <p style="position: relative; top: 2px">Dashboard</p>
                 </a>
@@ -83,7 +83,7 @@
             </li>
             <!-- Menu5 -->
             <li class="nav-item">
-                <a href="managers.php" class="nav-link">
+                <a href="managers" class="nav-link">
                 <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" fill="currentColor" viewBox="0 0 256 256"><path d="M256,120a8,8,0,0,1-8,8H8a8,8,0,0,1,0-16H35.92l47.5-65.41a16,16,0,0,1,25.31-.72l12.85,14.9.2.23a7.95,7.95,0,0,0,12.44,0l.2-.23,12.85-14.9a16,16,0,0,1,25.31.72L220.08,112H248A8,8,0,0,1,256,120Zm-76,24a36,36,0,0,0-35.77,32H111.77a36,36,0,1,0-1.83,16h36.12A36,36,0,1,0,180,144Z"></path></svg>
                 <p style="position: relative; top: 2px">Managers</p>
                 </a>

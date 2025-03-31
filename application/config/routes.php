@@ -58,13 +58,14 @@ $route['home'] = 'Home/browse';
 
 /* Admin Panel */
 
-$route['admin'] = 'Admin/dashboard';
+$route['admin/home'] = 'Admin/dashboard';
 
-$route['clients'] = 'User/getClients';
+$route['admin/clients'] = 'User/getClients';
+$route['registerClient'] = 'User/registerClient';
 
-$route['bookings'] = 'Book/getBookings';
+$route['admin/bookings'] = 'Book/getBookings';
 $route['checkout'] = 'Book/checkout';
 
-$route['cars'] = 'Car/getCars';
-$route['new-car'] = 'Car/newCar';
+$route['admin/cars'] = 'Car/getCars';
+$route['admin/new-car'] = 'Car/newCar';
 $route['view'] = 'Car/viewCar';
