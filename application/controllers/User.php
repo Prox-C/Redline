@@ -2,7 +2,14 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends CI_Controller {
-    public function getClients() {
-        $this->load->view('admin/clients');
+
+    public function __construct() {
+        parent::__construct();
+        $this->load->model('UserModel'); 
     }
+
+    public function getClients() {
+        $data['clients'] = $this->UserModel->getClients();
+        $this->load->view('admin/clients', $data); 
+    }  
 }

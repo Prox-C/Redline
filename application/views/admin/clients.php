@@ -165,6 +165,7 @@
 
   </head>
   <body>
+    
   <?php $this->load->view('templates/forms'); ?>
   <?php $this->load->view('templates/sidebar'); ?>
     <!-- Content Wrapper. Contains page content -->
