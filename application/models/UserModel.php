@@ -83,6 +83,18 @@ class UserModel extends CI_Model {
     
         redirect('admin/clients');
     }
+
+    public function deleteClient($id) {
+        $this->db->where('user_id', $id);
+
+        if ($this->db->delete('users')){
+            $this->session->set_flashdata('success', 'Client unregistered!');
+        } else {
+            $this->session->set_flashdata('error', 'Failed to unregister client.');
+        }
+
+        redirect('admin/clients');
+    }
     
     
     

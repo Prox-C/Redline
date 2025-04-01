@@ -63,6 +63,7 @@ $route['admin/home'] = 'Admin/dashboard';
 $route['admin/clients'] = 'User/getClients';
 $route['registerClient'] = 'User/registerClient';
 $route['updateClient/(:num)'] = 'User/updateClient/$1';
+$route['deleteClient/(:num)'] = 'User/deleteClient/$1';
 
 $route['admin/bookings'] = 'Book/getBookings';
 $route['checkout'] = 'Book/checkout';

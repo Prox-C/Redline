@@ -24,5 +24,11 @@ class User extends CI_Controller {
             $this->UserModel->updateClient($id);
         }
     }
+
+    public function deleteClient($id) {
+        if ($this->input->server('REQUEST_METHOD') === 'POST') {
+            $this->UserModel->deleteClient($id);
+        }
+    }
     
 }
