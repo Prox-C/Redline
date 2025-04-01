@@ -21,6 +21,29 @@ class Car extends CI_Controller {
         $this->load->view('admin/cars', $data);
     }
 
+    public function addCar() {
+        if ($this->input->server('REQUEST_METHOD') === 'POST') {
+            // Handle file upload
+            $config['upload_path'] = './assets/images/cars/';
+            $config['allowed_types'] = 'jpg|jpeg|png';
+            $config['max_size'] = 2048; // 2MB
+            $config['file_name'] = $_FILES['image']['name']; // Keep original file name
+            // $config['encrypt_name'] = TRUE; // Uncomment this line if you want to encrypt the file name
+            
+            $this->load->library('upload', $config);
+            
+            if ($this->upload->do_upload('image')) {
+                $uploadData = $this->upload->data();
+                $imageFileName = $uploadData['file_name'];
+            } else {
+                $imageFileName = null;
+            }
+            
+            $this->CarModel->addCar($imageFileName);
+        }
+    }
+    
+
     public function newCar() {
         $this->load->view('admin/new-car');
     }

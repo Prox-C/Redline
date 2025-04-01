@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="<?= base_url('assets/dist/css/adminlte.min.css?v=3.2.0') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/plugins/fontawesome-free/css/all.min.css') ?>"> 
 
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+        
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -277,10 +280,38 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <!-- Bootstrap 5.3 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 <!-- Popper JS -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <!-- AdminLTE App -->
 <script src="<?= base_url('assets/dist/js/adminlte.min.js?v=3.2.0') ?>"></script>
+
+<script>
+  // Create a reusable Toast instance
+  var Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end', // Top-right corner
+    showConfirmButton: false,
+    timer: 4000
+  });
+
+  // Check for flash data success
+  <?php if ($this->session->flashdata('success')): ?>
+    Toast.fire({
+      icon: 'success',
+      title: '<?= $this->session->flashdata('success'); ?>'
+    });
+  <?php endif; ?>
+
+  // Check for flash data error
+  <?php if ($this->session->flashdata('error')): ?>
+    Toast.fire({
+      icon: 'error',
+      title: '<?= $this->session->flashdata('error'); ?>'
+    });
+  <?php endif; ?>
+</script>
 
 </html>
 

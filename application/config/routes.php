@@ -70,6 +70,7 @@ $route['admin/bookings'] = 'Book/getBookings';
 
 $route['admin/cars'] = 'Car/getAllCars';
 $route['admin/new-car'] = 'Car/newCar';
+$route['addCar'] = 'Car/addCar';
 
 /* Client-side */
 $route['view'] = 'Car/viewCar';
