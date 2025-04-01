@@ -66,8 +66,11 @@ $route['updateClient/(:num)'] = 'User/updateClient/$1';
 $route['deleteClient/(:num)'] = 'User/deleteClient/$1';
 
 $route['admin/bookings'] = 'Book/getBookings';
-$route['checkout'] = 'Book/checkout';
+
 
 $route['admin/cars'] = 'Car/getAllCars';
 $route['admin/new-car'] = 'Car/newCar';
+
+/* Client-side */
 $route['view'] = 'Car/viewCar';
+$route['checkout'] = 'Book/checkout';
