@@ -229,7 +229,7 @@
                 </div>
                 <div class="row m-0 p-0 ">
                     <div class="col-12">
-                        <label for="" class="from-label txt-pri">Rate</label>
+                        <label for="" class="from-label">Rate</label>
                         <input type="text" class="form-control form-control-lg mb-3 rounded-3" placeholder="Rate per day (PHP )">
                         <a href="" class="btn btn-lg btn-bd-primary rounded-4 w-100">Add to Fleet</a>
                     </div>
