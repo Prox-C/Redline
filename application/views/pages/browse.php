@@ -219,6 +219,7 @@
       }
 
       .card-star {height: 16px;}
+      .make-logo {height: 26px; width: auto;}
 
       @font-face {
         font-family: 'NikkyouSans';
@@ -244,7 +245,7 @@
   <div class="container px-4">
 
     <!-- Search -->
-    <div class="card p-3 rounded-3">
+    <div class="card p-3 rounded-3 m-2">
         <div class="row g-lg-3">
             <div class="col-lg-3 col-12 mb-3 mb-lg-0">
                 <div class="form-floating">
@@ -272,8 +273,8 @@
             </div>
         </div>
     </div>
-
-    <!-- Brand Filters -->
+      
+    <!-- Brand Filters
     <div class="col-lg-12 d-none d-lg-flex justify-content-center gap-2" style="overflow-x: auto; white-space: no-wrap">
         <button class="btn btn-light rounded-pill px-4">All</button>
         <button class="btn btn-light rounded-pill px-4"><svg role="img" viewBox="0 0 24 24" fill="currentColor" class="logo-tag" xmlns="http://www.w3.org/2000/svg"><title>Toyota</title><path d="M12 3.848C5.223 3.848 0 7.298 0 12c0 4.702 5.224 8.152 12 8.152S24 16.702 24 12c0-4.702-5.223-8.152-12-8.152zm7.334 3.839c0 1.08-1.725 1.913-4.488 2.246-.26-2.58-1.005-4.279-1.963-4.913 2.948.184 6.45 1.227 6.45 2.667zM12 16.401c-.96 0-1.746-1.5-1.808-4.389.577.047 1.18.072 1.808.072.628 0 1.23-.025 1.807-.072-.061 2.89-.847 4.389-1.807 4.389zm0-6.308c-.59 0-1.155-.019-1.69-.054.261-1.728.92-3.15 1.69-3.15.77 0 1.428 1.422 1.689 3.15-.535.034-1.099.054-1.689.054zm-.882-5.075c-.956.633-1.706 2.333-1.964 4.915C6.391 9.6 4.665 8.767 4.665 7.687c0-1.44 3.504-2.49 6.453-2.669zM2.037 11.68a5.265 5.265 0 011.048-3.164c.27 1.547 2.522 2.881 5.972 3.37V12c0 3.772.879 6.203 2.087 6.97-5.107-.321-9.107-3.48-9.107-7.29zm10.823 7.29c1.207-.767 2.087-3.198 2.087-6.97v-.115c3.447-.488 5.704-1.826 5.972-3.37a5.26 5.26 0 011.049 3.165c-.004 3.81-4.008 6.969-9.109 7.29z"/></svg>Toyota</button>
@@ -282,93 +283,59 @@
         <button class="btn btn-light rounded-pill px-4"><svg role="img" viewBox="0 0 24 24" fill="currentColor" class="logo-tag" xmlns="http://www.w3.org/2000/svg"><title>Mazda</title><path d="M11.999 12.876c-.036 0-.105-.046-.222-.26a7.531 7.531 0 00-1.975-2.353A8.255 8.255 0 007.7 9.065a17.945 17.945 0 00-.345-.136c-1.012-.4-2.061-.813-3.035-1.377A8.982 8.982 0 014 7.362c.194-.34.42-.665.67-.962a6.055 6.055 0 011.253-1.131 7.126 7.126 0 011.618-.806c1.218-.434 2.677-.647 4.458-.649 1.783.002 3.241.215 4.459.65a7.097 7.097 0 011.619.805c.471.319.892.699 1.253 1.13.25.298.475.623.67.963-.103.064-.212.129-.32.192-.976.564-2.023.977-3.037 1.376l-.345.136a8.26 8.26 0 00-2.1 1.198 7.519 7.519 0 00-1.975 2.354c-.117.213-.187.259-.224.259m0 7.072c-1.544-.002-2.798-.129-3.83-.387-1.013-.252-1.855-.64-2.576-1.188a5.792 5.792 0 01-1.392-1.537 7.607 7.607 0 01-.81-1.768 10.298 10.298 0 01-.467-2.983c0-.674.047-1.313.135-1.901 1.106.596 2.153.895 3.08 1.16l.215.06c1.29.371 2.314.857 3.135 1.488.475.368.89.793 1.23 1.264.369.508.663 1.088.877 1.725.096.289.2.468.403.468.207 0 .308-.18.405-.468a6.124 6.124 0 012.107-2.988c.82-.632 1.845-1.118 3.135-1.489l.216-.06c.926-.265 1.973-.564 3.078-1.16.09.589.136 1.227.136 1.9 0 .458-.046 1.664-.465 2.984a7.626 7.626 0 01-.809 1.768 5.789 5.789 0 01-1.396 1.537c-.723.548-1.565.936-2.574 1.188-1.035.258-2.288.385-3.833.387m9.692-14.556c-1.909-2.05-4.99-2.99-9.692-2.995-4.7.005-7.781.944-9.69 2.994C.89 6.913 0 9.018 0 11.874c0 1.579.39 5.6 3.564 7.676 1.9 1.242 4.354 2.046 8.435 2.052 4.083-.006 6.536-.81 8.437-2.052C23.609 17.474 24 13.452 24 11.874c0-2.848-.897-4.968-2.31-6.483Z"/></svg>Mazda</button>
         <button class="btn btn-light rounded-pill px-4"><svg role="img" viewBox="0 0 24 24" fill="currentColor" class="logo-tag" xmlns="http://www.w3.org/2000/svg"><title>Subaru</title><path d="M12 4.983c3.004 0 6.224.612 8.786 2.239C22.451 8.286 24 9.9 24 12.002c0 2.456-2.097 4.242-4.106 5.287-2.391 1.238-5.216 1.728-7.894 1.728-3.003 0-6.217-.605-8.78-2.238C1.556 15.714 0 14.101 0 12.003 0 9.536 2.092 7.757 4.106 6.71 6.504 5.474 9.323 4.983 12 4.983zm-.025.746c-2.793 0-5.802.523-8.225 1.983-1.524.912-3.03 2.347-3.03 4.253 0 2.239 2.04 3.806 3.864 4.706 2.258 1.102 4.897 1.53 7.391 1.53 2.798 0 5.809-.523 8.232-1.983 1.517-.918 3.029-2.346 3.029-4.253 0-2.243-2.035-3.813-3.864-4.705-2.258-1.104-4.898-1.53-7.397-1.53zm-10.54 4.686l4.597-.784 1.384-3.003L8.794 9.63l4.596.784-4.596.792-1.378 3.01-1.384-3.01zm10.106 2.289l2.028-.356.605-1.359.606 1.359 2.028.356-2.028.35-.606 1.36-.605-1.36zm4.196-3.621l2.028-.35.605-1.365.606 1.364 2.028.35-2.028.357-.606 1.36-.606-1.36zM13.57 15.51l2.02-.35.607-1.365.612 1.365 2.027.35-2.027.357-.612 1.36-.606-1.36zm-6.23.491l2.028-.35.612-1.366.605 1.366 2.028.35-2.028.357-.605 1.359-.612-1.359zm10.196-3.353l2.022-.357.605-1.359.612 1.359 2.028.357-2.028.35-.612 1.357-.606-1.357Z"/></svg>Subaru</button>
         <button class="btn btn-light rounded-pill px-4"><svg role="img" viewBox="0 0 24 24" fill="currentColor" class="logo-tag" xmlns="http://www.w3.org/2000/svg"><title>Mitsubishi</title><path d="M8 22.38H0l4-6.92h8zm8 0h8l-4-6.92h-8zm0-13.84l-4-6.92-4 6.92 4 6.92Z"/></svg>Mitshubishi</button>
-    </div>
+    </div> -->
 
-    <div class="col-lg-12 d-flex flex-wrap justify-content-center align-items-center gap-2 mt-4 px-0">
-        <div class="row">
+    <div class="col-lg-12 d-flex flex-wrap justify-content-center align-items-center gap-2 mt-4 mx-0 px-0">
+        <div class="row w-100 px-0">
+
+          <?php if(!empty($cars))
+          {
+            foreach ($cars as $car) 
+            { 
+          ?>
           
-          <!-- Card 1 -->
-          <div class="col-12 col-sm-6 col-lg-4 mb-4" onclick="window.location='view'">
-            <div class="car card rounded-4 p-0 overflow-hidden">
+          <div class="col-12 col-sm-6 col-lg-4 mb-0 mx-0 px-2" onclick="window.location='view'">
+            <div class="car card rounded-4 p-0 overflow-hidden mx-0">
               <div class="card-body px-4">
                 <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
                   <div class="col-12 m-0 p-0 d-flex align-items-center">
 
                     <p class="my-0">
-                      <span class="badge text-bg-light fw-normal mx-1">400hp</span>
-                      <span class="badge text-bg-light fw-normal">300km/h</span>
-                      <span class="badge text-bg-light fw-normal">Manual</span>
+                      <span class="badge text-bg-light fw-normal mx-1"><?php echo $car['power'];?>hp</span>
+                      <span class="badge text-bg-light fw-normal"><?php echo $car['speed'];?>km/h</span>
+                      <span class="badge text-bg-light fw-normal"><?php echo $car['transmission'];?></span>
                     </p>
 
                     <p class="my-0 ml-auto d-flex align-items-center gap-1"> 
                       <?php $this->load->view('templates/card-star'); ?>
-                      <span class="text-muted card-text">4.8</span>
+                      <span class="text-muted card-text"><?php echo $car['rating'];?></span>
                     </p>
                   </div>
                 </div>          
               </div>
-              <img src="<?= base_url('assets/images/cars/SKyline_GT-R_BNR32.png') ?>" class="card-img-top m-0 p-0" alt="Card image">
+              <img src="<?= base_url('assets/images/cars/' . $car['thumbnail']) ?>" class="card-img-top m-0 p-0" alt="Card image">
               <div class="card-body">
                 <div class="row m-0 p-0 mt-1">
-                  <h6 class="col-8 m-0 p-0 text-align-left fw-bold">Skyline GT-R BNR32</h6>
-                  <p class="col-4 m-0 p-0 text-end fw-semibold txt-pri">₱2499<span class="fw-normal text-muted">/day</span></p>
+                  
+                  <h6 class="col-8 m-0 p-0 text-align-left fw-bold"><?php $this->load->view('components/'.$car['brand']);?><?php echo $car['model'];?></h6>
+                  <p class="col-4 m-0 p-0 text-end fw-semibold txt-pri">₱<?php echo $car['rate'];?><span class="fw-normal text-muted">/day</span></p>
                 </div>
               </div>
             </div>
-          </div>
+          </div> 
 
-          <!-- Card 2 -->
-          <div class="col-12 col-sm-6 col-lg-4 mb-4" onclick="">
-            <div class="car card rounded-4 p-0 overflow-hidden">
-              <div class="card-body px-4">
-                <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
-                  <div class="col-12 m-0 p-0 d-flex align-items-center">
-                  <?php $this->load->view('templates/card-star'); ?>
-                    <p class="m-0">
-                      <span class="text-muted card-text m-1">4.8</span>
-                      <span class="badge text-bg-light fw-normal mx-1">400hp</span>
-                      <span class="badge text-bg-light fw-normal">300km/h</span>
-                      <span class="badge text-bg-light fw-normal">Manual</span>
-                    </p>
-                  </div>
-                </div>          
-              </div>
-              <img src="<?= base_url('assets/images/cars/SKyline_GT-R_BNR32.png') ?>" class="card-img-top m-0 p-0" alt="Card image">
-              <div class="card-body">
-                <div class="row m-0 p-0 mt-1">
-                  <h6 class="col-8 m-0 p-0 text-align-left fw-bold">Skyline GT-R BNR32</h6>
-                  <p class="col-4 m-0 p-0 text-end  fw-semibold text-muted">₱2499<span class="fw-thin">/day</span></p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <?php
+            }
+          } else {
+          ?>
 
-          <!-- Card 3 -->
-          <div class="col-12 col-sm-6 col-lg-4 mb-4" onclick="">
-            <div class="car card rounded-4 p-0 overflow-hidden">
-              <div class="card-body px-4">
-                <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
-                  <div class="col-12 m-0 p-0 d-flex align-items-center">
-                  <?php $this->load->view('templates/card-star'); ?>
-                    <p class="m-0">
-                      <span class="text-muted card-text m-1">4.8</span>
-                      <span class="badge text-bg-light fw-normal mx-1">400hp</span>
-                      <span class="badge text-bg-light fw-normal">300km/h</span>
-                      <span class="badge text-bg-light fw-normal">Manual</span>
-                    </p>
-                  </div>
-                </div>          
-              </div>
-              <img src="<?= base_url('assets/images/cars/SKyline_GT-R_BNR32.png') ?>" class="card-img-top m-0 p-0" alt="Card image">
-              <div class="card-body">
-                <div class="row m-0 p-0 mt-1">
-                  <h6 class="col-8 m-0 p-0 text-align-left fw-bold">Skyline GT-R BNR32</h6>
-                  <p class="col-4 m-0 p-0 text-end  fw-semibold text-muted">₱2499<span class="fw-thin">/day</span></p>
-                </div>
-              </div>
-            </div>
+          <div class="col-12 col-sm-6 col-lg-4 mb-0 mx-0 px-2 w-100 d-flex align-items-center justify-content-center" style="height: 300px"> 
+            No cars found. 
           </div>
-          
+          <?php 
+                }
+          ?>
+    
         </div>
     </div>
 

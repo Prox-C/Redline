@@ -29,11 +29,12 @@ CAR (
 id int primary_key auto_increment
 brand
 model
-rate
+rating
 power
 speed
 capacity
 fuel
+status (0 = available, 1 = under maintenance)
 )
 
 BOOK (
@@ -43,7 +44,7 @@ user id, fname, lname
 rentStart
 rendEnd
 total
-status
+status (pending, confirmed, cancelled, completed)
 )
 
 

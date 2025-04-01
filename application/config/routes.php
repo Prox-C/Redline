@@ -53,7 +53,7 @@ $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['home'] = 'Home/browse';
+$route['home'] = 'Car/getCars';
 
 
 /* Admin Panel */
@@ -68,6 +68,6 @@ $route['deleteClient/(:num)'] = 'User/deleteClient/$1';
 $route['admin/bookings'] = 'Book/getBookings';
 $route['checkout'] = 'Book/checkout';
 
-$route['admin/cars'] = 'Car/getCars';
+$route['admin/cars'] = 'Car/getAllCars';
 $route['admin/new-car'] = 'Car/newCar';
 $route['view'] = 'Car/viewCar';

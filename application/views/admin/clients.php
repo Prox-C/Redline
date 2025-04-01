@@ -201,7 +201,6 @@
                         <input type="search" class="form-control form-control b rounded-3" placeholder="Search">
                 </form>
             </div>
-
             <div class="col-12 mt-3">
                 <div class="card rounded-3 overflow-hidden">
                     <div class="card-header border-1 px-4 py-3 d-flex flex-row align-items-center justify-content-between">
