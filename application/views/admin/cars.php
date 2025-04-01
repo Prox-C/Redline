@@ -159,6 +159,7 @@
       }
 
       .card-star {height: 16px;}
+      .make-logo {height: 26px; width: auto;}
 
       .status-tag {
         height: 16px;
@@ -203,44 +204,61 @@
             </div>
         </div>
 
-        <div class="row m-0 px-2">
+        <div class="row m-0 mt-3 px-2 gap-0">
 
-            <div class="col-12 col-sm-6 col-lg-4 mt-3">
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
                 <button onclick="window.location='new-car'" class="car btn btn-lg bg-dark-subtle rounded-4 h-100 w-100 elevation-1">
                     <span class="text-dark fw-bold">New<svg xmlns="http://www.w3.org/2000/svg" class="big-cta-icon" fill="currentColor" viewBox="0 0 256 256"><path d="M208,28H48A20,20,0,0,0,28,48V208a20,20,0,0,0,20,20H208a20,20,0,0,0,20-20V48A20,20,0,0,0,208,28Zm-4,176H52V52H204ZM76,128a12,12,0,0,1,12-12h28V88a12,12,0,0,1,24,0v28h28a12,12,0,0,1,0,24H140v28a12,12,0,0,1-24,0V140H88A12,12,0,0,1,76,128Z"></path></svg></span>
                 </button>
             </div>
 
-            <!-- Card 1 -->
-            <div class="col-12 col-sm-6 col-lg-4 mt-3 w-100" onclick="">
-                <div class="car card rounded-4 p-0 overflow-hidden h-100">
-                <div class="card-body px-4">
-                    <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
-                    <div class="col-12 m-0 p-0 d-flex align-items-center">
+            <?php if(!empty($cars))
+          {
+            foreach ($cars as $car) 
+            { 
+          ?>
+          
+          <div class="col-12 col-sm-6 col-lg-4 mx-0 px-2" onclick="window.location='view'">
+            <div class="car card rounded-4 p-0 overflow-hidden mx-0">
+              <div class="card-body px-4">
+                <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
+                  <div class="col-12 m-0 p-0 d-flex align-items-center">
 
-                        <p class="my-0">
-                        <span class="badge text-bg-light fw-normal mx-1">400hp</span>
-                        <span class="badge text-bg-light fw-normal">300km/h</span>
-                        <span class="badge text-bg-light fw-normal">Manual</span>
-                        </p>
+                    <p class="my-0">
+                      <span class="badge text-bg-light fw-normal mx-1"><?php echo $car['power'];?>hp</span>
+                      <span class="badge text-bg-light fw-normal"><?php echo $car['speed'];?>km/h</span>
+                      <span class="badge text-bg-light fw-normal"><?php echo $car['transmission'];?></span>
+                    </p>
 
-                        <p class="my-0 ml-auto d-flex align-items-center gap-1"> 
-                        <?php $this->load->view('templates/card-star'); ?>
-                        <span class="text-muted card-text">4.8</span>
-                        </p>
-                    </div>
-                    </div>          
+                    <p class="my-0 ml-auto d-flex align-items-center gap-1"> 
+                      <?php $this->load->view('templates/card-star'); ?>
+                      <span class="text-muted card-text"><?php echo $car['rating'];?></span>
+                    </p>
+                  </div>
+                </div>          
+              </div>
+              <img src="<?= base_url('assets/images/cars/' . $car['thumbnail']) ?>" class="card-img-top m-0 p-0" alt="Card image">
+              <div class="card-body">
+                <div class="row m-0 p-0 mt-1">
+                  
+                  <h6 class="col-8 m-0 p-0 text-align-left fw-bold"><?php $this->load->view('components/'.$car['brand']);?><?php echo $car['model'];?></h6>
+                  <p class="col-4 m-0 p-0 text-end fw-semibold txt-pri">₱<?php echo $car['rate'];?><span class="fw-normal text-muted">/day</span></p>
                 </div>
-                <img src="<?= base_url('assets/images/cars/SKyline_GT-R_BNR32.png') ?>" class="card-img-top m-0 p-0" alt="Card image">
-                <div class="card-body">
-                    <div class="row m-0 p-0 mt-1">
-                    <h6 class="col-8 m-0 p-0 text-align-left fw-bold">Skyline GT-R BNR32</h6>
-                    <p class="col-4 m-0 p-0 text-end fw-semibold txt-pri">₱2499<span class="fw-normal text-muted">/day</span></p>
-                    </div>
-                </div>
-                </div>
+              </div>
             </div>
-            
+          </div> 
+
+          <?php
+            }
+          } else {
+          ?>
+
+          <div class="col12 col-sm-6 col-lg-4 mt-3" style="height: 260px;">
+
+          </div>
+          <?php
+          }
+          ?>
 
             
 

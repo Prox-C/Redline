@@ -11,6 +11,10 @@ class CarModel extends CI_Model {
         return $query->result_array();
     }
 
+    public function getAllCars() {
+        $query = $this->db->get('cars');
+        return $query->result_array();
+    }
     // public function registerClient() {
     //     $email = $this->input->post('email');
     

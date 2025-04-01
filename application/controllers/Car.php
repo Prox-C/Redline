@@ -10,18 +10,15 @@ class Car extends CI_Controller {
 
     public function getCars() {
         $data['cars'] = $this->CarModel->getAvailableCars();
-        // echo "<pre>";
-        // print_r($data);
-        // echo "</pre>";
         $this->load->view('pages/browse', $data);
     }
 
     public function getAllCars() {
-        $data['cars'] = $this->UserModel->fetchCars();
-        echo "<pre>";
-        print_r($data);
-        echo "</pre>";
-        $this->load->view('admin/cars');
+        $data['cars'] = $this->CarModel->getAllCars();
+        // echo "<pre>";
+        // print_r($data);
+        // echo "</pre>";
+        $this->load->view('admin/cars', $data);
     }
 
     public function newCar() {
