@@ -315,7 +315,7 @@
                                   <div class="modal-body p-4 text-center">
                                     <h5 class="mb-0">Account Deletion</h5>
                                       <input type="hidden" name="update_user" value="<?php echo $c['user_id']; ?>">
-                                    <p class="mb-0">Are you sure you want to unregister <em><?php echo $c['fname'].' '.$c['lname'];?></em>? This action cannot be undone.</p>
+                                    <p class="mb-0">Are you sure you want to unregister <b><?php echo $c['fname'].' '.$c['lname'];?></b>? This action cannot be undone.</p>
                                   </div>
                                   <div class="modal-footer flex-nowrap p-0">
                                     <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 text-muted border-end" data-bs-dismiss="modal">Cancel</button>
