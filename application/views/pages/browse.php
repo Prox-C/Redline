@@ -8,10 +8,14 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
     <title>Redline</title>
-
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/dist/css/adminlte.min.css?v=3.2.0') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/dist/css/bootstrap.min.css?v=3.2.0') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/plugins/fontawesome-free/css/all.min.css') ?>"> 
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -234,7 +238,11 @@
         bottom: 1px;
         right: 6px;
       }
-      
+
+    .form-floating .form-control {
+      background-color: white !important;
+    }
+
     </style>
 
   </head>
@@ -246,32 +254,43 @@
 
     <!-- Search -->
     <div class="card p-3 rounded-3 m-2">
+    <form>
         <div class="row g-lg-3">
             <div class="col-lg-3 col-12 mb-3 mb-lg-0">
                 <div class="form-floating">
-                  <input name="email" type="text" class="form-control rounded-3" placeholder="Email" required>
-                  <label class="text-muted-subtle fw-normal">Search Car</label>
+                    <input name="email" type="text" class="form-control rounded-3" placeholder="Email" required>
+                    <label class="text-muted-subtle fw-normal">Search Car</label>
                 </div>
             </div>
             <div class="col-lg-3 col-12 mb-3 mb-lg-0">
-                <div class="form-floating">
-                    <input type="date" class="form-control rounded-3" id="pickupDate" name="rentEnd" required>
-                    <label for="returnDate" class="text-muted-subtle fw-normal">Pickup</label>
+                <div class="form-floating position-relative">
+                    <input type="text" class="form-control rounded-3 pe-5" id="pickupDate" name="rentStart" placeholder="Pickup" required>
+                    <label for="pickupDate" class="text-muted-subtle fw-normal">Pickup</label>
+                    <span class="position-absolute end-0 top-50 translate-middle-y me-3">
+                        <i class="bi bi-calendar"></i>
+                    </span>
                 </div>
             </div>
             <div class="col-lg-3 col-12 mb-3 mb-lg-0">
-                <div class="form-floating">
-                    <input type="date" class="form-control rounded-3" id="dropoffDate" name="rentEnd" required>
-                    <label for="returnDate" class="text-muted-subtle fw-normal">Dropoff</label>
+                <div class="form-floating position-relative">
+                    <input type="text" class="form-control rounded-3 pe-5" id="dropoffDate" name="rentEnd" placeholder="Dropoff" required>
+                    <label for="dropoffDate" class="text-muted-subtle fw-normal">Dropoff</label>
+                    <span class="position-absolute end-0 top-50 translate-middle-y me-3">
+                        <i class="bi bi-calendar"></i>
+                    </span>
                 </div>
             </div>
             <div class="col-lg-3 col-12 mb-3 mb-lg-0">
                 <button class="btn btn-primary btn-block rounded-4 btn-bd-primary h-100">
                     Search
-                    <svg style="position: relative; bottom: 1px" xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M232.49,215.51,185,168a92.12,92.12,0,1,0-17,17l47.53,47.54a12,12,0,0,0,17-17ZM44,112a68,68,0,1,1,68,68A68.07,68.07,0,0,1,44,112Z"></path></svg>
+                    <svg style="position: relative; bottom: 1px" xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M232.49,215.51,185,168a92.12,92.12,0,1,0-17,17l47.53,47.54a12,12,0,0,0,17-17ZM44,112a68,68,0,1,1,68,68A68.07,68.07,0,0,1,44,112Z"></path>
+                    </svg>
                 </button>
             </div>
         </div>
+    </form>
+
     </div>
       
     <!-- Brand Filters
@@ -353,6 +372,47 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <!-- Popper JS -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<!-- Flatpickr -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Initialize the pickup date picker
+        const pickupDatePicker = flatpickr("#pickupDate", {
+            dateFormat: "Y-m-d",
+            disable: ["2025-04-01", "2025-04-15"], // Disable specific dates
+            onChange: function (selectedDates) {
+                if (selectedDates.length > 0) {
+                    const minDropoffDate = new Date(selectedDates[0]);
+                    minDropoffDate.setDate(minDropoffDate.getDate() + 1); // Ensure dropoff is at least 1 day after
+
+                    dropoffDatePicker.set("minDate", minDropoffDate);
+                }
+            }
+        });
+
+        // Initialize the dropoff date picker
+        const dropoffDatePicker = flatpickr("#dropoffDate", {
+            dateFormat: "Y-m-d",
+            disable: [
+                function(date) {
+                    return (date.getDay() === 0 || date.getDay() === 6); // Disable weekends
+                }
+            ],
+            onChange: function (selectedDates) {
+                const pickupDate = pickupDatePicker.selectedDates[0];
+                if (pickupDate && selectedDates.length > 0) {
+                    if (selectedDates[0] <= pickupDate) {
+                        alert("Drop-off date must be later than the pickup date.");
+                        dropoffDatePicker.clear();
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+
 
 
 <!-- FAB -->
