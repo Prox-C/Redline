@@ -73,5 +73,5 @@ $route['admin/new-car'] = 'Car/newCar';
 $route['addCar'] = 'Car/addCar';
 
 /* Client-side */
-$route['view'] = 'Car/viewCar';
+$route['view-car/(:num)'] = 'Car/viewCar/$1';
 $route['checkout'] = 'Book/checkout';

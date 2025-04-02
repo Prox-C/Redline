@@ -15,10 +15,15 @@ class Car extends CI_Controller {
 
     public function getAllCars() {
         $data['cars'] = $this->CarModel->getAllCars();
+        $this->load->view('admin/cars', $data);
+    }
+
+    public function viewCar($id) {
+        $data['cars'] = $this->CarModel->getCarByID($id);
         // echo "<pre>";
         // print_r($data);
         // echo "</pre>";
-        $this->load->view('admin/cars', $data);
+        $this->load->view('pages/view', $data);
     }
 
     public function addCar() {
@@ -46,9 +51,5 @@ class Car extends CI_Controller {
 
     public function newCar() {
         $this->load->view('admin/new-car');
-    }
-
-    public function viewCar() {
-        $this->load->view('pages/view');
     }
 }

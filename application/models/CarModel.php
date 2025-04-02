@@ -16,6 +16,12 @@ class CarModel extends CI_Model {
         return $query->result_array();
     }
 
+    public function getCarByID($id) {
+        $this->db->where('id', $id);
+        $query = $this->db->get('cars');
+        return $query->row_array();
+    }
+
     function addCar($imageFileName) {
         $data = array(
             'thumbnail' => $imageFileName,
