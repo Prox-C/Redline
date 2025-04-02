@@ -124,11 +124,19 @@
         display: block !important;
       }
 
+      .car-bg {
+        background-image: url("<?= base_url('assets/images/bg2.jpg') ?>"); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
 
-      .car-img {
-        width: 100%; /* Adjust based on container */
-        height: 400px; /* Set a square dimension */
-        object-fit: contain; /* Ensures the image fills the square without stretching */
+
+
+    .car-img {
+      width: 100%;
+      height: 500px;
+      object-fit: contain; /* Ensures the image fills the square without stretching */
     }
 
     .fab-icon {
@@ -148,7 +156,7 @@
 
     <!-- Header -->
     <nav class="container-fluid sticky-top bg-white p-0">
-      <header class="d-flex flex-wrap align-items-center justify-content-between px-4 py-4   m-0 border-bottom">
+      <header class="d-flex flex-wrap align-items-center justify-content-between px-4 py-4 m-0 border-bottom">
         <div class="col-1 d-flex align-items-center justify-content-start"> 
             <button onclick="history.back()" class="btn btn-sm border-secondary rounded-circle text-align-center"><svg class="fab-icon" xmlns="http://www.w3.org/2000/svg" height="18px" fill="currentColor" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H69l51.52,51.51a12,12,0,0,1-17,17l-72-72a12,12,0,0,1,0-17l72-72a12,12,0,0,1,17,17L69,116H216A12,12,0,0,1,228,128Z"></path></svg></button>
         </div>
@@ -164,23 +172,23 @@
     <!-- Main -->
      <div class="container-fluid"> 
         <div class="row gap-0 p-0 border-bottom">
-            <div class="col-lg-5 bg-secondary-subtle p-5"> 
-                <img class="img-fluid car-img" src="<?= base_url('assets/images/cars/Skyline_GT-R_BNR32.png') ?>" alt="">
+            <div class="col-lg-6 bg-secondary-subtle p-lg-5 py-0 car-bg"> 
+                <img class="img-fluid car-img px-3" src="<?= base_url('assets/images/cars/'.$cars['thumbnail']) ?>" alt="">
             </div>
-            <div class="col-lg-7 bg-white p-5 d-flex flex-column">
+            <div class="col-lg-6 bg-white p-5 d-flex flex-column">
                 <div class="row mb-3">
                     <div class="col-9 d-flex align-items-center justify-content-start">
-                        <h2 class="m-0 p-0 fw-bold">Nissan Skyline GT-R</h2>
+                        <h2 class="m-0 p-0 fw-bold"><?php echo $cars['brand'].' '.$cars['model'];?></h2>
                     </div>
                     <div class="col-3 d-flex align-items-center justify-content-end">
-                        <?php $this->load->view('templates/details-star');?><h4 style="font-family: 'Space Grotesk'" class="align-middle p-0 m-0 ms-1 fw-normal text-muted">4.8</h4>
+                        <?php $this->load->view('templates/details-star');?><h4 style="font-family: 'Space Grotesk'" class="align-middle p-0 m-0 ms-1 fw-normal text-muted"><?php echo $cars['rating'];?></h4>
                     </div>
                 </div>
                 <hr>
                 <div class="row">
                   <div class="col-12">
                     <h5>Description</h5>
-                    <p>The Nissan Skyline GT-R BNR32, also known as the "Godzilla," is a legendary Japanese sports car that revolutionized performance with its RB26DETT twin-turbo inline-six engine and ATTESA E-TS all-wheel-drive system.</p>                  
+                    <p><?php echo $cars['description'];?></p>                  
                   </div>
                   <div class="col-12">
                     <h5>Technical Specifications</h5>
@@ -195,7 +203,7 @@
                 </div>
                 <div class="row px-0 d-flex h-100 align-items-end mt-5">
                   <div class="col-md-4">
-                    <h5 style="font-family: 'Space Grotesk';" class="fw-semibold">₱2499<span class="fw-normal text-muted">/day</span></5>
+                    <h5 style="font-family: 'Space Grotesk';" class="fw-semibold">₱<?php echo $cars['rate']?><span class="fw-normal text-muted">/day</span></5>
                   </div>
                   <div class="col-md-8 mt-2">
                     <button class="px-4 btn btn-lg btn-bd-primary btn-block rounded-4 m-0 d-flex justify-content-between align-items-center w-100" data-bs-toggle="modal" data-bs-target="#bookModal">
@@ -208,7 +216,7 @@
         </div>
 
         <div class="row d-flex align-items-start px-5 pb-5 bg-white">
-          <div class="col-lg-5 mt-5 p-3">
+          <div class="col-lg-6 mt-5 py-3 ps-0 pe-lg-4 px-0">
             <h2 class="mb-4">Ratings</h2>
             <?php $this->load->view('templates/ratings');?>
           </div>
