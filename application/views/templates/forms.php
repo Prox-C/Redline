@@ -101,18 +101,18 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body p-5 pt-0">
-      <?= form_open('registerClient');?>
+        <?= form_open('registerClient');?>
           <label class="form-label">Personal Information</label>
           <div class="row">
             <div class="col-md-6">
               <div class="form-floating mb-3">
-                <input name="fname" type="text" class="form-control rounded-3" placeholder="First name" required>
+                <input name="fname" type="text" class="form-control rounded-3" placeholder="First name" autocomplete="off">
                 <label>First name</label>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-floating mb-3">
-                <input name="lname" type="text" class="form-control rounded-3" placeholder="name@example.com" required>
+                <input name="lname" type="text" class="form-control rounded-3" placeholder="name@example.com" autocomplete="off">
                 <label>Last name</label>
               </div>
             </div>
@@ -120,12 +120,12 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-floating mb-3">
-                <input name="bday" type="date" class="form-control rounded-3" id="pickupDate" required>
+                <input name="bday" type="date" class="form-control rounded-3" id="pickupDate">
                 <label for="pickupDate" class="text-muted-subtle">Date of Birth</label>
               </div>
             </div>
             <div class="col-md-6 pb-3">
-              <select name="sex" class="form-select form-select-md mb-3 rounded-3 h-100 m-0" aria-label=".form-select-lg example" required>
+              <select name="sex" class="form-select form-select-md mb-3 rounded-3 h-100 m-0" aria-label=".form-select-lg example">
                 <option value="" class="d-none" disabled selected>Sex<span class="text-muted-subtle"></span></option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
@@ -135,11 +135,11 @@
           </div>
           <label for="" class="form-label">Contact Details</label>
           <div class="form-floating mb-3">
-            <input name="email" type="email" class="form-control rounded-3" placeholder="Email" required>
+            <input name="email" type="email" class="form-control rounded-3" placeholder="Email" autocomplete="off">
             <label for="floatingPassword">Email</label>
           </div>
           <div class="form-floating mb-3">
-            <input name="password" type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password" minlength="8" required>
+            <input name="password" type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password" minlength="8">
             <label for="floatingPassword">Password</label>
           </div>
           <!-- <div class="form-floating mb-3">
@@ -147,7 +147,7 @@
             <label for="floatingPassword">Confirm Password</label>
           </div> -->
           <input name="register" role="button" href="clients" class="w-100 mb-2 btn btn-lg rounded-4 btn-danger" type="submit" value="Create account">
-        </form> 
+        <?= form_close(); ?> 
       </div>
     </div>
   </div>
