@@ -210,7 +210,7 @@
       }
 
       .card-img-top {
-        height: 175px !important;
+        height: 175px !important; object-fit: contain;
       }
 
       .car {
@@ -223,7 +223,7 @@
       }
 
       .card-star {height: 16px;}
-      .make-logo {height: 26px; width: auto;}
+      .make-logo {height: 26px; width: auto; position: relative; bottom: 2px;}
 
       @font-face {
         font-family: 'NikkyouSans';
