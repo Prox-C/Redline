@@ -255,7 +255,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                   </div>
                                   <div class="modal-body p-5 pt-0">
-                                    <form method="POST" action="<?=base_url('/updateClient/'.$c['user_id'])?>">
+                                    <?= form_open('updateClient/'.$c['user_id']);?>
                                       <label class="form-label">Personal Information</label>
                                       <div class="row">
                                         <div class="col-md-6">
@@ -303,7 +303,7 @@
                                       </div> -->
                                       <input type="hidden" name="update_user_id" value="<?php echo $c['user_id']; ?>">
                                       <input name="update" role="button" href="admin-panel/dashboard.php" class="w-100 mb-2 btn btn-lg rounded-4 btn-outline-danger" type="submit" value="Save changes">
-                                    </form> 
+                                      <?= form_close(); ?>
                                   </div>
                                 </div>
                               </div>
@@ -319,10 +319,10 @@
                                   </div>
                                   <div class="modal-footer flex-nowrap p-0">
                                     <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 text-muted border-end" data-bs-dismiss="modal">Cancel</button>
-                                    <form method="POST" action="<?=base_url('/deleteClient/'.$c['user_id'])?>">
+                                    <?= form_open('deleteClient/'.$c['user_id']);?>
                                       <input type="hidden" name="delete_user_id" value="<?php echo $c['user_id']; ?>">
                                       <input name="delete" type="submit" role="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 txt-pri" value="Unregister">
-                                    </form>
+                                    <?= form_close(); ?>
                                   </div>
                                 </div>
                               </div>

@@ -101,7 +101,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body p-5 pt-0">
-        <form method="POST" action="<?php echo base_url('registerClient'); ?>">
+      <?= form_open('registerClient');?>
           <label class="form-label">Personal Information</label>
           <div class="row">
             <div class="col-md-6">

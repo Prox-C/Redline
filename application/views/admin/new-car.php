@@ -169,7 +169,7 @@
     <!-- Main -->
     <div class="container-fluid p-5">
         <div class="row"><div class="col-12"><h2>Car Information</h2></div></div>
-        <form action="<?= base_url('addCar') ?>" method="POST" enctype="multipart/form-data">
+        <?= form_open_multipart('addCar'); ?>
           <div class="row">
               <div class="col-lg-4 h-100 pb-4">
                   <label for="" class="form-label">Thumbnail</label>                             
@@ -237,7 +237,7 @@
                   </div>
               </div>
           </div>
-        </form>
+        <?= form_close(); ?>
     </div>
 
 
