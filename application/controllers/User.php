@@ -8,7 +8,7 @@ class User extends CI_Controller {
         $this->load->model('UserModel'); 
     }
 
-    public function getClients() {
+    public function getClients() { //this function returns client management pafe along with the addinf fom
         $data['cl'] = $this->UserModel->getClients();
         $this->load->view('admin/clients', $data); 
     } 
