@@ -6,7 +6,7 @@
             <span class="me-3 ms-1">5</span> 
             <div class="card-body">
                 <div class="progress">
-                <div class="progress-bar bg-orange" style="width: 80%;" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-orange rounded-pill" style="width: 80%;" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>  
             </div>  
@@ -18,7 +18,7 @@
             <span class="me-3 ms-1">4</span> 
             <div class="card-body">
                 <div class="progress">
-                <div class="progress-bar bg-orange" style="width: 70%;" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-orange rounded-pill" style="width: 70%;" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>  
             </div>  
@@ -30,7 +30,7 @@
             <span class="me-3 ms-1">3</span> 
             <div class="card-body">
                 <div class="progress">
-                <div class="progress-bar bg-orange" style="width: 25%;" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-orange rounded-pill" style="width: 25%;" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>  
             </div>  
@@ -42,7 +42,7 @@
             <span class="me-3 ms-1">2</span> 
             <div class="card-body">
                 <div class="progress">
-                <div class="progress-bar bg-orange" style="width: 10%;"role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-orange rounded-pill" style="width: 10%;"role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>  
             </div>  
@@ -54,7 +54,7 @@
             <span class="me-3 ms-1">1</span> 
             <div class="card-body">
                 <div class="progress">
-                <div class="progress-bar bg-orange" style="width: 0%;" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-orange rounded-pill" style="width: 0%;" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>  
             </div>  
