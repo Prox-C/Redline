@@ -107,13 +107,13 @@
             <div class="col-md-6">
               <div class="form-floating mb-3">
                 <input name="fname" type="text" class="form-control rounded-3" placeholder="First name" autocomplete="off">
-                <label>First name</label>
+                <label for="firstname">First name</label>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-floating mb-3">
                 <input name="lname" type="text" class="form-control rounded-3" placeholder="name@example.com" autocomplete="off">
-                <label>Last name</label>
+                <label for="lastname">Last name</label>
               </div>
             </div>
           </div>
@@ -121,7 +121,7 @@
             <div class="col-md-6">
               <div class="form-floating mb-3">
                 <input name="bday" type="date" class="form-control rounded-3" id="pickupDate">
-                <label for="pickupDate" class="text-muted-subtle">Date of Birth</label>
+                <label for="birthday" class="text-muted-subtle">Date of Birth</label>
               </div>
             </div>
             <div class="col-md-6 pb-3">

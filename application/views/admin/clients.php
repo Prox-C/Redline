@@ -303,7 +303,7 @@
                                       </div> -->
                                       <input type="hidden" name="update_user_id" value="<?php echo $c['user_id']; ?>">
                                       <input name="update" role="button" href="admin-panel/dashboard.php" class="w-100 mb-2 btn btn-lg rounded-4 btn-outline-danger" type="submit" value="Save changes">
-                                      <?= form_close(); ?>
+                                    <?= form_close(); ?>
                                   </div>
                                 </div>
                               </div>
