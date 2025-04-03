@@ -140,8 +140,14 @@
     }
 
     .fab-icon {
-        position: relative;
-        bottom: 1px;
+      position: relative;
+      bottom: 1px;
+    }
+
+    .spec-logo {
+      height: 16px;
+      position: relative;
+      bottom: 2px;
     }
 
     .details-star {height: 28px;}
@@ -193,23 +199,53 @@
                   <div class="col-12">
                     <h5>Technical Specifications</h5>
                     <div class="col-12 gap-1 align-items-center p-0">
-                      <span class="badge bg-secondary px-3 rounded-pill" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Power">400hp</span>
-                      <span class="badge bg-secondary px-3 rounded-pill" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Top Speed">300km/h</span>
-                      <span class="badge bg-secondary px-3 rounded-pill" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Transmission">Manual</span>
-                      <span class="badge bg-secondary px-3 rounded-pill" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Fuel Type">Gasoline</span>
-                      <span class="badge bg-secondary px-3 rounded-pill" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Seating Capacity">2</span>
+                      <div class="row">
+                        <div class="col-lg-4 col-12 d-flex flex-row align-items-center justify-content-between w-100 border-bottom py-2">
+                          <h6 class="p-0 m-0 text-muted">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="spec-logo" fill="currentColor" viewBox="0 0 256 256"><path d="M213.85,125.46l-112,120a8,8,0,0,1-13.69-7l14.66-73.33L45.19,143.49a8,8,0,0,1-3-13l112-120a8,8,0,0,1,13.69,7L153.18,90.9l57.63,21.61a8,8,0,0,1,3,12.95Z"></path></svg>
+                            Power
+                          </h6>
+                          <span class="fw-bold my-0 me-0 ms-2 p-0" style="font-size: 16px">300hp</span>           
+                        </div>
+                        <div class="col-lg-4 col-12 d-flex flex-row align-items-center justify-content-between w-100 border-bottom py-2">
+                          <h6 class="p-0 m-0 text-muted">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="spec-logo" fill="currentColor" viewBox="0 0 256 256"><path d="M213.85,125.46l-112,120a8,8,0,0,1-13.69-7l14.66-73.33L45.19,143.49a8,8,0,0,1-3-13l112-120a8,8,0,0,1,13.69,7L153.18,90.9l57.63,21.61a8,8,0,0,1,3,12.95Z"></path></svg>
+                            Power
+                          </h6>
+                          <span class="fw-bold my-0 me-0 ms-2 p-0" style="font-size: 16px">300hp</span>           
+                        </div>
+                        <div class="col-lg-4 col-12 d-flex flex-row align-items-center justify-content-between w-100 border-bottom py-2">
+                          <h6 class="p-0 m-0 text-muted">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="spec-logo" fill="currentColor" viewBox="0 0 256 256"><path d="M213.85,125.46l-112,120a8,8,0,0,1-13.69-7l14.66-73.33L45.19,143.49a8,8,0,0,1-3-13l112-120a8,8,0,0,1,13.69,7L153.18,90.9l57.63,21.61a8,8,0,0,1,3,12.95Z"></path></svg>
+                            Power
+                          </h6>
+                          <span class="fw-bold my-0 me-0 ms-2 p-0" style="font-size: 16px">300hp</span>           
+                        </div>
+                        <div class="col-lg-4 col-12 d-flex flex-row align-items-center justify-content-between w-100 border-bottom py-2">
+                          <h6 class="p-0 m-0 text-muted">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="spec-logo" fill="currentColor" viewBox="0 0 256 256"><path d="M213.85,125.46l-112,120a8,8,0,0,1-13.69-7l14.66-73.33L45.19,143.49a8,8,0,0,1-3-13l112-120a8,8,0,0,1,13.69,7L153.18,90.9l57.63,21.61a8,8,0,0,1,3,12.95Z"></path></svg>
+                            Power
+                          </h6>
+                          <span class="fw-bold my-0 me-0 ms-2 p-0" style="font-size: 16px">300hp</span>           
+                        </div>
+                        <div class="col-lg-4 col-12 d-flex flex-row align-items-center justify-content-between w-100 border-bottom py-2">
+                          <h6 class="p-0 m-0 text-muted">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="spec-logo" fill="currentColor" viewBox="0 0 256 256"><path d="M213.85,125.46l-112,120a8,8,0,0,1-13.69-7l14.66-73.33L45.19,143.49a8,8,0,0,1-3-13l112-120a8,8,0,0,1,13.69,7L153.18,90.9l57.63,21.61a8,8,0,0,1,3,12.95Z"></path></svg>
+                            Power
+                          </h6>
+                          <span class="fw-bold my-0 me-0 ms-2 p-0" style="font-size: 16px">300hp</span>           
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="row px-0 d-flex h-100 align-items-end mt-5">
-                  <div class="col-md-4">
-                    <h5 style="font-family: 'Space Grotesk';" class="fw-semibold">₱<?php echo $cars['rate']?><span class="fw-normal text-muted">/day</span></5>
-                  </div>
-                  <div class="col-md-8 mt-2">
-                    <button class="px-4 btn btn-lg btn-bd-primary btn-block rounded-4 m-0 d-flex justify-content-between align-items-center w-100" data-bs-toggle="modal" data-bs-target="#bookModal">
-                      <span>Book now</span> 
-                      <svg xmlns="http://www.w3.org/2000/svg" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"></path></svg>
-                    </button>
+                <div class="row px-0 mt-auto d-flex align-items-center pb-lg-0 pb-5">
+                <div class="col-lg-4 h-100 d-flex align-items-center justify-content-start">
+                    <h5 class="fw-semibold p-0 m-0" style="font-family: 'Space Grotesk';">₱<?php echo $cars['rate']?><span class="fw-normal text-muted">/day</span></h5>
+                </div>
+
+                  <div class="col-lg-8">
+                    <button class="btn btn-lg btn-bd-primary w-100 rounded-4">Book now</button>
                   </div>
                 </div>
             </div>
@@ -220,7 +256,7 @@
             <h2 class="mb-4">Ratings</h2>
             <?php $this->load->view('templates/ratings');?>
           </div>
-          <div class="col-lg-6 ml-auto pt-5 align-items-center justify-content-center">
+          <div class="col-lg-6 ml-auto py-3 mt-5 align-items-center justify-content-center">
             <h2 class="mb-4">Reviews</h2>
             <!-- <p class="text-muted fw-normal text-center p-5">
               Wow, such empty.
