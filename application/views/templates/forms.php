@@ -16,7 +16,7 @@
             <input type="password" class="form-control rounded-3" placeholder="Password" minlength="8" required>
             <label for="floatingPassword">Password</label>
           </div>
-          <a role="button" href="admin/home" class="w-100 mb-2 btn btn-lg rounded-3 btn-bd-primary" type="submit">Login</a>
+          <a role="button" href="admin/home" class="w-100 mb-2 btn btn-lg rounded-4 btn-bd-primary" type="submit">Login</a>
           <small class="text-body-secondary text-center d-block">
             Don't have an account? 
             <a class="txt-pri" data-bs-target="#registerModal" data-bs-toggle="modal" data-bs-dismiss="modal" role="button">Sign up</a>
@@ -81,7 +81,7 @@
             <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password" minlength="8" required>
             <label for="floatingPassword">Confirm Password</label>
           </div> -->
-          <a role="button" href="admin-panel/dashboard.php" class="w-100 mb-2 btn btn-lg rounded-3 btn-bd-primary" type="submit">Register</a>
+          <a role="button" href="admin-panel/dashboard.php" class="w-100 mb-2 btn btn-lg rounded-4 btn-bd-primary" type="submit">Register</a>
           <small class="text-body-secondary text-center d-block">
             Already have an account? 
             <a class="txt-pri" data-bs-target="#loginModal" data-bs-toggle="modal" data-bs-dismiss="modal" role="button">Sign in</a>
