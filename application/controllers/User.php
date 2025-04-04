@@ -48,13 +48,13 @@ class User extends CI_Controller {
             $this->form_validation->set_rules('email', 'Email', 'required');
     
             if ($this->form_validation->run() == FALSE) {
-                // Set error flag with the dynamic modal ID
                 $this->session->set_flashdata('validation-error', 'updateClientModal_' . $id);
                 $data['cl'] = $this->UserModel->getClients();
                 $this->load->view('admin/clients', $data);
             } else {
                 $this->UserModel->updateClient($id);
             }
+            // $this->UserModel->updateClient($id);
         }
     }
     
