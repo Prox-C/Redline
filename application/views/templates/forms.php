@@ -101,7 +101,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body p-5 pt-0">
-        <?= form_open('registerClient');?>
+        <?= form_open('admin/registerClient');?>
           <label class="form-label">Personal Information</label>
           <div class="row">
             <div class="col-md-6">
@@ -146,7 +146,7 @@
             <input name="password2" type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password" minlength="8" required>
             <label for="floatingPassword">Confirm Password</label>
           </div> -->
-          <input name="register" role="button" href="clients" class="w-100 mb-2 btn btn-lg rounded-4 btn-danger" type="submit" value="Create account">
+          <input name="register" role="button" class="w-100 mb-2 btn btn-lg rounded-4 btn-danger" type="submit" value="Create account">
         <?= form_close(); ?> 
       </div>
     </div>

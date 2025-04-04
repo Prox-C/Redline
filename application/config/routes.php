@@ -61,7 +61,7 @@ $route['home'] = 'Car/getCars';
 $route['admin/home'] = 'Admin/dashboard';
 
 $route['admin/clients'] = 'User/getClients';
-$route['registerClient'] = 'User/registerClient';
+$route['admin/registerClient'] = 'User/registerClient';
 $route['updateClient/(:num)'] = 'User/updateClient/$1';
 $route['deleteClient/(:num)'] = 'User/deleteClient/$1';
 

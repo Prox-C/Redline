@@ -15,7 +15,23 @@ class User extends CI_Controller {
 
     public function registerClient() {
         if ($this->input->server('REQUEST_METHOD') === 'POST') {
-            $this->UserModel->registerClient();
+            $this->load->library('form_validation');
+
+            $this->form_validation->set_rules('fname', 'First Name', 'required');
+            $this->form_validation->set_rules('lname', 'Last Name', 'required');
+            $this->form_validation->set_rules('bday', 'Birthday', 'required');
+            $this->form_validation->set_rules('sex', 'Sex', 'required');
+            $this->form_validation->set_rules('email', 'Email', 'required');
+            $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
+            
+            if ($this->form_validation->run() == FALSE) {
+                $data['cl'] = $this->UserModel->getClients();
+                $this->load->view('admin/clients', $data);
+            } else {
+                $this->UserModel->registerClient();
+            }
+
+            // $this->UserModel->registerClient();
         }
     }
 

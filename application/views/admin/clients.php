@@ -416,6 +416,17 @@
       title: '<?= $this->session->flashdata('error'); ?>'
     });
   <?php endif; ?>
+
+  <?php if (validation_errors()): ?>
+    Toast.fire({
+      icon: 'warning',
+      title: 'Please fill up all the fields.'
+    });
+
+    var register_modal = new bootstrap.Modal(document.getElementById('addClientModal'));
+    register_modal.show();
+  <?php endif; ?>
+
 </script>
 </html>
 
