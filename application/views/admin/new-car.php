@@ -175,7 +175,7 @@
     <!-- Main -->
     <div class="container-fluid p-5">
         <div class="row"><div class="col-12"><h2>Car Information</h2></div></div>
-        <?= form_open_multipart('addCar'); ?>
+        <?= form_open_multipart('admin/addCar'); ?>
           <div class="row">
               <div class="col-lg-4 h-100 pb-4">
                   <label for="" class="form-label">Thumbnail</label>                             
