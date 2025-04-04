@@ -240,14 +240,14 @@
                               ?>
                             </td>
                             <td class="align-middle"><?php echo $c['sex'];?></td>
-                            <td class="align-middle"><a href="#" class="link-icon text-warning" data-bs-toggle="modal" data-bs-target="#updateUserModal_<?php echo $c['user_id'];?>"><i class="fas fa-edit"></i></a></td>
+                            <td class="align-middle"><a href="#" class="link-icon text-warning" data-bs-toggle="modal" data-bs-target="#updateClientModal_<?php echo $c['user_id'];?>"><i class="fas fa-edit"></i></a></td>
                             <td class="align-middle">
                               <a href="#" class="link-icon text-danger">
                                 <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#deleteUserModal_<?php echo $c['user_id'];?>"></i>
                               </a>
                             </td>
                             <!-- Update User Modal -->
-                            <div class="modal fade" tabindex="-1" id="updateUserModal_<?php echo $c['user_id'];?>" aria-hidden="true">
+                            <div class="modal fade" tabindex="-1" id="updateClientModal_<?php echo $c['user_id'];?>" aria-hidden="true">
                               <div class="modal-dialog modal-dialog-centered modal-lg">
                                 <div class="modal-content rounded-4 shadow">
                                   <div class="modal-header px-5 pt-5 pb-0 border-bottom-0">
@@ -255,18 +255,18 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                   </div>
                                   <div class="modal-body p-5 pt-0">
-                                    <?= form_open('updateClient/'.$c['user_id']);?>
+                                    <?= form_open('admin/updateClient/'.$c['user_id']);?>
                                       <label class="form-label">Personal Information</label>
                                       <div class="row">
                                         <div class="col-md-6">
                                           <div class="form-floating mb-3">
-                                            <input value="<?php echo $c['fname'];?>" name="fname" type="text" class="form-control rounded-3" id="floatingInput"placeholder="First name" required>
+                                            <input value="<?php echo $c['fname'];?>" name="fname" type="text" class="form-control rounded-3" id="floatingInput"placeholder="First name">
                                             <label for="floatingInput">First name</label>
                                           </div>
                                         </div>
                                         <div class="col-md-6">
                                           <div class="form-floating mb-3">
-                                            <input value="<?php echo $c['lname'];?>" name="lname" type="text" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com" required>
+                                            <input value="<?php echo $c['lname'];?>" name="lname" type="text" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
                                             <label for="floatingInput">Last name</label>
                                           </div>
                                         </div>
@@ -274,12 +274,12 @@
                                       <div class="row">
                                         <div class="col-md-6">
                                           <div class="form-floating mb-3">
-                                            <input value="<?php echo $c['birthdate'];?>" name="bday" type="date" class="form-control rounded-3" id="pickupDate" required>
+                                            <input value="<?php echo $c['birthdate'];?>" name="bday" type="date" class="form-control rounded-3" id="pickupDate">
                                             <label for="pickupDate" class="text-muted-subtle">Date of Birth</label>
                                           </div>
                                         </div>
                                         <div class="col-md-6 pb-3">
-                                        <select name="sex" class="form-select form-select-md mb-3 rounded-3 h-100 m-0" aria-label=".form-select-lg example" required>
+                                        <select name="sex" class="form-select form-select-md mb-3 rounded-3 h-100 m-0" aria-label=".form-select-lg example">
                                             <option value="" class="d-none" disabled <?php echo empty($c['sex']) ? 'selected' : ''; ?>>Sex</option>
                                             <option value="Male" <?php echo ($c['sex'] == 'Male') ? 'selected' : ''; ?>>Male</option>
                                             <option value="Female" <?php echo ($c['sex'] == 'Female') ? 'selected' : ''; ?>>Female</option>
@@ -290,7 +290,7 @@
                                       </div>
                                       <label for="" class="form-label">Contact Details</label>
                                       <div class="form-floating mb-3">
-                                        <input value="<?php echo $c['email'];?>" name="email" type="email" class="form-control rounded-3" id="floatingInput" placeholder="Email" required>
+                                        <input value="<?php echo $c['email'];?>" name="email" type="email" class="form-control rounded-3" id="floatingInput" placeholder="Email">
                                         <label for="floatingPassword">Email</label>
                                       </div>
                                       <div class="form-floating mb-3">
@@ -393,7 +393,6 @@
 <script src="<?= base_url('assets/dist/js/adminlte.min.js?v=3.2.0') ?>"></script>
 
 <script>
-  // Create a reusable Toast instance
   var Toast = Swal.mixin({
     toast: true,
     position: 'top-end', // Top-right corner
@@ -401,8 +400,21 @@
     timer: 4000
   });
 
-  // Check for flash data success
-  <?php if ($this->session->flashdata('success')): ?>
+  <?php if ($this->session->flashdata('validation-error')): ?>
+    Toast.fire({
+      icon: 'warning',
+      title: 'Please fill up all the fields.'
+    });
+
+    var modalID = '<?= $this->session->flashdata('validation-error'); ?>';
+    var modal = new bootstrap.Modal(document.getElementById(modalID));
+    modal.show();
+  <?php endif; ?>
+  
+
+
+    // Check for flash data success
+    <?php if ($this->session->flashdata('success')): ?>
     Toast.fire({
       icon: 'success',
       title: '<?= $this->session->flashdata('success'); ?>'
@@ -417,17 +429,9 @@
     });
   <?php endif; ?>
 
-  <?php if (validation_errors()): ?>
-    Toast.fire({
-      icon: 'warning',
-      title: 'Please fill up all the fields.'
-    });
-
-    var register_modal = new bootstrap.Modal(document.getElementById('addClientModal'));
-    register_modal.show();
-  <?php endif; ?>
-
 </script>
+
+
 </html>
 
 

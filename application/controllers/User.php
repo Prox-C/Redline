@@ -16,30 +16,48 @@ class User extends CI_Controller {
     public function registerClient() {
         if ($this->input->server('REQUEST_METHOD') === 'POST') {
             $this->load->library('form_validation');
-
+    
+            // Form validation rules
             $this->form_validation->set_rules('fname', 'First Name', 'required');
             $this->form_validation->set_rules('lname', 'Last Name', 'required');
             $this->form_validation->set_rules('bday', 'Birthday', 'required');
             $this->form_validation->set_rules('sex', 'Sex', 'required');
             $this->form_validation->set_rules('email', 'Email', 'required');
             $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
-            
+    
             if ($this->form_validation->run() == FALSE) {
+                // Set error flag for the registration form
+                $this->session->set_flashdata('validation-error', 'addClientModal');
                 $data['cl'] = $this->UserModel->getClients();
                 $this->load->view('admin/clients', $data);
             } else {
                 $this->UserModel->registerClient();
             }
-
-            // $this->UserModel->registerClient();
         }
     }
-
+    
     public function updateClient($id) {
         if ($this->input->server('REQUEST_METHOD') === 'POST') {
-            $this->UserModel->updateClient($id);
+            $this->load->library('form_validation');
+    
+            // Form validation rules
+            $this->form_validation->set_rules('fname', 'First Name', 'required');
+            $this->form_validation->set_rules('lname', 'Last Name', 'required');
+            $this->form_validation->set_rules('bday', 'Birthday', 'required');
+            $this->form_validation->set_rules('sex', 'Sex', 'required');
+            $this->form_validation->set_rules('email', 'Email', 'required');
+    
+            if ($this->form_validation->run() == FALSE) {
+                // Set error flag with the dynamic modal ID
+                $this->session->set_flashdata('validation-error', 'updateClientModal_' . $id);
+                $data['cl'] = $this->UserModel->getClients();
+                $this->load->view('admin/clients', $data);
+            } else {
+                $this->UserModel->updateClient($id);
+            }
         }
     }
+    
 
     public function deleteClient($id) {
         if ($this->input->server('REQUEST_METHOD') === 'POST') {
