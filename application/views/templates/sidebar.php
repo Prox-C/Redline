@@ -55,28 +55,28 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Menu1 -->
             <li class="nav-item">
-                <a href="home" class="nav-link">
+                <a href="<?= base_url('admin/home')?>" class="nav-link">
                 <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" fill="currentColor" viewBox="0 0 256 256"><path d="M120,56v48a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V56A16,16,0,0,1,56,40h48A16,16,0,0,1,120,56Zm80-16H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm-96,96H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm96,0H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Z"></path></svg> 
                 <p style="position: relative; top: 2px">Dashboard</p>
                 </a>
             </li>
             <!-- Menu2 -->
             <li class="nav-item">
-                <a href="cars" class="nav-link">
+                <a href="<?= base_url('admin/cars')?>" class="nav-link">
                 <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" fill="currentColor" viewBox="0 0 256 256"><path d="M240,104H229.2L201.42,41.5A16,16,0,0,0,186.8,32H69.2a16,16,0,0,0-14.62,9.5L26.8,104H16a8,8,0,0,0,0,16h8v80a16,16,0,0,0,16,16H64a16,16,0,0,0,16-16v-8h96v8a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16V120h8a8,8,0,0,0,0-16ZM80,152H56a8,8,0,0,1,0-16H80a8,8,0,0,1,0,16Zm120,0H176a8,8,0,0,1,0-16h24a8,8,0,0,1,0,16ZM44.31,104,69.2,48H186.8l24.89,56Z"></path></svg>
                 <p style="position: relative; top: 2px">Cars</p>
                 </a>
             </li>
             <!-- Menu3 -->
             <li class="nav-item">
-                <a href="bookings" class="nav-link">
+                <a href="<?= base_url('admin/bookings')?>" class="nav-link">
                 <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" fill="currentColor" viewBox="0 0 256 256"><path d="M160,56H64A16,16,0,0,0,48,72V224a8,8,0,0,0,12.65,6.51L112,193.83l51.36,36.68A8,8,0,0,0,176,224V72A16,16,0,0,0,160,56Z"></path><path d="M192,24H88a8,8,0,0,0,0,16H192V192a8,8,0,0,0,16,0V40A16,16,0,0,0,192,24Z"></path></svg>
                 <p style="position: relative; top: 2px">Bookings</p>
                 </a>
             </li>
             <!-- Menu4 -->
             <li class="nav-item">
-                <a href="clients" class="nav-link">
+                <a href="<?= base_url('admin/clients')?>" class="nav-link">
                 <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" fill="currentColor" viewBox="0 0 256 256"><path d="M230.93,220a8,8,0,0,1-6.93,4H32a8,8,0,0,1-6.92-12c15.23-26.33,38.7-45.21,66.09-54.16a72,72,0,1,1,73.66,0c27.39,8.95,50.86,27.83,66.09,54.16A8,8,0,0,1,230.93,220Z"></path></svg>
                 <p style="position: relative; top: 2px">Clients</p>
                 </a>
