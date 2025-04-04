@@ -62,15 +62,15 @@ $route['admin/home'] = 'Admin/dashboard';
 
 $route['admin/clients'] = 'User/getClients';
 $route['admin/registerClient'] = 'User/registerClient';
-$route['updateClient/(:num)'] = 'User/updateClient/$1';
-$route['deleteClient/(:num)'] = 'User/deleteClient/$1';
+$route['admin/updateClient/(:num)'] = 'User/updateClient/$1';
+$route['admin/deleteClient/(:num)'] = 'User/deleteClient/$1';
 
 $route['admin/bookings'] = 'Book/getBookings';
 
 
 $route['admin/cars'] = 'Car/getAllCars';
 $route['admin/new-car'] = 'Car/newCar';
-$route['addCar'] = 'Car/addCar';
+$route['admin/addCar'] = 'Car/addCar';
 
 /* Client-side */
 $route['view-car/(:num)'] = 'Car/viewCar/$1';
