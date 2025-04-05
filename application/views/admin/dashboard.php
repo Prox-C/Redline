@@ -286,7 +286,7 @@
                         12,500
                       </td>
                       <td>
-                      <div class="span badge bg-warning-subtle text-warning w-100">Pending</div>
+                      <div class="span badge bg-primary-subtle text-primary w-100">Completed</div>
                       </td>
                     </tr>
                     <tr>
@@ -334,7 +334,7 @@
                     <thead>
                     <tr>
                       <th>Image</th>
-                      <th>Brand</th>
+                      <th>Make</th>
                       <th>Model</th>
                       <th>Rate</th>
                     </tr>                                   
@@ -347,25 +347,25 @@
                         <td>2,499</td>
                       </tr>
                       <tr>
-                        <td><img class="car-img-table" src="<?= base_url('assets/images/cars/Skyline_GT-R_BNR32.png') ?>" alt=""></td>
+                        <td><img class="car-img-table" src="<?= base_url('assets/images/cars/NSX_NA1.png') ?>" alt=""></td>
                         <td>Honda</td>
                         <td>NSX NA1</td>
                         <td>2,999</td>
                       </tr>
                       <tr>
-                        <td><img class="car-img-table" src="<?= base_url('assets/images/cars/Skyline_GT-R_BNR32.png') ?>" alt=""></td>
+                        <td><img class="car-img-table" src="<?= base_url('assets/images/cars/supra_mk4.png') ?>" alt=""></td>
                         <td>Toyota</td>
                         <td>Supra MK4</td>
                         <td>2,799</td>
                       </tr>
                       <tr>
-                        <td><img class="car-img-table" src="<?= base_url('assets/images/cars/Skyline_GT-R_BNR32.png') ?>" alt=""></td>
+                        <td><img class="car-img-table" src="<?= base_url('assets/images/cars/RX7.png') ?>" alt=""></td>
                         <td>Honda</td>
                         <td>Civic FK8</td>
                         <td>2,499</td>
                       </tr>
                       <tr>
-                        <td><img class="car-img-table" src="<?= base_url('assets/images/cars/Skyline_GT-R_BNR32.png') ?>" alt=""></td>
+                        <td><img class="car-img-table" src="<?= base_url('assets/images/cars/impreza_wrx_type_r_sti_v6.png') ?>" alt=""></td>
                         <td>Mazda</td>
                         <td>RX7</td>
                         <td>2,499</td>
