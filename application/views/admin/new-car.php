@@ -182,68 +182,69 @@
                   <img class="w-100 preview mb-3 rounded-4 bg-secondary-subtle" id="blah" src="<?= base_url('assets/images/cars/preview2.jpg') ?>" alt="your image" />
                   <input name="image" accept="image/*" class="form-control bg-white rounded-3" type='file' onchange="readURL(this);" />
               </div>
+              
               <div class="col-lg-4 d-flex flex-column pb-4">
                   <label for="" class="form-label">Brand</label>
                   <select name="brand-select" class="form-select form-select-md mb-3 rounded-3" aria-label=".form-select-lg example">
                       <option class="d-none" selected><span class="text-muted">Select brand</span></option>
-                      <option value="Honda">Honda</option>
-                      <option value="Mazda">Mazda</option>
-                      <option value="Mitsubishi">Mitsubishi</option>
-                      <option value="Nissan">Nissan</option>
-                      <option value="Subaru">Subaru</option>
-                      <option value="Toyota">Toyota</option>
-
-
-
+                      <option value="Honda" <?= set_select('brand-select', 'Honda'); ?>>Honda</option>
+                      <option value="Mazda" <?= set_select('brand-select', 'Mazda'); ?>>Mazda</option>
+                      <option value="Mitsubishi" <?= set_select('brand-select', 'Mitsubishi'); ?>>Mitsubishi</option>
+                      <option value="Nissan" <?= set_select('brand-select', 'Nissan'); ?>>Nissan</option>
+                      <option value="Subaru" <?= set_select('brand-select', 'Subaru'); ?>>Subaru</option>
+                      <option value="Toyota" <?= set_select('brand-select', 'Toyota'); ?>>Toyota</option>
                   </select>
+
                   <label for="" class="form-label">Model</label>
-                  <input name="model" type="text" placeholder="Enter model name" class="form-control rounded-3 mb-3">
+                  <input name="model" type="text" placeholder="Enter model name" class="form-control rounded-3 mb-3" value="<?= set_value('model'); ?>">
                   
                   <label for="" class="form-label">Description</label>
-                  <textarea name="description" placeholder="Write a catchy description for the car" id="description" class="form-control flex-grow-1 rounded-3"></textarea>
+                  <textarea name="description" placeholder="Write a catchy description for the car" id="description" class="form-control flex-grow-1 rounded-3"><?= set_value('description'); ?></textarea>
               </div>
+
               <div class="col-lg-4 d-flex flex-column p-0 pb-4 justify-content-between">  
                   <div class="row m-0 p-0">
                       <div class="col-4">
                           <label for="" class="form-label">Power</label>
-                          <input name="power" type="number" class="form-control rounded-3" placeholder="(hp)" min=0>
+                          <input name="power" type="number" class="form-control rounded-3" placeholder="(hp)" min=0 value="<?= set_value('power'); ?>">
                       </div>
                       <div class="col-4">
                           <label for="" class="form-label">Top Speed</label>
-                          <input name="speed" type="number" class="form-control rounded-3" placeholder="(km/h)" min=0>
+                          <input name="speed" type="number" class="form-control rounded-3" placeholder="(km/h)" min=0 value="<?= set_value('speed'); ?>">
                       </div>
                       <div class="col-4">
                           <label for="" class="form-label">Seats</label>
-                          <input name="capacity" type="number" class="form-control rounded-3" placeholder="(no.)" min="0">
+                          <input name="capacity" type="number" class="form-control rounded-3" placeholder="(no.)" min="0" value="<?= set_value('capacity'); ?>">
                       </div>
                       <div class="col-6 mt-3">
                           <label for="" class="form-label">Transmission</label>
                           <select name="transmission" class="form-select form-select-md mb-3 rounded-3" aria-label=".form-select-lg example">
                               <option class="d-none" selected><span class="text-muted">Gear box</span></option>
-                              <option value="Automatic">Automatic</option>
-                              <option value="Manual">Manual</option>
+                              <option value="Automatic" <?= set_select('transmission', 'Automatic'); ?>>Automatic</option>
+                              <option value="Manual" <?= set_select('transmission', 'Manual'); ?>>Manual</option>
                           </select>
                       </div>
                       <div class="col-6 mt-3">
-                      <label for="" class="form-label">Fuel</label>
-                      <select name="fuel" class="form-select form-select-md mb-3 rounded-3" aria-label=".form-select-lg example">
-                          <option class="d-none" selected><span class="text-muted">Fuel type</span></option>
-                          <option value="1">Gasoline</option>
-                          <option value="2">Diesel</option>
-                          <option value="3">Hybrid</option>
-                      </select>
+                          <label for="" class="form-label">Fuel</label>
+                          <select name="fuel" class="form-select form-select-md mb-3 rounded-3" aria-label=".form-select-lg example">
+                              <option class="d-none" selected><span class="text-muted">Fuel type</span></option>
+                              <option value="1" <?= set_select('fuel', '1'); ?>>Gasoline</option>
+                              <option value="2" <?= set_select('fuel', '2'); ?>>Diesel</option>
+                              <option value="3" <?= set_select('fuel', '3'); ?>>Hybrid</option>
+                          </select>
                       </div>
                   </div>
                   <div class="row m-0 p-0 ">
                       <div class="col-12">
                           <label for="" class="from-label">Rate</label>
-                          <input type="number" name="rate" class="form-control form-control-lg mb-3 rounded-3" placeholder="Rate per day (PHP )" min=0>
+                          <input type="number" name="rate" class="form-control form-control-lg mb-3 rounded-3" placeholder="Rate per day (PHP )" min=0 value="<?= set_value('rate'); ?>">
                           <input type="submit" name="add-car" class="btn btn-lg btn-bd-primary rounded-4 w-100" value="Add to fleet">
                       </div>
                   </div>
               </div>
           </div>
         <?= form_close(); ?>
+
     </div>
 
 

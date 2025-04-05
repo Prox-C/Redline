@@ -136,7 +136,7 @@
 
     .car-img {
       width: 100%;
-      height: 480px;
+      height: 500px;
       object-fit: contain; /* Ensures the image fills the square without stretching */
     }
 
