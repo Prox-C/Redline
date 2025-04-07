@@ -12,6 +12,9 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/heroes/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +26,7 @@
     h1, h2, h3, h4, h5, h6 {font-family: 'Syne', "sans-serif"; color: #282828}
     * {font-family: 'Space Grotesk', "sans-serif";}
     .txt-pri {color: #EA4335}
+    .txt-pri:hover {color: #EA4335}
 
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -387,4 +391,51 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
+  <script>
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end', // Top-right corner
+      showConfirmButton: false,
+      timer: 4000
+    });
+
+    <?php if ($this->session->flashdata('validation-error')): ?>
+      Toast.fire({
+        icon: 'warning',
+        title: 'Please fill up all the fields.'
+      });
+
+      var modalID = '<?= $this->session->flashdata('validation-error'); ?>';
+      var modal = new bootstrap.Modal(document.getElementById(modalID));
+      modal.show();
+    <?php endif; ?>
+
+    <?php if ($this->session->flashdata('password-mismatch')): ?>
+      Toast.fire({
+        icon: 'warning',
+        title: 'Passwords do not match'
+      });
+      var modalID = '<?= $this->session->flashdata('password-mismatch'); ?>';
+      var modal2 = new bootstrap.Modal(document.getElementById(modalID));
+      modal2.show();
+    <?php endif; ?>
+
+    // Check for flash data error
+    <?php if ($this->session->flashdata('error')): ?>
+      Toast.fire({
+        icon: 'error',
+        title: '<?= $this->session->flashdata('error'); ?>'
+      });
+    <?php endif; ?>
+
+    <?php if ($this->session->flashdata('email-error')): ?>
+      var modalID = '<?= $this->session->flashdata('email-error'); ?>';
+      var modal3 = new bootstrap.Modal(document.getElementById(modalID));
+      modal3.show();
+    <?php endif; ?>
+
+  </script>
 </html>
