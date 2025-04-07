@@ -53,9 +53,6 @@ $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['home'] = 'Car/getCars';
-
-
 /* Admin Panel */
 
 $route['admin/home'] = 'Admin/dashboard';
@@ -73,5 +70,8 @@ $route['admin/new-car'] = 'Car/newCar';
 $route['admin/addCar'] = 'Car/addCar';
 
 /* Client-side */
+$route['register'] = 'Home/register';
+
+$route['home'] = 'Car/getCars';
 $route['view-car/(:num)'] = 'Car/viewCar/$1';
 $route['checkout'] = 'Book/checkout';
