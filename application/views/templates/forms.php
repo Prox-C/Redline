@@ -7,21 +7,21 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body p-5 pt-0">
-        <form>
+        <?= form_open('login'); ?>
           <div class="form-floating mb-3">
-            <input type="email" class="form-control rounded-3" placeholder="name@example.com" required>
+            <input name="email" type="email" class="form-control rounded-3 fw-light" placeholder="Email" value="<?= set_value('email'); ?>">
             <label>Email address</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="password" class="form-control rounded-3" placeholder="Password" minlength="8" required>
+            <input name="password" type="password" class="form-control rounded-3 fw-light" placeholder="Password" minlength="8">
             <label for="floatingPassword">Password</label>
           </div>
-          <a role="button" href="admin/home" class="w-100 mb-2 btn btn-lg rounded-4 btn-bd-primary" type="submit">Login</a>
+          <button class="w-100 mb-2 btn btn-lg rounded-4 btn-bd-primary" type="submit">Login</button>
           <small class="text-body-secondary text-center d-block mt-2">
             Don't have an account? 
             <a class="txt-pri" data-bs-target="#registerModal" data-bs-toggle="modal" data-bs-dismiss="modal" role="button">Sign up</a>
           </small>
-        </form> 
+        <?= form_close(); ?>
       </div>
     </div>
   </div>

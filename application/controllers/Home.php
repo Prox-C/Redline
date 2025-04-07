@@ -73,7 +73,12 @@ class Home extends CI_Controller {
             if ($this->form_validation->run() == FALSE) {
                 // Set error flag for the registration form
                 $this->session->set_flashdata('validation-error', 'registerModal');
-                $this->load->view('index');
+                if($this->session->userdata('current_view') == 'pages/browse') {
+                    $data['cars'] = $this->CarModel->getAvailableCars();
+                    $this->load->view('pages/browse', $data);
+                } else {
+                    $this->load->view('index');
+                }
             } else {
                 $this->UserModel->selfRegister();
             }
