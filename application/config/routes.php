@@ -64,7 +64,6 @@ $route['admin/deleteClient/(:num)'] = 'User/deleteClient/$1';
 
 $route['admin/bookings'] = 'Book/getBookings';
 
-
 $route['admin/cars'] = 'Car/getAllCars';
 $route['admin/new-car'] = 'Car/newCar';
 $route['admin/addCar'] = 'Car/addCar';
