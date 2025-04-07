@@ -32,7 +32,7 @@
                 <li><a class="dropdown-item" href="#">Profile</a></li>
                 <li><a class="dropdown-item" href="#">Settings</a></li> 
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item text-danger" href="#">Sign out</a></li>
+                <li><a class="dropdown-item text-danger" href="<?=base_url('logout');?>">Sign out</a></li>
             </ul>
             <!-- <button type="button" class="btn btn-dark rounded-4 px-4" data-bs-toggle="modal" data-bs-target="#loginModal">Sign in</button> -->
         </div>
