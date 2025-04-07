@@ -13,6 +13,18 @@ class UserModel extends CI_Model {
         return $query->result_array();
     }
 
+    public function auth() {
+        $this->db->where('email', $this->input->post('email'));
+        $this->db->where('password', $this->input->post('password'));
+        $result = $this->db->get('users');
+
+        if($result->num_rows()==1){
+            return $result->row_array();
+        } else {
+            return false; 
+        }  
+    }
+
     public function registerClient() {
         $email = $this->input->post('email');
     
@@ -139,8 +151,6 @@ class UserModel extends CI_Model {
             $this->load->view('index');
         }
     }
-    
-    
     
     
 }
