@@ -5,6 +5,7 @@ class UserModel extends CI_Model {
         $this->load->database(); 
     }
     
+    /* Admin */
 
     public function getClients() {
         $this->db->where('role', 3);
@@ -43,7 +44,6 @@ class UserModel extends CI_Model {
         redirect('admin/clients');
     }
     
-
     public function updateClient($id) {
         $email = $this->input->post('email');
     
@@ -94,6 +94,50 @@ class UserModel extends CI_Model {
         }
 
         redirect('admin/clients');
+    }
+    
+    /* Client */
+    public function selfRegister() {
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
+        $confirmPassword = $this->input->post('password2');
+    
+        // Check if passwords match
+        if ($password !== $confirmPassword) {
+            $this->session->set_flashdata('password-mismatch', 'registerModal');
+            $this->load->view('index');
+            return;
+        }
+    
+        // Check for duplicate email
+        $this->db->where('email', $email);
+        $query = $this->db->get('users');
+    
+        if ($query->num_rows() > 0) {
+            $this->session->set_flashdata('email-error', 'emailErrorModal');
+            redirect(base_url());
+            return;
+        }
+    
+        // Proceed to register
+        $data = array(
+            'role' => 3,
+            'email' => $email,
+            'fname' => $this->input->post('fname'),
+            'lname' => $this->input->post('lname'),
+            'birthdate' => $this->input->post('bday'),
+            'sex' => $this->input->post('sex'),
+            'password' => password_hash($password, PASSWORD_DEFAULT),
+            'profile_pic' => "profile.png"
+        );
+    
+        if ($this->db->insert('users', $data)) {
+            $this->session->set_flashdata('registration-success', 'Account registered!');
+            redirect('home'); // Redirect to home after successful registration
+        } else {
+            $this->session->set_flashdata('error', 'Registration failed. Please try again.');
+            $this->load->view('index');
+        }
     }
     
     
