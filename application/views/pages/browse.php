@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="<?= base_url('assets/dist/css/bootstrap.min.css?v=3.2.0') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/plugins/fontawesome-free/css/all.min.css') ?>"> 
 
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
@@ -374,7 +377,10 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <!-- Flatpickr -->
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 
+<!-- Date Picker -->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         // Initialize the pickup date picker
@@ -411,6 +417,31 @@
         });
     });
 </script>
+
+<!-- Modals & Alerts -->
+<?php if ($this->session->flashdata('registration-success')): ?>
+  <script>
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 5000,
+      customClass: {
+        popup: 'custom-toast'
+      }
+    });
+
+    Toast.fire({
+      html: `
+        <div style="display: flex; align-items: center;">
+          <img src="https://media.tenor.com/SNL9_xhZl9oAAAAj/waving-hand-joypixels.gif" width="30" height="30" style="margin-right: 10px;">
+          <span>Welcome to Redline Rentals!</span>
+        </div>
+      `
+    });
+  </script>
+<?php endif; ?>
+
 
 
 
