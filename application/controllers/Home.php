@@ -36,7 +36,14 @@ class Home extends CI_Controller {
                     );
                     $this->session->set_userdata($user_data);
                     $this->session->set_flashdata('login-success', 'Welcome back, '.$this->session->userdata('fname'));
-                    redirect(base_url('home'));
+
+                    if($this->session->userdata('role')==3) {
+                        redirect(base_url('home'));
+                    }
+                    if($this->session->userdata('role')==1) {
+                        redirect(base_url('admin/home'));
+                    }
+                    
                 } else {
                     $this->session->set_flashdata('login-failed', 'Account not found');
 
