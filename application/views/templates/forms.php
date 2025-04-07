@@ -53,10 +53,13 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6">
-            <div class="form-floating mb-3">
-              <input name="bday" type="date" class="form-control rounded-3" id="pickupDate" value="<?= set_value('bday'); ?>">
-              <label for="pickupDate" class="text-muted-subtle">Date of Birth</label>
+          <div class="col-md-6 pb-3">
+            <div class="form-floating position-relative">
+              <input name="bday" type="text" class="form-control rounded-3 pe-5" id="bday" placeholder="Date of Birth" required>
+              <label for="birthday" class="text-muted-subtle fw-normal">Date of Birth</label>
+              <span class="position-absolute end-0 top-50 translate-middle-y me-3">
+                <i class="bi bi-calendar"></i>
+              </span>
             </div>
           </div>
           <div class="col-md-6 pb-3">
