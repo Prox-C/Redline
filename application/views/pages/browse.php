@@ -10,7 +10,6 @@
     <title>Redline</title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <link rel="stylesheet" href="<?= base_url('assets/dist/css/adminlte.min.css?v=3.2.0') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/dist/css/bootstrap.min.css?v=3.2.0') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/plugins/fontawesome-free/css/all.min.css') ?>"> 
 
@@ -257,7 +256,7 @@
   <div class="container px-4">
 
     <!-- Search -->
-    <div class="card p-3 rounded-3 m-2">
+    <div class="card p-3 rounded-3 m-2 shadow-sm">
     <form>
         <div class="row g-lg-3">
             <div class="col-lg-3 col-12 mb-3 mb-lg-0">
@@ -285,7 +284,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-12 mb-3 mb-lg-0">
-                <button class="btn btn-primary btn-block rounded-4 btn-bd-primary h-100">
+                <button class="btn btn-primary rounded-4 btn-bd-primary h-100 w-100">
                     Search
                     <svg style="position: relative; bottom: 1px" xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" viewBox="0 0 256 256">
                         <path d="M232.49,215.51,185,168a92.12,92.12,0,1,0-17,17l47.53,47.54a12,12,0,0,0,17-17ZM44,112a68,68,0,1,1,68,68A68.07,68.07,0,0,1,44,112Z"></path>
@@ -317,8 +316,8 @@
             { 
           ?>
           
-          <div class="col-12 col-sm-6 col-lg-4 mb-0 mx-0 px-2" onclick="window.location='<?= base_url('view-car/' . $car['id']); ?>'">
-            <div class="car card rounded-4 p-0 overflow-hidden mx-0">
+          <div class="col-12 col-sm-6 col-lg-4 mb-0 mx-0 px-2 pb-3" onclick="window.location='<?= base_url('view-car/' . $car['id']); ?>'">
+            <div class="car card rounded-4 p-0 overflow-hidden mx-0 shadow-sm">
               <div class="card-body px-4">
                 <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
                   <div class="col-12 m-0 p-0 d-flex align-items-center">
@@ -419,6 +418,14 @@
                     }
                 }
             }
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        flatpickr("#bday", {
+            dateFormat: "Y-m-d",  // Format as MM-DD-YYYY
         });
     });
 </script>
