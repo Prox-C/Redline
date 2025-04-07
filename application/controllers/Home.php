@@ -35,12 +35,13 @@ class Home extends CI_Controller {
                         'logged_in' => true
                     );
                     $this->session->set_userdata($user_data);
-                    $this->session->set_flashdata('login-success', 'Welcome back, '.$this->session->userdata('fname'));
 
                     if($this->session->userdata('role')==3) {
+                        $this->session->set_flashdata('login-success', 'Welcome back, '.$this->session->userdata('fname'));
                         redirect(base_url('home'));
                     }
-                    if($this->session->userdata('role')==1) {
+                    if($this->session->userdata('role')==1 || $this->session->userdata('role')==0) {
+                        $this->session->set_flashdata('login-success', 'Greetings Admin, '.$this->session->userdata('fname'));
                         redirect(base_url('admin/home'));
                     }
                     
