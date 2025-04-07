@@ -14,16 +14,25 @@ class UserModel extends CI_Model {
     }
 
     public function auth() {
+        // Get the user by email
         $this->db->where('email', $this->input->post('email'));
-        $this->db->where('password', $this->input->post('password'));
         $result = $this->db->get('users');
-
-        if($result->num_rows()==1){
-            return $result->row_array();
+    
+        // Check if a user is found
+        if ($result->num_rows() == 1) {
+            $user = $result->row_array();
+    
+            // Verify if the password matches the hashed password in the database
+            if (password_verify($this->input->post('password'), $user['password'])) {
+                return $user;  // Return user data if password matches
+            } else {
+                return false;  // Return false if password doesn't match
+            }
         } else {
-            return false; 
-        }  
+            return false;  // Return false if no user is found
+        }
     }
+    
 
     public function registerClient() {
         $email = $this->input->post('email');
