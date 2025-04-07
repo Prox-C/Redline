@@ -250,6 +250,7 @@
 
   </head>
   <body class="bg-light-subtle">
+  <?= $this->session->set_userdata('current_view', 'pages/browse'); ?>
   <?php $this->load->view('templates/forms'); ?>
   <?php $this->load->view('templates/top-nav'); ?>
 
@@ -365,7 +366,11 @@
 
 
 
-  <?php $this->load->view('templates/fab');?>
+  <?php 
+    if($this->session->userdata('logged_in')){
+      $this->load->view('templates/fab');
+    }
+  ?>
   </body>
 <!-- JQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -442,6 +447,29 @@
   </script>
 <?php endif; ?>
 
+<?php if ($this->session->flashdata('login-success')): ?>
+  <script>
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 5000,
+      customClass: {
+        popup: 'custom-toast'
+      }
+    });
+
+    Toast.fire({
+      html: `
+        <div style="display: flex; align-items: center;">
+          <img src="https://media.tenor.com/SNL9_xhZl9oAAAAj/waving-hand-joypixels.gif" width="30" height="30" style="margin-right: 10px;">
+          <span><?= $this->session->flashdata('login-success');?></span>
+        </div>
+      `
+    });
+  </script>
+<?php endif; ?>
+
 
 
 
@@ -460,6 +488,59 @@
       $('[data-bs-toggle="tooltip"]').tooltip();
   });
 </script>
+
+<script>
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end', // Top-right corner
+      showConfirmButton: false,
+      timer: 4000
+    });
+
+    <?php if ($this->session->flashdata('validation-error')): ?>
+      Toast.fire({
+        icon: 'warning',
+        title: 'Please fill up all the fields.'
+      });
+
+      var modalID = '<?= $this->session->flashdata('validation-error'); ?>';
+      var modal = new bootstrap.Modal(document.getElementById(modalID));
+      modal.show();
+    <?php endif; ?>
+
+    <?php if ($this->session->flashdata('password-mismatch')): ?>
+      Toast.fire({
+        icon: 'warning',
+        title: 'Passwords do not match'
+      });
+      var modalID = '<?= $this->session->flashdata('password-mismatch'); ?>';
+      var modal2 = new bootstrap.Modal(document.getElementById(modalID));
+      modal2.show();
+    <?php endif; ?>
+
+    // Check for flash data error
+    <?php if ($this->session->flashdata('error')): ?>
+      Toast.fire({
+        icon: 'error',
+        title: '<?= $this->session->flashdata('error'); ?>'
+      });
+    <?php endif; ?>
+
+    <?php if ($this->session->flashdata('login-failed')): ?>
+      Toast.fire({
+        icon: 'error',
+        title: '<?= $this->session->flashdata('login-failed'); ?>'
+      });
+    <?php endif; ?>
+
+    <?php if ($this->session->flashdata('email-error')): ?>
+      var modalID = '<?= $this->session->flashdata('email-error'); ?>';
+      var modal3 = new bootstrap.Modal(document.getElementById(modalID));
+      modal3.show();
+    <?php endif; ?>
+
+
+  </script>
 
 </html>
 

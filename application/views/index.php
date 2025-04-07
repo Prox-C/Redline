@@ -431,11 +431,19 @@
       });
     <?php endif; ?>
 
+    <?php if ($this->session->flashdata('login-failed')): ?>
+      Toast.fire({
+        icon: 'error',
+        title: '<?= $this->session->flashdata('login-failed'); ?>'
+      });
+    <?php endif; ?>
+
     <?php if ($this->session->flashdata('email-error')): ?>
       var modalID = '<?= $this->session->flashdata('email-error'); ?>';
       var modal3 = new bootstrap.Modal(document.getElementById(modalID));
       modal3.show();
     <?php endif; ?>
+
 
   </script>
 </html>

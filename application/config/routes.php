@@ -71,6 +71,8 @@ $route['admin/addCar'] = 'Car/addCar';
 
 /* Client-side */
 $route['register'] = 'Home/register';
+$route['login'] = 'Home/login';
+$route['logout'] = 'Home/logout';
 
 $route['home'] = 'Car/getCars';
 $route['view-car/(:num)'] = 'Car/viewCar/$1';
