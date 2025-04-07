@@ -53,7 +53,7 @@ class UserModel extends CI_Model {
                 $this->session->set_flashdata('error', 'Failed to register client.');
             }
         }
-        redirect('admin/clients');
+        redirect(base_url('admin/clients'));
     }
     
     public function updateClient($id) {
@@ -93,7 +93,7 @@ class UserModel extends CI_Model {
             }
         }
     
-        redirect('admin/clients');
+        redirect(base_url('admin/clients'));
     }
 
     public function deleteClient($id) {
@@ -117,7 +117,12 @@ class UserModel extends CI_Model {
         // Check if passwords match
         if ($password !== $confirmPassword) {
             $this->session->set_flashdata('password-mismatch', 'registerModal');
-            $this->load->view('index');
+            if($this->session->userdata('current_view') == 'pages/browse') {
+                $data['cars'] = $this->CarModel->getAvailableCars();
+                $this->load->view('pages/browse', $data);
+            } else {
+                $this->load->view('index');
+            }
             return;
         }
     
@@ -127,7 +132,11 @@ class UserModel extends CI_Model {
     
         if ($query->num_rows() > 0) {
             $this->session->set_flashdata('email-error', 'emailErrorModal');
-            redirect(base_url());
+            if($this->session->userdata('current_view') == 'pages/browse') {
+                redirect(base_url('home'));
+            } else {
+                redirect(base_url());
+            }
             return;
         }
     
@@ -144,11 +153,33 @@ class UserModel extends CI_Model {
         );
     
         if ($this->db->insert('users', $data)) {
+            // Get the last inserted user ID
+            $user_id = $this->db->insert_id();
+            // Fetch user data from the database using the last inserted ID
+            $this->db->where('user_id', $user_id);  // Assuming 'id' is the primary key for 'users' table
+            $query = $this->db->get('users');
+            $user = $query->row_array();
+            // Prepare session data
+            $user_data = array(
+                'fname' => $user['fname'],
+                'lname' => $user['lname'],
+                'fullname' => $user['fname'] . ' ' . $user['lname'],
+                'role' => $user['role'],
+                'pfp' => $user['profile_pic'],
+                'logged_in' => true
+            );
+            // Set session data
+            $this->session->set_userdata($user_data);
             $this->session->set_flashdata('registration-success', 'Account registered!');
-            redirect('home'); // Redirect to home after successful registration
+            redirect(base_url('home'));
         } else {
             $this->session->set_flashdata('error', 'Registration failed. Please try again.');
-            $this->load->view('index');
+            if($this->session->userdata('current_view') == 'pages/browse') {
+                $data['cars'] = $this->CarModel->getAvailableCars();
+                $this->load->view('pages/browse', $data);
+            } else {
+                $this->load->view('index');
+            }
         }
     }
     
