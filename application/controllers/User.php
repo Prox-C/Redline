@@ -5,13 +5,14 @@ require_once(APPPATH.'core/MY_Secured.php');
 class User extends MY_Secured {
 
     public function __construct() {
-        $this->restricted = [1,2]; // Block role 3 (e.g. regular clients)
-        parent::__construct();   // Make sure this comes AFTER setting restricted
+        $this->restrict = [1, 2]; // Block admins/staff
+        $this->allow_guests = true; // Allow non-logged-in users
+        parent::__construct();
         $this->load->model('CarModel');
         $this->load->model('UserModel');
     }
 
-    public function getCars() {
+    public function getCars() {     
         $data['cars'] = $this->CarModel->getAvailableCars();
         $this->load->view('pages/browse', $data);
     }
