@@ -5,20 +5,29 @@ require_once(APPPATH.'core/MY_Secured.php');
 class Admin extends MY_Secured {
 
     public function __construct() {
-        $this->restricted = [3]; // Block role 3 (e.g. regular clients)
-        parent::__construct();   // Make sure this comes AFTER setting restricted
+        $this->restrict = [3]; // Block clients
+        $this->allow_guests = false; // Guests should not access admin
+        parent::__construct();
         $this->load->model('CarModel');
         $this->load->model('UserModel');
     }
 
     public function dashboard() {
+        $this->load->view('templates/admin-header');
+        $this->load->view('templates/sidebar');
         $this->load->view('admin/dashboard');
+        $this->load->view('templates/admin-footer');
     }
     
     // CAR MANAGEMENT
     public function getAllCars() {
         $data['cars'] = $this->CarModel->getAllCars();
+
+        $this->load->view('templates/admin-header');
+        $this->load->view('templates/sidebar');
         $this->load->view('admin/cars', $data);
+        $this->load->view('templates/admin-footer');
+        $this->load->view('templates/validation-alerts');
     }
 
     public function addCar() {
@@ -73,7 +82,13 @@ class Admin extends MY_Secured {
     // CLIENT MANAGEMENT
     public function getClients() { //this function returns client management pafe along with the addinf fom
         $data['cl'] = $this->UserModel->getClients();
-        $this->load->view('admin/clients', $data); 
+
+        $this->load->view('templates/admin-header');
+        $this->load->view('templates/forms');
+        $this->load->view('templates/sidebar');
+        $this->load->view('admin/clients', $data);
+        $this->load->view('templates/admin-footer');
+        $this->load->view('templates/validation-alerts');
     } 
 
     public function registerClient() {
@@ -92,7 +107,13 @@ class Admin extends MY_Secured {
                 // Set error flag for the registration form
                 $this->session->set_flashdata('validation-error', 'addClientModal');
                 $data['cl'] = $this->UserModel->getClients();
+
+                $this->load->view('templates/admin-header');
+                $this->load->view('templates/forms');
+                $this->load->view('templates/sidebar');
                 $this->load->view('admin/clients', $data);
+                $this->load->view('templates/admin-footer');
+                $this->load->view('templates/validation-alerts');
             } else {
                 $this->UserModel->registerClient();
             }
@@ -113,7 +134,12 @@ class Admin extends MY_Secured {
             if ($this->form_validation->run() == FALSE) {
                 $this->session->set_flashdata('validation-error', 'updateClientModal_' . $id);
                 $data['cl'] = $this->UserModel->getClients();
+                $this->load->view('templates/admin-header');
+                $this->load->view('templates/forms');
+                $this->load->view('templates/sidebar');
                 $this->load->view('admin/clients', $data);
+                $this->load->view('templates/admin-footer');
+                $this->load->view('templates/validation-alerts');
             } else {
                 $this->UserModel->updateClient($id);
             }
@@ -125,5 +151,10 @@ class Admin extends MY_Secured {
         if ($this->input->server('REQUEST_METHOD') === 'POST') {
             $this->UserModel->deleteClient($id);
         }
+    }
+
+    // BOOKINGS MANAGEMENT
+    public function getBookings() {
+        $this->load->view('admin/bookings');
     }
 }
