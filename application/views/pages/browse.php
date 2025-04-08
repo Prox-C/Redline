@@ -320,7 +320,7 @@
             <div class="car card rounded-4 p-0 overflow-hidden mx-0 shadow-sm">
               <div class="card-body px-4">
                 <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
-                  <div class="col-12 m-0 p-0 d-flex align-items-center">
+                  <div class="col-12 m-0 p-0 d-flex align-items-center justify-content-between">
 
                     <p class="my-0">
                       <span class="badge text-bg-light fw-normal mx-1"><?php echo $car['power'];?>hp</span>
@@ -328,7 +328,7 @@
                       <span class="badge text-bg-light fw-normal"><?php echo $car['transmission'];?></span>
                     </p>
 
-                    <p class="my-0 ml-auto d-flex align-items-center gap-1"> 
+                    <p class="my-0 d-flex align-items-center gap-1 me-2"> 
                       <?php $this->load->view('templates/card-star'); ?>
                       <span class="text-muted card-text"><?php echo $car['rating'];?></span>
                     </p>
