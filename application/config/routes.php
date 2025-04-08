@@ -62,11 +62,11 @@ $route['logout'] = 'Home/logout';
 $route['admin/home'] = 'Admin/dashboard';
 
 $route['admin/clients'] = 'Admin/getClients';
-$route['admin/registerClient'] = 'Amin/registerClient';
+$route['admin/registerClient'] = 'Admin/registerClient';
 $route['admin/updateClient/(:num)'] = 'Admin/updateClient/$1';
 $route['admin/deleteClient/(:num)'] = 'Admin/deleteClient/$1';
 
-$route['admin/bookings'] = 'Admin /getBookings';
+$route['admin/bookings'] = 'Admin/getBookings';
 
 $route['admin/cars'] = 'Admin/getAllCars';
 $route['admin/new-car'] = 'Admin/newCar';
