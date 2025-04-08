@@ -64,7 +64,6 @@ class Home extends CI_Controller {
         redirect(base_url());
     }
 
-
     public function register() {
         if ($this->input->server('REQUEST_METHOD') === 'POST') {
             $this->load->library('form_validation');

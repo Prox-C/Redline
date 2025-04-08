@@ -53,26 +53,26 @@ $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-/* Admin Panel */
-
-$route['admin/home'] = 'Admin/dashboard';
-
-$route['admin/clients'] = 'User/getClients';
-$route['admin/registerClient'] = 'User/registerClient';
-$route['admin/updateClient/(:num)'] = 'User/updateClient/$1';
-$route['admin/deleteClient/(:num)'] = 'User/deleteClient/$1';
-
-$route['admin/bookings'] = 'Book/getBookings';
-
-$route['admin/cars'] = 'Car/getAllCars';
-$route['admin/new-car'] = 'Car/newCar';
-$route['admin/addCar'] = 'Car/addCar';
-
-/* Client-side */
+/* Home */
 $route['register'] = 'Home/register';
 $route['login'] = 'Home/login';
 $route['logout'] = 'Home/logout';
 
-$route['home'] = 'Car/getCars';
-$route['view-car/(:num)'] = 'Car/viewCar/$1';
-$route['checkout'] = 'Book/checkout';
+/* Admin Panel */
+$route['admin/home'] = 'Admin/dashboard';
+
+$route['admin/clients'] = 'Admin/getClients';
+$route['admin/registerClient'] = 'Amin/registerClient';
+$route['admin/updateClient/(:num)'] = 'Admin/updateClient/$1';
+$route['admin/deleteClient/(:num)'] = 'Admin/deleteClient/$1';
+
+$route['admin/bookings'] = 'Admin /getBookings';
+
+$route['admin/cars'] = 'Admin/getAllCars';
+$route['admin/new-car'] = 'Admin/newCar';
+$route['admin/addCar'] = 'Admin/addCar';
+
+/* Client */
+$route['home'] = 'User/getCars';
+$route['view-car/(:num)'] = 'User/viewCar/$1';
+$route['checkout'] = 'User/checkout';

@@ -208,6 +208,8 @@
   </head>
 
   <body>
+  <?= $this->session->set_userdata('current_view', 'index'); ?>
+
     <!-- Forms -->
     <?php $this->load->view('templates/forms'); ?>
 
