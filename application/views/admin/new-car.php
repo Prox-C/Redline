@@ -184,9 +184,9 @@
               </div>
               
               <div class="col-lg-4 d-flex flex-column pb-4">
-                  <label for="" class="form-label">Brand</label>
+                  <label for="" class="form-label">Manufacturer</label>
                   <select name="brand-select" class="form-select form-select-md mb-3 rounded-3" aria-label=".form-select-lg example">
-                      <option class="d-none" selected><span class="text-muted">Select brand</span></option>
+                      <option class="d-none" selected><span class="text-muted">Brand</span></option>
                       <option value="Honda" <?= set_select('brand-select', 'Honda'); ?>>Honda</option>
                       <option value="Mazda" <?= set_select('brand-select', 'Mazda'); ?>>Mazda</option>
                       <option value="Mitsubishi" <?= set_select('brand-select', 'Mitsubishi'); ?>>Mitsubishi</option>
