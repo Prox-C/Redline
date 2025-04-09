@@ -155,6 +155,11 @@ class Admin extends MY_Secured {
 
     // BOOKINGS MANAGEMENT
     public function getBookings() {
+        $this->load->view('templates/admin-header');
+        $this->load->view('templates/sidebar');
         $this->load->view('admin/bookings');
+        $this->load->view('templates/admin-footer');
     }
+
+    // Staff Management
 }
