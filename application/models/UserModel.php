@@ -5,13 +5,7 @@ class UserModel extends CI_Model {
         $this->load->database(); 
     }
     
-    /* Admin */
-
-    public function getClients() {
-        $this->db->where('role', 3);
-        $query = $this->db->get('users');
-        return $query->result_array();
-    }
+    /* Home */
 
     public function auth() {
         // Get the user by email
@@ -32,8 +26,15 @@ class UserModel extends CI_Model {
             return false;  // Return false if no user is found
         }
     }
-    
 
+    /* Client */
+
+    public function getClients() {
+        $this->db->where('role', 3);
+        $query = $this->db->get('users');
+        return $query->result_array();
+    }
+    
     public function registerClient() {
         $email = $this->input->post('email');
     
@@ -117,7 +118,6 @@ class UserModel extends CI_Model {
         redirect('admin/clients');
     }
     
-    /* Client */
     public function selfRegister() {
         $email = $this->input->post('email');
         $password = $this->input->post('password');
@@ -191,6 +191,45 @@ class UserModel extends CI_Model {
             }
         }
     }
+
+    /* Managers */
+    public function getManagers() {
+        $this->db->where('role', 2);
+        $query = $this->db->get('users');
+        return $query->result_array();
+    }
+
+    public function registerManager() {
+        $email = $this->input->post('email');
+    
+        $this->db->where('email', $email);
+        $query = $this->db->get('users');
+
+        if ($query->num_rows() > 0) { // Terminate if email already registered.
+            $this->session->set_flashdata('error', 'Email already exists. Please use a different one.');
+        } else {
+            // Proceed if not
+            $data = array(
+                'role' => 2,
+                'email' => $email,
+                'fname' => $this->input->post('fname'),
+                'lname' => $this->input->post('lname'),
+                'birthdate' => $this->input->post('bday'),
+                'sex' => $this->input->post('sex'),
+                'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+                'profile_pic' => "profile.png"
+            );
+    
+            // Insert data if email is not duplicate
+            if ($this->db->insert('users', $data)) {
+                $this->session->set_flashdata('success', 'Manager registered!');
+            } else {
+                $this->session->set_flashdata('error', 'Failed to register manager.');
+            }
+        }
+        redirect(base_url('admin/managers'));
+    }
+
     
     
 }
