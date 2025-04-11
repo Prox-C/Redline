@@ -49,25 +49,27 @@
                 <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
                   <div class="col-12 m-0 p-0 d-flex align-items-center">
 
-                    <p class="my-0">
-                      <span class="badge text-bg-light fw-normal mx-1"><?php echo $car['power'];?>hp</span>
-                      <span class="badge text-bg-light fw-normal"><?php echo $car['speed'];?>km/h</span>
-                      <span class="badge text-bg-light fw-normal"><?php echo $car['transmission'];?></span>
-                    </p>
+                  <p class="my-0 p-0 d-flex align-items-center">
+                    <span class="badge fw-medium px-3 rounded-3 mx-1 <?php echo ($car['status'] == 'Available') ? 'bg-success-subtle text-success' : 'bg-danger-subtle text-danger'; ?>">
+                      <?php echo ($car['status'] == 'Available') ? 'Available' : 'Under Maintenance'; ?>
+                    </span>
+                  </p>
 
-                    <p class="my-0 ml-auto d-flex align-items-center gap-1"> 
-                      <?php $this->load->view('templates/card-star'); ?>
-                      <span class="text-muted card-text"><?php echo $car['rating'];?></span>
+                    <p class="my-0 ml-auto d-flex align-items-center gap-1">
+                      <p class="col-4 m-0 p-0 text-end fw-semibold txt-pri">₱<?php echo $car['rate'];?><span class="fw-normal text-muted">/day</span></p> 
                     </p>
                   </div>
                 </div>          
               </div>
               <img src="<?= base_url('assets/images/cars/' . $car['thumbnail']) ?>" class="card-img-top m-0 p-0" alt="Card image">
               <div class="card-body">
-                <div class="row m-0 p-0 mt-1">
+                <div class="row m-0 p-0 mt-1 d-flex flex-row">
                   
-                  <h6 class="col-8 m-0 p-0 text-align-left fw-bold"><?php $this->load->view('components/'.$car['brand']);?><?php echo $car['model'];?></h6>
-                  <p class="col-4 m-0 p-0 text-end fw-semibold txt-pri">₱<?php echo $car['rate'];?><span class="fw-normal text-muted">/day</span></p>
+                  <h6 class="col-9 m-0 p-0 text-align-left fw-bold"><?php $this->load->view('components/'.$car['brand']);?><?php echo $car['model'];?></h6>
+                  <p class="col-3 ml-auto d-flex align-items-center justify-content-end my-0"> 
+                      <?php $this->load->view('templates/card-star'); ?>
+                      <span class="text-muted card-text"><?php echo $car['rating'];?></span>
+                  </p>
                 </div>
               </div>
             </div>
