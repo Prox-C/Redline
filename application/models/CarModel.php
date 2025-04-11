@@ -6,7 +6,7 @@ class CarModel extends CI_Model {
     }
     
     public function getAvailableCars() {
-        $this->db->where('status', 0);
+        $this->db->where('status', 'Available');
         $query = $this->db->get('cars');
         return $query->result_array();
     }
