@@ -161,5 +161,46 @@ class Admin extends MY_Secured {
         $this->load->view('templates/admin-footer');
     }
 
-    // Staff Management
+    // STAFF MANAGEMENT
+    public function getManagers() { //this function returns client management pafe along with the addinf fom
+        $data['mngr'] = $this->UserModel->getManagers();
+
+        $this->load->view('templates/admin-header');
+        $this->load->view('templates/forms');
+        $this->load->view('templates/sidebar');
+        $this->load->view('admin/managers', $data);
+        $this->load->view('templates/admin-footer');
+        $this->load->view('templates/validation-alerts');
+    }
+
+    public function registerManager() {
+        if ($this->input->server('REQUEST_METHOD') === 'POST') {
+            $this->load->library('form_validation');
+    
+            // Form validation rules
+            $this->form_validation->set_rules('fname', 'First Name', 'required');
+            $this->form_validation->set_rules('lname', 'Last Name', 'required');
+            $this->form_validation->set_rules('bday', 'Birthday', 'required');
+            $this->form_validation->set_rules('sex', 'Sex', 'required');
+            $this->form_validation->set_rules('email', 'Email', 'required');
+            $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
+    
+            if ($this->form_validation->run() == FALSE) {
+                // Set error flag for the registration form
+                $this->session->set_flashdata('validation-error', 'addManagerModal');
+                $data['mngr'] = $this->UserModel->getManagers();
+
+                $this->load->view('templates/admin-header');
+                $this->load->view('templates/forms');
+                $this->load->view('templates/sidebar');
+                $this->load->view('admin/managers', $data);
+                $this->load->view('templates/admin-footer');
+                $this->load->view('templates/validation-alerts');
+            } else {
+                $this->UserModel->registerManager();
+            }
+        }
+    }
+
+
 }
