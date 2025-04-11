@@ -61,16 +61,20 @@ $route['logout'] = 'Home/logout';
 /* Admin Panel */
 $route['admin/home'] = 'Admin/dashboard';
 
+$route['admin/cars'] = 'Admin/getAllCars';
+$route['admin/new-car'] = 'Admin/newCar';
+$route['admin/addCar'] = 'Admin/addCar';
+
+$route['admin/bookings'] = 'Admin/getBookings';
+
 $route['admin/clients'] = 'Admin/getClients';
 $route['admin/registerClient'] = 'Admin/registerClient';
 $route['admin/updateClient/(:num)'] = 'Admin/updateClient/$1';
 $route['admin/deleteClient/(:num)'] = 'Admin/deleteClient/$1';
 
-$route['admin/bookings'] = 'Admin/getBookings';
+$route['admin/managers'] = 'Admin/getManagers';
+$route['admin/registerManager'] = 'Admin/registerManager';
 
-$route['admin/cars'] = 'Admin/getAllCars';
-$route['admin/new-car'] = 'Admin/newCar';
-$route['admin/addCar'] = 'Admin/addCar';
 
 /* Client */
 $route['home'] = 'User/getCars';
