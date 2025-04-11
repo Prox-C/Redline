@@ -65,9 +65,9 @@
           <div class="col-md-6 pb-3">
             <select name="sex" class="form-select form-select-md mb-3 rounded-3 h-100 m-0" aria-label=".form-select-lg example">
               <option class="d-none" value="" <?= set_select('sex', '', TRUE); ?>>Sex</option>
-              <option value="1" <?= set_select('sex', '1'); ?>>Male</option>
-              <option value="2" <?= set_select('sex', '2'); ?>>Female</option>
-              <option value="3" <?= set_select('sex', '3'); ?>>Prefer not to say</option>
+              <option value="Male" <?= set_select('sex', 'Male'); ?>>Male</option>
+              <option value="Female" <?= set_select('sex', 'Female'); ?>>Female</option>
+              <option value="Prefer not to say" <?= set_select('Prefer not to say', '3'); ?>>Prefer not to say</option>
             </select>
           </div>
         </div>
@@ -107,11 +107,72 @@
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content rounded-4 shadow">
       <div class="modal-header px-5 pt-5 pb-0 border-bottom-0">
-        <h1 class="fw-bold mb-0 fs-2 text-center">Register a client</h1>
+        <h1 class="fw-bold mb-0 fs-2 text-center">Client Registration</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body p-5 pt-0">
       <?= form_open('admin/registerClient'); ?>
+          <label class="form-label">Personal Information</label>
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="form-floating mb-3">
+                      <input name="fname" type="text" class="form-control rounded-3" placeholder="First name" autocomplete="off" value="<?= set_value('fname'); ?>">
+                      <label for="firstname">First name</label>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-floating mb-3">
+                      <input name="lname" type="text" class="form-control rounded-3" placeholder="Last name" autocomplete="off" value="<?= set_value('lname'); ?>">
+                      <label for="lastname">Last name</label>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="form-floating mb-3">
+                      <input name="bday" type="date" class="form-control rounded-3" id="pickupDate" value="<?= set_value('bday'); ?>">
+                      <label for="birthday" class="text-muted-subtle">Date of Birth</label>
+                  </div>
+              </div>
+              <div class="col-md-6 pb-3">
+                  <select name="sex" class="form-select form-select-md mb-3 rounded-3 h-100 m-0" aria-label=".form-select-lg example">
+                      <option value="" class="d-none" disabled <?= set_select('sex', '', TRUE); ?>>Sex</option>
+                      <option value="Male" <?= set_select('sex', 'Male'); ?>>Male</option>
+                      <option value="Female" <?= set_select('sex', 'Female'); ?>>Female</option>
+                      <option value="Prefer not to say" <?= set_select('sex', 'Prefer not to say'); ?>>Prefer not to say</option>
+                  </select>
+              </div>
+          </div>
+
+          <label for="" class="form-label">Contact Details</label>
+          <div class="form-floating mb-3">
+              <input name="email" type="email" class="form-control rounded-3" placeholder="Email" autocomplete="off" value="<?= set_value('email'); ?>">
+              <label for="floatingEmail">Email</label>
+          </div>
+          <div class="form-floating mb-3">
+              <input name="password" type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password" minlength="8">
+              <label for="floatingPassword">Password</label>
+          </div>
+
+          <input name="register" role="button" class="w-100 mb-2 btn btn-lg rounded-4 btn-danger" type="submit" value="Create account">
+      <?= form_close(); ?>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Manager Modal -->
+<div class="modal fade" tabindex="-1" id="addManagerModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header px-5 pt-5 pb-0 border-bottom-0">
+        <h1 class="fw-bold mb-0 fs-2 text-center">Manager Registration</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-5 pt-0">
+      <?= form_open('admin/registerManager'); ?>
           <label class="form-label">Personal Information</label>
           <div class="row">
               <div class="col-md-6">
