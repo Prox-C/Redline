@@ -87,13 +87,13 @@
                                       <div class="row">
                                         <div class="col-md-6">
                                           <div class="form-floating mb-3">
-                                            <input value="<?php echo $c['fname'];?>" name="fname" type="text" class="form-control rounded-3" id="floatingInput"placeholder="First name">
+                                            <input value="<?php echo $c['fname'];?>" name="c_fname" type="text" class="form-control rounded-3" id="floatingInput"placeholder="First name">
                                             <label for="floatingInput">First name</label>
                                           </div>
                                         </div>
                                         <div class="col-md-6">
                                           <div class="form-floating mb-3">
-                                            <input value="<?php echo $c['lname'];?>" name="lname" type="text" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
+                                            <input value="<?php echo $c['lname'];?>" name="c_lname" type="text" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
                                             <label for="floatingInput">Last name</label>
                                           </div>
                                         </div>
@@ -101,12 +101,12 @@
                                       <div class="row">
                                         <div class="col-md-6">
                                           <div class="form-floating mb-3">
-                                            <input value="<?php echo $c['birthdate'];?>" name="bday" type="date" class="form-control rounded-3" id="pickupDate">
+                                            <input value="<?php echo $c['birthdate'];?>" name="c_bday" type="date" class="form-control rounded-3" id="pickupDate">
                                             <label for="pickupDate" class="text-muted-subtle">Date of Birth</label>
                                           </div>
                                         </div>
                                         <div class="col-md-6 pb-3">
-                                        <select name="sex" class="form-select form-select-md mb-3 rounded-3 h-100 m-0" aria-label=".form-select-lg example">
+                                        <select name="c_sex" class="form-select form-select-md mb-3 rounded-3 h-100 m-0" aria-label=".form-select-lg example">
                                             <option value="" class="d-none" disabled <?php echo empty($c['sex']) ? 'selected' : ''; ?>>Sex</option>
                                             <option value="Male" <?php echo ($c['sex'] == 'Male') ? 'selected' : ''; ?>>Male</option>
                                             <option value="Female" <?php echo ($c['sex'] == 'Female') ? 'selected' : ''; ?>>Female</option>
@@ -117,11 +117,11 @@
                                       </div>
                                       <label for="" class="form-label">Contact Details</label>
                                       <div class="form-floating mb-3">
-                                        <input value="<?php echo $c['email'];?>" name="email" type="email" class="form-control rounded-3" id="floatingInput" placeholder="Email">
+                                        <input value="<?php echo $c['email'];?>" name="c_email" type="email" class="form-control rounded-3" id="floatingInput" placeholder="Email">
                                         <label for="floatingPassword">Email</label>
                                       </div>
                                       <div class="form-floating mb-3">
-                                        <input name="password" type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password" minlength="8">
+                                        <input name="c_password" type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password" minlength="8">
                                         <label for="floatingPassword">New Password</label>
                                       </div>
                                       <!-- <div class="form-floating mb-3">
@@ -140,7 +140,7 @@
                               <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content rounded-4 shadow">
                                   <div class="modal-body p-4 text-center">
-                                    <h5 class="mb-0">Account Deletion</h5>
+                                    <h5 class="mb-2">Account Deletion</h5>
                                       <input type="hidden" name="update_user" value="<?php echo $c['user_id']; ?>">
                                     <p class="mb-0">Are you sure you want to unregister <b><?php echo $c['fname'].' '.$c['lname'];?></b>? This action cannot be undone.</p>
                                   </div>

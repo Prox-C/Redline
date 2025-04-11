@@ -67,14 +67,18 @@
                               ?>
                             </td>
                             <td class="align-middle"><?php echo $c['sex'];?></td>
-                            <td class="align-middle"><a href="#" class="link-icon text-warning" data-bs-toggle="modal" data-bs-target="#updateClientModal_<?php echo $c['user_id'];?>"><i class="fas fa-edit"></i></a></td>
+                            <td class="align-middle">
+                                <a href="#" class="link-icon text-warning" data-bs-toggle="modal" data-bs-target="#updateManagerModal_<?php echo $c['user_id'];?>">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
                             <td class="align-middle">
                               <a href="#" class="link-icon text-danger">
                                 <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#deleteUserModal_<?php echo $c['user_id'];?>"></i>
                               </a>
                             </td>
                             <!-- Update User Modal -->
-                            <div class="modal fade" tabindex="-1" id="updateClientModal_<?php echo $c['user_id'];?>" aria-hidden="true">
+                            <div class="modal fade" tabindex="-1" id="updateManagerModal_<?php echo $c['user_id'];?>" aria-hidden="true">
                               <div class="modal-dialog modal-dialog-centered modal-lg">
                                 <div class="modal-content rounded-4 shadow">
                                   <div class="modal-header px-5 pt-5 pb-0 border-bottom-0">
@@ -82,18 +86,18 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                   </div>
                                   <div class="modal-body p-5 pt-0">
-                                    <?= form_open('admin/updateClient/'.$c['user_id']);?>
+                                    <?= form_open('admin/updateManager/'.$c['user_id']);?>
                                       <label class="form-label">Personal Information</label>
                                       <div class="row">
                                         <div class="col-md-6">
                                           <div class="form-floating mb-3">
-                                            <input value="<?php echo $c['fname'];?>" name="fname" type="text" class="form-control rounded-3" id="floatingInput"placeholder="First name">
+                                            <input value="<?php echo $c['fname'];?>" name="m_fname" type="text" class="form-control rounded-3" id="floatingInput"placeholder="First name">
                                             <label for="floatingInput">First name</label>
                                           </div>
                                         </div>
                                         <div class="col-md-6">
                                           <div class="form-floating mb-3">
-                                            <input value="<?php echo $c['lname'];?>" name="lname" type="text" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
+                                            <input value="<?php echo $c['lname'];?>" name="m_lname" type="text" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
                                             <label for="floatingInput">Last name</label>
                                           </div>
                                         </div>
@@ -101,12 +105,12 @@
                                       <div class="row">
                                         <div class="col-md-6">
                                           <div class="form-floating mb-3">
-                                            <input value="<?php echo $c['birthdate'];?>" name="bday" type="date" class="form-control rounded-3" id="pickupDate">
+                                            <input value="<?php echo $c['birthdate'];?>" name="m_bday" type="date" class="form-control rounded-3" id="pickupDate">
                                             <label for="pickupDate" class="text-muted-subtle">Date of Birth</label>
                                           </div>
                                         </div>
                                         <div class="col-md-6 pb-3">
-                                        <select name="sex" class="form-select form-select-md mb-3 rounded-3 h-100 m-0" aria-label=".form-select-lg example">
+                                        <select name="m_sex" class="form-select form-select-md mb-3 rounded-3 h-100 m-0" aria-label=".form-select-lg example">
                                             <option value="" class="d-none" disabled <?php echo empty($c['sex']) ? 'selected' : ''; ?>>Sex</option>
                                             <option value="Male" <?php echo ($c['sex'] == 'Male') ? 'selected' : ''; ?>>Male</option>
                                             <option value="Female" <?php echo ($c['sex'] == 'Female') ? 'selected' : ''; ?>>Female</option>
@@ -117,11 +121,11 @@
                                       </div>
                                       <label for="" class="form-label">Contact Details</label>
                                       <div class="form-floating mb-3">
-                                        <input value="<?php echo $c['email'];?>" name="email" type="email" class="form-control rounded-3" id="floatingInput" placeholder="Email">
+                                        <input value="<?php echo $c['email'];?>" name="m_email" type="email" class="form-control rounded-3" id="floatingInput" placeholder="Email">
                                         <label for="floatingPassword">Email</label>
                                       </div>
                                       <div class="form-floating mb-3">
-                                        <input name="password" type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password" minlength="8">
+                                        <input name="m_password" type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password" minlength="8">
                                         <label for="floatingPassword">New Password</label>
                                       </div>
                                       <!-- <div class="form-floating mb-3">
@@ -129,7 +133,7 @@
                                         <label for="floatingPassword">Confirm Password</label>
                                       </div> -->
                                       <input type="hidden" name="update_user_id" value="<?php echo $c['user_id']; ?>">
-                                      <input name="update" role="button" href="admin-panel/dashboard.php" class="w-100 mb-2 btn btn-lg rounded-4 btn-outline-danger" type="submit" value="Save changes">
+                                      <input name="update" role="button" class="w-100 mb-2 btn btn-lg rounded-4 btn-outline-danger" type="submit" value="Save changes">
                                     <?= form_close(); ?>
                                   </div>
                                 </div>
@@ -140,13 +144,13 @@
                               <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content rounded-4 shadow">
                                   <div class="modal-body p-4 text-center">
-                                    <h5 class="mb-0">Account Deletion</h5>
+                                    <h5 class="mb-2">Account Deletion</h5>
                                       <input type="hidden" name="update_user" value="<?php echo $c['user_id']; ?>">
                                     <p class="mb-0">Are you sure you want to unregister <b><?php echo $c['fname'].' '.$c['lname'];?></b>? This action cannot be undone.</p>
                                   </div>
                                   <div class="modal-footer flex-nowrap p-0">
                                     <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 text-muted border-end" data-bs-dismiss="modal">Cancel</button>
-                                    <?= form_open('admin/deleteClient/'.$c['user_id']);?>
+                                    <?= form_open('admin/deleteManager/'.$c['user_id']);?>
                                       <input type="hidden" name="delete_user_id" value="<?php echo $c['user_id']; ?>">
                                       <input name="delete" type="submit" role="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 txt-pri" value="Unregister">
                                     <?= form_close(); ?>

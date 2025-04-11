@@ -125,11 +125,11 @@ class Admin extends MY_Secured {
             $this->load->library('form_validation');
     
             // Form validation rules
-            $this->form_validation->set_rules('fname', 'First Name', 'required');
-            $this->form_validation->set_rules('lname', 'Last Name', 'required');
-            $this->form_validation->set_rules('bday', 'Birthday', 'required');
-            $this->form_validation->set_rules('sex', 'Sex', 'required');
-            $this->form_validation->set_rules('email', 'Email', 'required');
+            $this->form_validation->set_rules('c_fname', 'First Name', 'required');
+            $this->form_validation->set_rules('c_lname', 'Last Name', 'required');
+            $this->form_validation->set_rules('c_bday', 'Birthday', 'required');
+            $this->form_validation->set_rules('c_sex', 'Sex', 'required');
+            $this->form_validation->set_rules('c_email', 'Email', 'required');
     
             if ($this->form_validation->run() == FALSE) {
                 $this->session->set_flashdata('validation-error', 'updateClientModal_' . $id);
@@ -199,6 +199,39 @@ class Admin extends MY_Secured {
             } else {
                 $this->UserModel->registerManager();
             }
+        }
+    }
+
+    public function updateManager($id) {
+        if ($this->input->server('REQUEST_METHOD') === 'POST') {
+            $this->load->library('form_validation');
+    
+            // Form validation rules
+            $this->form_validation->set_rules('m_fname', 'First Name', 'required');
+            $this->form_validation->set_rules('m_lname', 'Last Name', 'required');
+            $this->form_validation->set_rules('m_bday', 'Birthday', 'required');
+            $this->form_validation->set_rules('m_sex', 'Sex', 'required');
+            $this->form_validation->set_rules('m_email', 'Email', 'required');
+    
+            if ($this->form_validation->run() == FALSE) {
+                $this->session->set_flashdata('validation-error', 'updateManagerModal_' . $id);
+                $data['mngr'] = $this->UserModel->getManagers();
+                $this->load->view('templates/admin-header');
+                $this->load->view('templates/forms');
+                $this->load->view('templates/sidebar');
+                $this->load->view('admin/managers', $data);
+                $this->load->view('templates/admin-footer');
+                $this->load->view('templates/validation-alerts');
+            } else {
+                $this->UserModel->updateManager($id);
+            }
+            // $this->UserModel->updateClient($id);
+        }
+    }
+
+    public function deleteManager($id) {
+        if ($this->input->server('REQUEST_METHOD') === 'POST') {
+            $this->UserModel->deleteManager($id);
         }
     }
 

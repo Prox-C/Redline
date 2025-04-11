@@ -67,7 +67,7 @@ class UserModel extends CI_Model {
     }
     
     public function updateClient($id) {
-        $email = $this->input->post('email');
+        $email = $this->input->post('c_email');
     
         // Check if email already exists for another user (exclude the current user ID)
         $this->db->where('email', $email);
@@ -81,11 +81,10 @@ class UserModel extends CI_Model {
             $data = array(
                 'role' => 3,
                 'email' => $email,
-                'fname' => $this->input->post('fname'),
-                'lname' => $this->input->post('lname'),
-                'birthdate' => $this->input->post('bday'),
-                'sex' => $this->input->post('sex'),
-                'profile_pic' => "profile.png"
+                'fname' => $this->input->post('c_fname'),
+                'lname' => $this->input->post('c_lname'),
+                'birthdate' => $this->input->post('c_bday'),
+                'sex' => $this->input->post('c_sex')
             );
     
             // Check if a new password is provided
@@ -193,6 +192,7 @@ class UserModel extends CI_Model {
     }
 
     /* Managers */
+    
     public function getManagers() {
         $this->db->where('role', 2);
         $query = $this->db->get('users');
@@ -229,6 +229,59 @@ class UserModel extends CI_Model {
         }
         redirect(base_url('admin/managers'));
     }
+
+    public function updateManager($id) {
+        $email = $this->input->post('m_email');
+    
+        // Check if email already exists for another user (exclude the current user ID)
+        $this->db->where('email', $email);
+        $this->db->where('user_id !=', $id);
+        $query = $this->db->get('users');
+    
+        if ($query->num_rows() > 0) {
+            $this->session->set_flashdata('error', 'Email already exists. Please use a different one.');
+        } else {
+            // Prepare data for update
+            $data = array(
+                'role' => 2,
+                'email' => $email,
+                'fname' => $this->input->post('m_fname'),
+                'lname' => $this->input->post('m_lname'),
+                'birthdate' => $this->input->post('m_bday'),
+                'sex' => $this->input->post('m_sex')
+            );
+    
+            // Check if a new password is provided
+            $password = $this->input->post('m_password');
+            if (!empty($password)) {
+                $data['password'] = password_hash($password, PASSWORD_DEFAULT);
+            }
+    
+            // Update user data
+            $this->db->where('user_id', $id);
+            if ($this->db->update('users', $data)) {
+                $this->session->set_flashdata('success', 'Changes saved!');
+            } else {
+                $this->session->set_flashdata('error', 'Failed to update information.');
+            }
+        }
+    
+        redirect(base_url('admin/managers'));
+    }
+
+    public function deleteManager($id) {
+        $this->db->where('user_id', $id);
+
+        if ($this->db->delete('users')){
+            $this->session->set_flashdata('success', 'Manager unregistered!');
+        } else {
+            $this->session->set_flashdata('error', 'Failed to unregister manager.');
+        }
+
+        redirect('admin/managers');
+    }
+
+    
 
     
     
