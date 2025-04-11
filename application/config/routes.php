@@ -74,6 +74,8 @@ $route['admin/deleteClient/(:num)'] = 'Admin/deleteClient/$1';
 
 $route['admin/managers'] = 'Admin/getManagers';
 $route['admin/registerManager'] = 'Admin/registerManager';
+$route['admin/updateManager/(:num)'] = 'Admin/updateManager/$1';
+$route['admin/deleteManager/(:num)'] = 'Admin/deleteManager/$1';
 
 
 /* Client */
