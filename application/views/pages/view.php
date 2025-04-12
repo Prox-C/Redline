@@ -9,8 +9,7 @@
     <meta name="generator" content="Hugo 0.122.0">
     <title>Redline</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/heroes/">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/dist/css/adminlte.min.css?v=3.2.0') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/plugins/fontawesome-free/css/all.min.css') ?>">
     
@@ -154,6 +153,10 @@
     .details-star {height: 20px;}
     .card-star {height: 16px;}
 
+    .form-floating .form-control {
+      background-color: white !important;
+    }
+
     </style>
     <!-- Custom styles for this template -->
     <link href="modals.css" rel="stylesheet">
@@ -246,7 +249,7 @@
                 </div>
 
                   <div class="col-lg-8">
-                    <button class="btn btn-lg btn-bd-primary w-100 rounded-4">Book now</button>
+                    <button class="btn btn-lg btn-bd-primary w-100 rounded-4" data-bs-toggle="modal" data-bs-target="#bookModal">Book now</button>
                   </div>
                 </div>
             </div>
@@ -270,15 +273,56 @@
 
 
   </body>
+<!-- JQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<!-- Chart JS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Bootstrap 5.3 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<!-- AdminLTE App -->
-<script src="<?= base_url('assets/dist/js/adminlte.min.js?v=3.2.0') ?>"></script>
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<!-- Flatpickr -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 
+<!-- Date Picker -->
 <script>
-  $(function () {
-      $('[data-bs-toggle="tooltip"]').tooltip();
-  });
+    document.addEventListener("DOMContentLoaded", function () {
+        // Initialize the pickup date picker
+        const pickupDatePicker = flatpickr("#pickupDate", {
+            dateFormat: "Y-m-d",
+            disable: ["2025-04-01", "2025-04-15"], // Disable specific dates
+            onChange: function (selectedDates) {
+                if (selectedDates.length > 0) {
+                    const minDropoffDate = new Date(selectedDates[0]);
+                    minDropoffDate.setDate(minDropoffDate.getDate() + 1); // Ensure dropoff is at least 1 day after
+
+                    dropoffDatePicker.set("minDate", minDropoffDate);
+                }
+            }
+        });
+
+        // Initialize the dropoff date picker
+        const dropoffDatePicker = flatpickr("#dropoffDate", {
+            dateFormat: "Y-m-d",
+            disable: [
+                function(date) {
+                    return (date.getDay() === 0 || date.getDay() === 6); // Disable weekends
+                }
+            ],
+            onChange: function (selectedDates) {
+                const pickupDate = pickupDatePicker.selectedDates[0];
+                if (pickupDate && selectedDates.length > 0) {
+                    if (selectedDates[0] <= pickupDate) {
+                        alert("Drop-off date must be later than the pickup date.");
+                        dropoffDatePicker.clear();
+                    }
+                }
+            }
+        });
+    });
 </script>
+
+
 </html>
