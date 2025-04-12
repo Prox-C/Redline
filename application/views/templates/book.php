@@ -1,44 +1,29 @@
-<!-- Book Modal -->
+<!-- Login Modal -->
 <div class="modal fade" tabindex="-1" id="bookModal" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content rounded-4 shadow">
       <div class="modal-header p-5 pb-4 border-bottom-0">
-        <h2 class="fw-bold mb-0 fs-2 text-center w-100">Booking Information</h2>
+        <h4 class="fw-bold mb-0 text-center">Pick Your Dates</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body p-5 pt-0">
-        <form>
-          <label for="" class="form-label">Car Selected:</label>
-          <div class="form-floating mb-3">
-            <input type="text" class="form-control rounded-3" id="floatingInput" placeholder="Car Name" disabled>
-            <label for="floatingInput">Nissan Skyline GT-R</label>
+        <?= form_open('login'); ?>
+          <div class="form-floating position-relative mb-3">
+            <input type="text" class="form-control rounded-3 pe-5" id="pickupDate" name="rentStart" placeholder="Pickup" required>
+            <label for="pickupDate" class="text-muted-subtle fw-normal">Pickup</label>
+            <span class="position-absolute end-0 top-50 translate-middle-y me-3">
+              <i class="bi bi-calendar"></i>
+            </span>
           </div>
-
-          <div class="row">
-            <div class="col-lg-6">
-                <label for="pickupDate" class="form-label">Start</label>
-                <div class="form-floating mb-3">
-                    <input type="date" class="form-control rounded-3" id="pickupDate" name="rentStart" required>
-                    <label for="pickupDate" class="text-muted-subtle">Pickup on:</label>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <label for="returnDate" class="form-label">End</label>
-                <div class="form-floating mb-3">
-                    <input type="date" class="form-control rounded-3" id="returnDate" name="rentEnd" required>
-                    <label for="returnDate" class="text-muted-subtle">Dropoff on:</label>
-                </div>
-            </div>
-        </div>
-
-          
-          <div class="row">
-            <div class="col-lg-12">
-                <a role="button" href="checkout" class="w-100 mb-2 btn btn-lg rounded-4 btn-bd-primary" type="submit">Proceed to checkout</a>
-            </div>
+          <div class="form-floating position-relative mb-3">
+            <input type="text" class="form-control rounded-3 pe-5" id="dropoffDate" name="rentStart" placeholder="Pickup" required>
+            <label for="pickupDate" class="text-muted-subtle fw-normal">Dropoff</label>
+            <span class="position-absolute end-0 top-50 translate-middle-y me-3">
+              <i class="bi bi-calendar"></i>
+            </span>
           </div>
-
-          
-        </form> 
+          <button class="w-100 btn btn-lg rounded-4 btn-bd-primary" type="submit">Login</button>
+        <?= form_close(); ?>
       </div>
     </div>
   </div>
