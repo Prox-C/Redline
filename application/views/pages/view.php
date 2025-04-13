@@ -186,22 +186,22 @@
      <div class="container-fluid"> 
         <div class="row gap-0 p-0 border-bottom">
             <div class="col-lg-6 bg-secondary-subtle p-lg-5 py-0 car-bg"> 
-                <img class="img-fluid car-img px-3" src="<?= base_url('assets/images/cars/'.$cars['thumbnail']) ?>" alt="">
+                <img class="img-fluid car-img px-3" src="<?= base_url('assets/images/cars/'.$car['thumbnail']) ?>" alt="">
             </div>
             <div class="col-lg-6 bg-white p-5 d-flex flex-column">
                 <div class="row">
                     <div class="col-9 d-flex align-items-center justify-content-start">
-                        <h4 class="m-0 p-0 fw-bold"><?php echo $cars['brand'].' '.$cars['model'];?></h4>
+                        <h4 class="m-0 p-0 fw-bold"><?php echo $car['brand'].' '.$car['model'];?></h4>
                     </div>
                     <div class="col-3 d-flex align-items-center justify-content-end">
-                        <?php $this->load->view('templates/details-star');?><h5 style="font-family: 'Space Grotesk'" class="align-middle p-0 m-0 ms-1 fw-normal text-muted"><?php echo $cars['rating'];?></h5>
+                        <?php $this->load->view('templates/details-star');?><h5 style="font-family: 'Space Grotesk'" class="align-middle p-0 m-0 ms-1 fw-normal text-muted"><?php echo $car['rating'];?></h5>
                     </div>
                 </div>
                 <hr>
                 <div class="row">
                   <div class="col-12">
                     <h5>Description</h5>
-                    <p><?php echo $cars['description'];?></p>                  
+                    <p><?php echo $car['description'];?></p>                  
                   </div>
                   <div class="col-12">
                     <h5>Technical Specifications</h5>
@@ -212,35 +212,35 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="spec-logo me-1" fill="currentColor" viewBox="0 0 256 256"><path d="M213.85,125.46l-112,120a8,8,0,0,1-13.69-7l14.66-73.33L45.19,143.49a8,8,0,0,1-3-13l112-120a8,8,0,0,1,13.69,7L153.18,90.9l57.63,21.61a8,8,0,0,1,3,12.95Z"></path></svg>
                             Power
                           </h6>
-                          <span class=" my-0 me-0 ms-2 p-0" style="font-size: 16px"><?php echo $cars['power'];?>hp</span>           
+                          <span class=" my-0 me-0 ms-2 p-0" style="font-size: 16px"><?php echo $car['power'];?>hp</span>           
                         </div>
                         <div class="col-lg-4 col-12 d-flex flex-row align-items-center justify-content-between w-100 border-bottom py-2">
                           <h6 class="p-0 m-0 text-muted">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="spec-logo" fill="currentColor" viewBox="0 0 256 256"><path d="M256,128a15.76,15.76,0,0,1-7.33,13.34L160.48,197.5A15.91,15.91,0,0,1,136,184.16v-37.3L56.48,197.5A15.91,15.91,0,0,1,32,184.16V71.84A15.91,15.91,0,0,1,56.48,58.5L136,109.14V71.84A15.91,15.91,0,0,1,160.48,58.5l88.19,56.16A15.76,15.76,0,0,1,256,128Z"></path></svg>                            
+                            <svg xmlns="http://www.w3.org/2000/svg" class="spec-logo me-1" fill="currentColor" viewBox="0 0 256 256"><path d="M256,128a15.76,15.76,0,0,1-7.33,13.34L160.48,197.5A15.91,15.91,0,0,1,136,184.16v-37.3L56.48,197.5A15.91,15.91,0,0,1,32,184.16V71.84A15.91,15.91,0,0,1,56.48,58.5L136,109.14V71.84A15.91,15.91,0,0,1,160.48,58.5l88.19,56.16A15.76,15.76,0,0,1,256,128Z"></path></svg>                            
                             Top Speed
                           </h6>
-                          <span class=" my-0 me-0 ms-2 p-0" style="font-size: 16px"><?php echo $cars['speed'];?>km/h</span>           
+                          <span class=" my-0 me-0 ms-2 p-0" style="font-size: 16px"><?php echo $car['speed'];?>km/h</span>           
                         </div>
                         <div class="col-lg-4 col-12 d-flex flex-row align-items-center justify-content-between w-100 border-bottom py-2">
                           <h6 class="p-0 m-0 text-muted">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="spec-logo" fill="currentColor" viewBox="0 0 256 256"><path d="M224,232a8,8,0,0,1-8,8H112a8,8,0,0,1,0-16H216A8,8,0,0,1,224,232Zm-16-88-64.22,0L112,80l14.19-26.32a1.51,1.51,0,0,0,.11-.22A16,16,0,0,0,119.15,32l-.47-.22L85,17.57A16,16,0,0,0,63.8,24.84l-22.12,44a16.1,16.1,0,0,0,0,14.32l58.11,116A15.93,15.93,0,0,0,114.11,208H208a16,16,0,0,0,16-16V160A16,16,0,0,0,208,144Z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="spec-logo me-1" fill="currentColor" viewBox="0 0 256 256"><path d="M224,232a8,8,0,0,1-8,8H112a8,8,0,0,1,0-16H216A8,8,0,0,1,224,232Zm-16-88-64.22,0L112,80l14.19-26.32a1.51,1.51,0,0,0,.11-.22A16,16,0,0,0,119.15,32l-.47-.22L85,17.57A16,16,0,0,0,63.8,24.84l-22.12,44a16.1,16.1,0,0,0,0,14.32l58.11,116A15.93,15.93,0,0,0,114.11,208H208a16,16,0,0,0,16-16V160A16,16,0,0,0,208,144Z"></path></svg>
                             Seating Capacity
-                          </h6>
-                          <span class=" my-0 me-0 ms-2 p-0" style="font-size: 16px"><?php echo $cars['capacity'];?></span>           
+                          </h6> 
+                          <span class=" my-0 me-0 ms-2 p-0" style="font-size: 16px"><?php echo $car['capacity'];?></span>           
                         </div>
                         <div class="col-lg-4 col-12 d-flex flex-row align-items-center justify-content-between w-100 border-bottom py-2">
                           <h6 class="p-0 m-0 text-muted">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="spec-logo" fill="currentColor" viewBox="0 0 256 256"><path d="M237.94,107.21a8,8,0,0,0-3.89-5.4l-29.83-17-.12-33.62a8,8,0,0,0-2.83-6.08,111.91,111.91,0,0,0-36.72-20.67,8,8,0,0,0-6.46.59L128,41.85,97.88,25a8,8,0,0,0-6.47-.6A111.92,111.92,0,0,0,54.73,45.15a8,8,0,0,0-2.83,6.07l-.15,33.65-29.83,17a8,8,0,0,0-3.89,5.4,106.47,106.47,0,0,0,0,41.56,8,8,0,0,0,3.89,5.4l29.83,17,.12,33.63a8,8,0,0,0,2.83,6.08,111.91,111.91,0,0,0,36.72,20.67,8,8,0,0,0,6.46-.59L128,214.15,158.12,231a7.91,7.91,0,0,0,3.9,1,8.09,8.09,0,0,0,2.57-.42,112.1,112.1,0,0,0,36.68-20.73,8,8,0,0,0,2.83-6.07l.15-33.65,29.83-17a8,8,0,0,0,3.89-5.4A106.47,106.47,0,0,0,237.94,107.21ZM128,168a40,40,0,1,1,40-40A40,40,0,0,1,128,168Z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="spec-logo me-1" fill="currentColor" viewBox="0 0 256 256"><path d="M237.94,107.21a8,8,0,0,0-3.89-5.4l-29.83-17-.12-33.62a8,8,0,0,0-2.83-6.08,111.91,111.91,0,0,0-36.72-20.67,8,8,0,0,0-6.46.59L128,41.85,97.88,25a8,8,0,0,0-6.47-.6A111.92,111.92,0,0,0,54.73,45.15a8,8,0,0,0-2.83,6.07l-.15,33.65-29.83,17a8,8,0,0,0-3.89,5.4,106.47,106.47,0,0,0,0,41.56,8,8,0,0,0,3.89,5.4l29.83,17,.12,33.63a8,8,0,0,0,2.83,6.08,111.91,111.91,0,0,0,36.72,20.67,8,8,0,0,0,6.46-.59L128,214.15,158.12,231a7.91,7.91,0,0,0,3.9,1,8.09,8.09,0,0,0,2.57-.42,112.1,112.1,0,0,0,36.68-20.73,8,8,0,0,0,2.83-6.07l.15-33.65,29.83-17a8,8,0,0,0,3.89-5.4A106.47,106.47,0,0,0,237.94,107.21ZM128,168a40,40,0,1,1,40-40A40,40,0,0,1,128,168Z"></path></svg>
                             Transmission
                           </h6>
-                          <span class=" my-0 me-0 ms-2 p-0" style="font-size: 16px"><?php echo $cars['transmission'];?></span>           
+                          <span class=" my-0 me-0 ms-2 p-0" style="font-size: 16px"><?php echo $car['transmission'];?></span>           
                         </div>
                         <div class="col-lg-4 col-12 d-flex flex-row align-items-center justify-content-between w-100 py-2">
                           <h6 class="p-0 m-0 text-muted">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="spec-logo" fill="currentColor" viewBox="0 0 256 256"><path d="M200,24H123.31A15.86,15.86,0,0,0,112,28.69L101.66,39,91.31,28.69a16,16,0,0,0-22.62,0l-24,24a16,16,0,0,0,0,22.62L55,85.66,44.69,96A15.86,15.86,0,0,0,40,107.31V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V40A16,16,0,0,0,200,24ZM56,64,80,40,90.34,50.34l-24,24ZM180.8,185.6a8,8,0,1,1-9.6,12.8L128,166,84.8,198.4a8,8,0,0,1-9.6-12.8L114.67,156,75.2,126.4a8,8,0,0,1,9.6-12.8L128,146l43.2-32.4a8,8,0,0,1,9.6,12.8L141.33,156ZM176,72H136a8,8,0,0,1,0-16h40a8,8,0,0,1,0,16Z"></path></svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" class="spec-logo me-1" fill="currentColor" viewBox="0 0 256 256"><path d="M200,24H123.31A15.86,15.86,0,0,0,112,28.69L101.66,39,91.31,28.69a16,16,0,0,0-22.62,0l-24,24a16,16,0,0,0,0,22.62L55,85.66,44.69,96A15.86,15.86,0,0,0,40,107.31V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V40A16,16,0,0,0,200,24ZM56,64,80,40,90.34,50.34l-24,24ZM180.8,185.6a8,8,0,1,1-9.6,12.8L128,166,84.8,198.4a8,8,0,0,1-9.6-12.8L114.67,156,75.2,126.4a8,8,0,0,1,9.6-12.8L128,146l43.2-32.4a8,8,0,0,1,9.6,12.8L141.33,156ZM176,72H136a8,8,0,0,1,0-16h40a8,8,0,0,1,0,16Z"></path></svg>
                             Fuel Type
                           </h6>
-                          <span class=" my-0 me-0 ms-2 p-0" style="font-size: 16px"><?php echo $cars['fuel'];?></span>           
+                          <span class="my-0 me-0 ms-2 p-0 text-end" style="font-size: 16px"><?php echo $car['fuel'];?></span>           
                         </div>
                       </div>
                     </div>
@@ -248,7 +248,7 @@
                 </div>
                 <div class="row px-0 mt-auto d-flex align-items-center pb-lg-0 pb-5">
                 <div class="col-lg-4 h-100 d-flex align-items-center justify-content-start">
-                    <h5 class="fw-semibold p-0 m-0 txt-pri" style="font-family: 'Space Grotesk';">₱<?php echo $cars['rate']?><span class="fw-normal text-muted">/day</span></h5>
+                    <h5 class="fw-semibold p-0 m-0 txt-pri" style="font-family: 'Space Grotesk';">₱<?php echo $car['rate']?><span class="fw-normal text-muted">/day</span></h5>
                 </div>
 
                   <div class="col-lg-8">
