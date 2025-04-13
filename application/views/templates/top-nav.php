@@ -17,7 +17,7 @@
                 <li><a class="dropdown-item" href="#">Profile</a></li>
                 <li><a class="dropdown-item" href="#">Settings</a></li> 
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item text-danger" href="logout">Sign out</a></li>
+                <li><button class="dropdown-item text-danger btn-white btn" data-bs-toggle="modal" data-bs-target="#logoutModal">Sign out</button></li>
             </ul>
         <?php 
             } else {
