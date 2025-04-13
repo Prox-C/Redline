@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="modal-body p-5 pt-0">
-        <?= form_open(''); ?>
+        <?= form_open('checkout'); ?>
           <div class="form-floating position-relative mb-3">
             <input type="text" class="form-control rounded-3 pe-5" id="pickupDate" name="rentStart" placeholder="Pickup" required>
             <label for="pickupDate" class="text-muted-subtle fw-normal">Pickup</label>
@@ -31,9 +31,10 @@
               <button type="button" data-bs-dismiss="modal" class="w-100 btn rounded-4 bg-secondary-subtle text-dark">Cancel</button>
             </div>
             <div class="col-md-6 g-2">
-              <button class="w-100 btn rounded-4 btn-bd-primary" type="">Confirm</button>
+              <button class="w-100 btn rounded-4 btn-bd-primary">Confirm</button>
             </div>
           </div>
+          <input type="hidden" name="book_car_id" value="<?php echo $car['id']; ?>">
         <?= form_close(); ?>
       </div>
     </div>
