@@ -13,14 +13,14 @@
       <div class="modal-body p-5 pt-0">
         <?= form_open('checkout'); ?>
           <div class="form-floating position-relative mb-3">
-            <input type="text" class="form-control rounded-3 pe-5" id="pickupDate" name="rentStart" placeholder="Pickup" required>
+            <input type="text" class="form-control rounded-3 pe-5" id="pickupDate" name="rentStart" placeholder="Pickup" value="<?= $this->session->userdata('pickup-date')?>">
             <label for="pickupDate" class="text-muted-subtle fw-normal">Pickup</label>
             <span class="position-absolute end-0 top-50 translate-middle-y me-3">
               <i class="bi bi-calendar"></i>
             </span>
           </div>
           <div class="form-floating position-relative mb-3">
-            <input type="text" class="form-control rounded-3 pe-5" id="dropoffDate" name="rentStart" placeholder="Pickup" required>
+            <input type="text" class="form-control rounded-3 pe-5" id="dropoffDate" name="rentStart" placeholder="Pickup" value="<?= $this->session->userdata('dropoff-date')?>">
             <label for="pickupDate" class="text-muted-subtle fw-normal">Dropoff</label>
             <span class="position-absolute end-0 top-50 translate-middle-y me-3">
               <i class="bi bi-calendar"></i>
