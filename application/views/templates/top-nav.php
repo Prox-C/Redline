@@ -1,6 +1,6 @@
 
     <header class="d-flex flex-wrap justify-content-between py-3 mb-4 border-bottom bg-primary px-4">
-        <a href="" class="d-inline-flex link-body-emphasis text-decoration-none">
+        <a href="<?= base_url()?>" class="d-inline-flex link-body-emphasis text-decoration-none">
             <h3 style="font-family: 'NikkyouSans';" class="text-white fw-normal">レッドライン</h3>
         </a>
 
