@@ -12,13 +12,17 @@ class User extends MY_Secured {
         $this->load->model('UserModel');
     }
 
-    public function getCars() {     
+    public function getCars() {  
+        $this->session->unset_userdata('pickup-date');
+        $this->session->unset_userdata('dropoff-date');
+        $this->session->unset_userdata('search-car');
+   
         $data['cars'] = $this->CarModel->getAvailableCars();
         $this->load->view('pages/browse', $data);
     }
 
     public function viewCar($id) {
-        $data['cars'] = $this->CarModel->getCarByID($id);
+        $data['car'] = $this->CarModel->getCarByID($id);
         // echo "<pre>";
         // print_r($data);
         // echo "</pre>";
