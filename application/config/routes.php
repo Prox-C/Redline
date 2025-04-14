@@ -81,4 +81,5 @@ $route['admin/deleteManager/(:num)'] = 'Admin/deleteManager/$1';
 /* Client */
 $route['home'] = 'User/getCars';
 $route['view-car/(:num)'] = 'User/viewCar/$1';
-$route['checkout'] = 'User/checkout';
+$route['checkout'] = 'Book/checkout';
+$route['search-cars'] = 'Home/searchCars';
