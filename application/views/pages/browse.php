@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Syne:wght@400..800&display=swap" rel="stylesheet">
     
-
+    <link rel="stylesheet" href="<?= base_url('assets/dist/css/loader.css')?>">
     
     <style>
     h1, h2, h4, h5, h6 {font-family: 'Syne', "sans-serif"; color: #282828;}
@@ -245,6 +245,12 @@
       background-color: white !important;
     }
 
+    .search-button-icon {
+        height: 16px; 
+        position: relative;
+        bottom: 1px;
+    }
+
     </style>
 
   </head>
@@ -252,22 +258,40 @@
   <?= $this->session->set_userdata('current_view', 'pages/browse'); ?>
   <?php $this->load->view('templates/forms'); ?>
   <?php $this->load->view('templates/top-nav'); ?>
+  <?php $this->load->view('partials/loader'); ?>
+
 
   <div class="container px-4">
 
+    <div class="col-lg-12 px-2">
+      <?php 
+        if ($this->session->userdata('logged_in')) {
+      ?>
+        <h4>Hello, <?= $this->session->userdata('fname');?></h4>
+        <p class="text-secondary">The road is calling. Ready to take another legend for a spin?</p>
+      <?php
+        } else {
+      ?>
+      <h4>Hey there!</h4>
+      <p class="text-secondary">Welcome to Redline. What kind of ride are you looking for today?</p>
+      <?php
+        }
+      ?>
+    </div>
+
     <!-- Search -->
     <div class="card p-3 rounded-3 m-2 shadow-sm">
-    <form>
+    <form action="<?= base_url('search-cars') ?>" method="get">
         <div class="row g-lg-3">
             <div class="col-lg-3 col-12 mb-3 mb-lg-0">
                 <div class="form-floating">
-                    <input name="email" type="text" class="form-control rounded-3" placeholder="Email" required>
+                    <input name="searchCar" type="text" class="form-control rounded-3" placeholder="search car">
                     <label class="text-muted-subtle fw-normal">Search Car</label>
                 </div>
             </div>
             <div class="col-lg-3 col-12 mb-3 mb-lg-0">
                 <div class="form-floating position-relative">
-                    <input type="text" class="form-control rounded-3 pe-5" id="pickupDate" name="rentStart" placeholder="Pickup" required>
+                    <input type="text" class="form-control rounded-3 pe-5" id="pickupDate" name="rentStart" placeholder="Pickup">
                     <label for="pickupDate" class="text-muted-subtle fw-normal">Pickup</label>
                     <span class="position-absolute end-0 top-50 translate-middle-y me-3">
                         <i class="bi bi-calendar"></i>
@@ -276,7 +300,7 @@
             </div>
             <div class="col-lg-3 col-12 mb-3 mb-lg-0">
                 <div class="form-floating position-relative">
-                    <input type="text" class="form-control rounded-3 pe-5" id="dropoffDate" name="rentEnd" placeholder="Dropoff" required>
+                    <input type="text" class="form-control rounded-3 pe-5" id="dropoffDate" name="rentEnd" placeholder="Dropoff">
                     <label for="dropoffDate" class="text-muted-subtle fw-normal">Dropoff</label>
                     <span class="position-absolute end-0 top-50 translate-middle-y me-3">
                         <i class="bi bi-calendar"></i>
@@ -286,7 +310,7 @@
             <div class="col-lg-3 col-12 mb-3 mb-lg-0">
                 <button class="btn btn-primary rounded-4 btn-bd-primary h-100 w-100">
                     Search
-                    <svg style="position: relative; bottom: 1px" xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" viewBox="0 0 256 256">
+                    <svg style="position: relative; bottom: 1px" xmlns="http://www.w3.org/2000/svg" class="search-button-icon" fill="currentColor" viewBox="0 0 256 256">
                         <path d="M232.49,215.51,185,168a92.12,92.12,0,1,0-17,17l47.53,47.54a12,12,0,0,0,17-17ZM44,112a68,68,0,1,1,68,68A68.07,68.07,0,0,1,44,112Z"></path>
                     </svg>
                 </button>
@@ -370,6 +394,7 @@
       $this->load->view('templates/fab');
     }
   ?>
+  <script src="<?= base_url('assets/dist/js/loader.js')?>"></script>
   </body>
 <!-- JQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
