@@ -91,4 +91,20 @@ class Home extends CI_Controller {
             }
         }
     }
+
+    public function searchCars() {
+        $search = $this->input->get('searchCar');
+        $start = $this->input->get('rentStart');
+        $end = $this->input->get('rentEnd');
+
+        $this->session->set_userdata('pickup-date', $start);
+        $this->session->set_userdata('dropoff-date', $end);
+        $this->session->set_userdata('search-car', $search);
+
+    
+        $this->load->model('CarModel');
+        $data['cars'] = $this->CarModel->searchAvailableCars($search, $start, $end);
+    
+        $this->load->view('pages/search', $data);
+    }
 }
