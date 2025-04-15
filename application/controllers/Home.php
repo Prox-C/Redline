@@ -30,6 +30,7 @@ class Home extends CI_Controller {
                         'fname' => $user_id['fname'],
                         'lname' => $user_id['lname'],
                         'fullname' => $user_id['fname'] . ' ' . $user_id['lname'],
+                        'email' => $user_id['email'],
                         'role' => $user_id['role'],
                         'pfp' => $user_id['profile_pic'],
                         'logged_in' => true
@@ -96,15 +97,18 @@ class Home extends CI_Controller {
         $search = $this->input->get('searchCar');
         $start = $this->input->get('rentStart');
         $end = $this->input->get('rentEnd');
-
+    
         $this->session->set_userdata('pickup-date', $start);
         $this->session->set_userdata('dropoff-date', $end);
         $this->session->set_userdata('search-car', $search);
-
     
         $this->load->model('CarModel');
-        $data['cars'] = $this->CarModel->searchAvailableCars($search, $start, $end);
+        $cars = $this->CarModel->searchAvailableCars($search, $start, $end);
+    
+        $data['cars'] = $cars;
+        $data['results'] = count($cars); // count the number of results
     
         $this->load->view('pages/search', $data);
     }
+    
 }
