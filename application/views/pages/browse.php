@@ -251,6 +251,12 @@
         bottom: 1px;
     }
 
+    .header-icon {
+      height: 18px;
+      position: relative;
+      bottom: 1px;
+    }
+
     </style>
 
   </head>
@@ -261,18 +267,18 @@
   <?php $this->load->view('partials/loader'); ?>
 
 
-  <div class="container px-4">
+  <div class="container px-4 pt-4">
 
     <div class="col-lg-12 px-2">
       <?php 
         if ($this->session->userdata('logged_in')) {
       ?>
-        <h4>Hello, <?= $this->session->userdata('fname');?></h4>
+        <h2>Hello, <?= $this->session->userdata('fname');?></h2>
         <p class="text-secondary">The road is calling. Ready to take another legend for a spin?</p>
       <?php
         } else {
       ?>
-      <h4>Hey there!</h4>
+      <h2>Hey there!</h2>
       <p class="text-secondary">Welcome to Redline. What kind of ride are you looking for today?</p>
       <?php
         }
@@ -332,6 +338,10 @@
     </div> -->
 
     <div class="col-lg-12 d-flex flex-wrap justify-content-center align-items-center gap-2 mt-4 mx-0 px-0">
+        <h6 class="w-100 mx-2 align-middle text-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" class="header-icon" fill="currentColor" viewBox="0 0 256 256"><path d="M128,20A108,108,0,1,0,236,128,108.12,108.12,0,0,0,128,20Zm0,192a84,84,0,1,1,84-84A84.09,84.09,0,0,1,128,212Zm68-84a12,12,0,0,1-12,12H128a12,12,0,0,1-12-12V72a12,12,0,0,1,24,0v44h44A12,12,0,0,1,196,128Z"></path></svg>
+          Recently Added
+        </h6>
         <div class="row w-100 px-0">
 
           <?php if(!empty($cars))
@@ -411,41 +421,40 @@
 
 <!-- Date Picker -->
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Initialize the pickup date picker
-        const pickupDatePicker = flatpickr("#pickupDate", {
-            dateFormat: "Y-m-d",
-            disable: ["2025-04-01", "2025-04-15"], // Disable specific dates
-            onChange: function (selectedDates) {
-                if (selectedDates.length > 0) {
-                    const minDropoffDate = new Date(selectedDates[0]);
-                    minDropoffDate.setDate(minDropoffDate.getDate() + 1); // Ensure dropoff is at least 1 day after
+document.addEventListener("DOMContentLoaded", function () {
+    const today = new Date();
 
-                    dropoffDatePicker.set("minDate", minDropoffDate);
-                }
-            }
-        });
+    // Initialize the pickup date picker
+    const pickupDatePicker = flatpickr("#pickupDate", {
+        dateFormat: "Y-m-d",
+        minDate: today,
+        onChange: function (selectedDates) {
+            if (selectedDates.length > 0) {
+                const minDropoffDate = new Date(selectedDates[0]);
+                minDropoffDate.setDate(minDropoffDate.getDate() + 1); // Ensure dropoff is at least 1 day after
 
-        // Initialize the dropoff date picker
-        const dropoffDatePicker = flatpickr("#dropoffDate", {
-            dateFormat: "Y-m-d",
-            disable: [
-                function(date) {
-                    return (date.getDay() === 0 || date.getDay() === 6); // Disable weekends
-                }
-            ],
-            onChange: function (selectedDates) {
-                const pickupDate = pickupDatePicker.selectedDates[0];
-                if (pickupDate && selectedDates.length > 0) {
-                    if (selectedDates[0] <= pickupDate) {
-                        alert("Drop-off date must be later than the pickup date.");
-                        dropoffDatePicker.clear();
-                    }
-                }
+                dropoffDatePicker.set("minDate", minDropoffDate);
             }
-        });
+        }
     });
+
+    // Initialize the dropoff date picker
+    const dropoffDatePicker = flatpickr("#dropoffDate", {
+        dateFormat: "Y-m-d",
+        minDate: today,
+        onChange: function (selectedDates) {
+            const pickupDate = pickupDatePicker.selectedDates[0];
+            if (pickupDate && selectedDates.length > 0) {
+                if (selectedDates[0] <= pickupDate) {
+                    alert("Drop-off date must be later than the pickup date.");
+                    dropoffDatePicker.clear();
+                }
+            }
+        }
+    });
+});
 </script>
+
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
