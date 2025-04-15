@@ -169,7 +169,7 @@
         <div class="py-5 text-center">  
         <img class="d-block mx-auto mb-4" src="<?= base_url('assets/images/Car rental-pana.svg') ?>" alt="" width="230">
         <h2>Your JDM Beast is Ready.</h2>
-        <p class="lead">
+        <p class="text-muted">
         Review your details, choose your payment method, and get ready to hit the road—your dream drive is just a few clicks away!
         </p>
         </div>
@@ -177,41 +177,44 @@
         <div class="row g-5">
         <div class="col-md-5 col-lg-4 order-md-last">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <span>Rent Summary</span>
+            Booking Summary
             <!-- <span class="badge bg-primary rounded-pill">3</span> -->
             </h4>
             <ul class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between lh-sm">
                 <div>
-                <h6 class="my-0">Nisssan Skyline GT-R</h6>
+                <h6 class="my-0"><?= $car['brand'].' '.$car['model']?></h6>
                 <small class="text-body-secondary">Car selected</small>
                 </div>
-                <span class="text-body-secondary">₱2499</span>
+                <span class="text-body-secondary">₱<?= $car['rate']?></span>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-sm">
                 <div>
                 <h6 class="my-0">Pickup Date</h6>
                 <small class="text-body-secondary">Rent start</small>
                 </div>
-                <span class="text-body-secondary">03/20/2025</span>
+                <span class="text-body-secondary"><?= date('F j, Y', strtotime($this->session->userdata('pickup-date'))); ?></span>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-sm">
                 <div>
                 <h6 class="my-0">Return Date</h6>
                 <small class="text-body-secondary">Rent end</small>
                 </div>
-                <span class="text-body-secondary">03/23/2025</span>
+                <span class="text-body-secondary"><?= date('F j, Y', strtotime($this->session->userdata('dropoff-date'))); ?></span>
             </li>
-            <!-- <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
-                <div class="text-success">
-                <h6 class="my-0">Promo code</h6>
-                <small>EXAMPLECODE</small>
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">Rent Duration</h6>
+                  <small class="text-body-secondary">No. of days booked</small>
                 </div>
-                <span class="text-success">−$5</span>
-            </li> -->
+                <span class="text-body-secondary"><?= $rent_duration?></span>
+            </li>
+
             <li class="list-group-item d-flex justify-content-between">
-                <span>Total (PHP)</span>
-                <strong>₱7,497</strong>
+              <div>
+                <h6 class="my-0">Total</h6>
+              </div>
+              <span class="text-dark fw-bold">₱<?= $car['rate'] * $rent_duration;?></span>
             </li>
             </ul>
 
@@ -223,12 +226,12 @@
             </form>
         </div>
         <div class="col-md-7 col-lg-8">
-            <h4 class="mb-3">Billing Information</h4>
-            <form class="needs-validation" novalidate>
+            <h4 class="mb-3">Personal Information</h4>
+            <?= form_open(base_url('book'))?>
             <div class="row g-3">
                 <div class="col-sm-6">
                 <label for="firstName" class="form-label">First name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                <input type="text" class="form-control" id="firstName" placeholder="" value="<?= $this->session->userdata('fname')?>" required>
                 <div class="invalid-feedback">
                     Valid first name is required.
                 </div>
@@ -236,7 +239,7 @@
 
                 <div class="col-sm-6">
                 <label for="lastName" class="form-label">Last name</label>
-                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                <input type="text" class="form-control" id="lastName" placeholder="" value="<?= $this->session->userdata('lname')?>" required>
                 <div class="invalid-feedback">
                     Valid last name is required.
                 </div>
@@ -244,7 +247,7 @@
 
                 <div class="col-12">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                <input type="email" class="form-control" id="email" placeholder="you@example.com" value="<?= $this->session->userdata('email')?>">
                 <div class="invalid-feedback">
                     Please enter a valid email address for shipping updates.
                 </div>
@@ -258,45 +261,6 @@
                 </div>
                 </div>
 
-                <div class="col-12">
-                <label for="address2" class="form-label">Address 2 <span class="text-body-secondary">(Optional)</span></label>
-                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-                </div>
-
-                <div class="col-md-4">
-                <label for="country" class="form-label">Region</label>
-                <select class="form-select" id="country" required>
-                    <option value="" class="d-none">Choose...</option>
-                    <option>Eastern Visayas (VIII)</option>
-                </select>
-                <div class="invalid-feedback">
-                    Please select a valid required.
-                </div>
-                </div>
-
-                <div class="col-md-5">
-                <label for="state" class="form-label">City/Municipal</label>
-                <select class="form-select" id="state" required>
-                    <option value="" class="d-none">Choose...</option>
-                    <option>Tacloban City (Capital)</option>
-                    <option>Ormoc City</option>
-                    <option>Baybay City</option>
-                    <option>Jaro</option>
-                    <option>Carigara</option>
-                    <option>Tanauan</option>
-                </select>
-                <div class="invalid-feedback">
-                    Please provide a valid state.
-                </div>
-                </div>
-
-                <div class="col-md-3">
-                <label for="zip" class="form-label">Zip</label>
-                <input type="text" class="form-control" id="zip" placeholder="" required>
-                <div class="invalid-feedback">
-                    Zip code required.
-                </div>
-                </div>
             </div>
 
             <hr class="my-4">
@@ -364,7 +328,7 @@
             <hr class="my-4">
 
             <button class="w-100 btn btn-bd-primary btn-lg rounded-4" type="submit">Pay ₱7,497</button>
-            </form>
+            <?= form_close()?>
         </div>
     </div>
 
