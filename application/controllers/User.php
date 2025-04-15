@@ -10,6 +10,7 @@ class User extends MY_Secured {
         parent::__construct();
         $this->load->model('CarModel');
         $this->load->model('UserModel');
+        $this->load->model('BookingModel');
     }
 
     public function getCars() {  
@@ -23,6 +24,7 @@ class User extends MY_Secured {
 
     public function viewCar($id) {
         $data['car'] = $this->CarModel->getCarByID($id);
+        $data['unavailable_dates'] = $this->BookingModel->getUnavailableDates($id);
         // echo "<pre>";
         // print_r($data);
         // echo "</pre>";
