@@ -1,5 +1,5 @@
 
-    <header class="d-flex flex-wrap justify-content-between py-3 mb-4 border-bottom bg-primary px-4">
+    <header class="d-flex flex-wrap justify-content-between py-3 mb-4 border-bottom bg-dark px-4">
         <a href="<?= base_url()?>" class="d-inline-flex link-body-emphasis text-decoration-none">
             <h3 style="font-family: 'NikkyouSans';" class="text-white fw-normal">レッドライン</h3>
         </a>
@@ -22,7 +22,7 @@
         <?php 
             } else {
         ?>
-            <button type="button" class="btn btn-dark rounded-4 px-4" data-bs-toggle="modal" data-bs-target="#loginModal">Sign in</button>
+            <button type="button" class="btn btn-bd-primary rounded-4 px-4" data-bs-toggle="modal" data-bs-target="#loginModal">Sign in</button>
         <?php }?>
         </div>
 
