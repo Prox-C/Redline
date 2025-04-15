@@ -1,4 +1,4 @@
-<!-- Login Modal -->
+<!-- Booking Modal -->
 <div class="modal fade" tabindex="-1" id="bookModal" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content rounded-4 shadow">
@@ -20,7 +20,7 @@
             </span>
           </div>
           <div class="form-floating position-relative mb-3">
-            <input type="text" class="form-control rounded-3 pe-5" id="dropoffDate" name="rentStart" placeholder="Pickup" value="<?= $this->session->userdata('dropoff-date')?>">
+            <input type="text" class="form-control rounded-3 pe-5" id="dropoffDate" name="rentEnd" placeholder="Pickup" value="<?= $this->session->userdata('dropoff-date')?>">
             <label for="pickupDate" class="text-muted-subtle fw-normal">Dropoff</label>
             <span class="position-absolute end-0 top-50 translate-middle-y me-3">
               <i class="bi bi-calendar"></i>
