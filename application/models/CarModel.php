@@ -7,6 +7,7 @@ class CarModel extends CI_Model {
     
     public function getAvailableCars() {
         $this->db->where('status', 'Available');
+        $this->db->order_by('id', 'DESC');
         $query = $this->db->get('cars');
         return $query->result_array();
     }
@@ -70,7 +71,12 @@ class CarModel extends CI_Model {
     
         return $this->db->get()->result_array();
     }
+
+
     
+    
+
+
     
     
 }
