@@ -21,6 +21,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Syne:wght@400..800&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="<?= base_url('assets/dist/css/loader.css')?>">
+
     <link href="<?= base_url('assets/dist/css/bootstrap.min.css') ?>" rel="stylesheet">
     
     <style>
@@ -166,6 +168,8 @@
   </head>
   <body class="bg-light">
     <?php $this->load->view('templates/book');?>
+    <?php $this->load->view('partials/loader'); ?>
+
 
     <!-- Header -->
     <nav class="container-fluid sticky-top bg-white p-0">
@@ -274,7 +278,7 @@
         </div>
      </div>
 
-
+    <script src="<?= base_url('assets/dist/js/loader.js')?>"></script>
   </body>
 <!-- JQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -291,41 +295,63 @@
 
 <!-- Date Picker -->
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Initialize the pickup date picker
-        const pickupDatePicker = flatpickr("#pickupDate", {
-            dateFormat: "Y-m-d",
-            disable: ["2025-04-01", "2025-04-15"], // Disable specific dates
-            onChange: function (selectedDates) {
-                if (selectedDates.length > 0) {
-                    const minDropoffDate = new Date(selectedDates[0]);
-                    minDropoffDate.setDate(minDropoffDate.getDate() + 1); // Ensure dropoff is at least 1 day after
+document.addEventListener("DOMContentLoaded", function () {
+    const disabledDates = <?= json_encode($unavailable_dates); ?>;
 
-                    dropoffDatePicker.set("minDate", minDropoffDate);
-                }
-            }
-        });
+    // Helper to check if any disabled date falls between pickup and dropoff
+    function hasOverlap(pickup, dropoff) {
+        const start = new Date(pickup);
+        const end = new Date(dropoff);
 
-        // Initialize the dropoff date picker
-        const dropoffDatePicker = flatpickr("#dropoffDate", {
-            dateFormat: "Y-m-d",
-            disable: [
-                function(date) {
-                    return (date.getDay() === 0 || date.getDay() === 6); // Disable weekends
-                }
-            ],
-            onChange: function (selectedDates) {
-                const pickupDate = pickupDatePicker.selectedDates[0];
-                if (pickupDate && selectedDates.length > 0) {
-                    if (selectedDates[0] <= pickupDate) {
-                        alert("Drop-off date must be later than the pickup date.");
-                        dropoffDatePicker.clear();
-                    }
-                }
+        for (const date of disabledDates) {
+            const d = new Date(date);
+            if (d >= start && d <= end) {
+                return true;
             }
-        });
+        }
+        return false;
+    }
+
+    const pickupDatePicker = flatpickr("#pickupDate", {
+        dateFormat: "Y-m-d",
+        minDate: "today",
+        disable: disabledDates,
+        onChange: function (selectedDates) {
+            if (selectedDates.length > 0) {
+                const minDropoffDate = new Date(selectedDates[0]);
+                minDropoffDate.setDate(minDropoffDate.getDate() + 1);
+                dropoffDatePicker.set("minDate", minDropoffDate);
+            }
+        }
     });
+
+    const dropoffDatePicker = flatpickr("#dropoffDate", {
+        dateFormat: "Y-m-d",
+        minDate: "today",
+        disable: disabledDates, // weekends no longer disabled
+        onChange: function (selectedDates) {
+            const pickupDate = pickupDatePicker.selectedDates[0];
+            if (pickupDate && selectedDates.length > 0) {
+                const pickup = pickupDate.toISOString().split('T')[0];
+                const dropoff = selectedDates[0].toISOString().split('T')[0];
+
+                if (selectedDates[0] <= pickupDate) {
+                    alert("Drop-off date must be later than the pickup date.");
+                    dropoffDatePicker.clear();
+                    return;
+                }
+
+                if (hasOverlap(pickup, dropoff)) {
+                    alert("This range includes dates where the car is already booked. Please choose a different range.");
+                    dropoffDatePicker.clear();
+                }
+            }
+        }
+    });
+});
 </script>
+
+
 
 
 </html>
