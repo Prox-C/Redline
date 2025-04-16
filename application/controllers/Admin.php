@@ -162,7 +162,7 @@ class Admin extends MY_Secured {
     }
 
     // STAFF MANAGEMENT
-    public function getManagers() { //this function returns client management pafe along with the addinf fom
+    public function getManagers() { 
         $data['mngr'] = $this->UserModel->getManagers();
 
         $this->load->view('templates/admin-header');

@@ -12,8 +12,21 @@ class Book extends MY_Secured {
     }
 
     public function checkout() {
+
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules('rentStart', 'Pickup Date', 'required');
+        $this->form_validation->set_rules('rentEnd', 'Dropoff Date', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+
+            $this->session->set_flashdata('validation-error', 'bookModal');
+            redirect($_SERVER['HTTP_REFERER']); // redirect back to form page
+            exit; // <-- Force it to stop executing and ensure session saves
+
+        }
         // Get the form data
-        $pickup = $this->input->post('rentStart');
+        $pickup = $this->input->post('rentStart'); 
         $dropoff = $this->input->post('rentEnd');
         $car_id = $this->input->post('book_car_id');
 
