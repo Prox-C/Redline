@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/dist/css/adminlte.min.css?v=3.2.0') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/plugins/fontawesome-free/css/all.min.css') ?>">
-
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
@@ -175,7 +176,7 @@
     <nav class="container-fluid sticky-top bg-white p-0">
       <header class="d-flex flex-wrap align-items-center justify-content-between px-4 py-4 m-0 border-bottom">
         <div class="col-1 d-flex align-items-center justify-content-start"> 
-            <button onclick="history.back()" class="btn btn-sm border-secondary rounded-circle text-align-center"><svg class="fab-icon" xmlns="http://www.w3.org/2000/svg" height="18px" fill="currentColor" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H69l51.52,51.51a12,12,0,0,1-17,17l-72-72a12,12,0,0,1,0-17l72-72a12,12,0,0,1,17,17L69,116H216A12,12,0,0,1,228,128Z"></path></svg></button>
+            <button onclick="window.location='<?= base_url('home')?>'" class="btn btn-sm border-secondary rounded-circle text-align-center"><svg class="fab-icon" xmlns="http://www.w3.org/2000/svg" height="18px" fill="currentColor" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H69l51.52,51.51a12,12,0,0,1-17,17l-72-72a12,12,0,0,1,0-17l72-72a12,12,0,0,1,17,17L69,116H216A12,12,0,0,1,228,128Z"></path></svg></button>
         </div>
         <div class="col-10 d-flex align-items-center justify-content-center">
             <h5 class="m-0 p-0">Car Details</h5>
@@ -256,7 +257,11 @@
                 </div>
 
                   <div class="col-lg-8">
+                    <?php if($this->session->userdata('logged_in')){?>
                     <button class="btn btn-lg btn-bd-primary w-100 rounded-4" data-bs-toggle="modal" data-bs-target="#bookModal">Book now</button>
+                    <?php } else { ?>
+                    <button type="button" class="btn btn-lg bg-dark-subtle fw-medium border-0 w-100 rounded-4" disabled>Sign in to book</button>
+                    <?php } ?>
                   </div>
                 </div>
             </div>
@@ -279,6 +284,30 @@
      </div>
 
     <script src="<?= base_url('assets/dist/js/loader.js')?>"></script>
+
+    
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end', // Top-right corner
+      showConfirmButton: false,
+      timer: 4000
+    });
+    
+    <?php if ($this->session->flashdata('validation-error')): ?>
+      Toast.fire({
+        icon: 'warning',
+        title: 'Please select dates for pickup and dropoff.'
+      });
+
+      var modalID = '<?= $this->session->flashdata('validation-error'); ?>';
+      var modal = new bootstrap.Modal(document.getElementById(modalID));
+      modal.show();
+    <?php endif; ?>
+  });
+</script>
+
   </body>
 <!-- JQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -350,6 +379,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 </script>
+
 
 
 

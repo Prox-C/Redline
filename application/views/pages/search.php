@@ -255,10 +255,10 @@
 
   </head>
   <body class="bg-light-subtle">
+  <?php $this->load->view('partials/loader'); ?>
   <?= $this->session->set_userdata('current_view', 'pages/browse'); ?>
   <?php $this->load->view('templates/forms'); ?>
   <?php $this->load->view('templates/top-nav'); ?>
-  <?php $this->load->view('partials/loader'); ?>
 
 
   <div class="container px-4">
