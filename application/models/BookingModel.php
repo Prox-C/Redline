@@ -23,5 +23,34 @@ class BookingModel extends CI_Model {
     
         return $unavailable;
     }
+
+    public function addBooking(){
+         // Gather booking data
+         $data = [
+            'car_id' => $this->input->post('car_id'),
+            'user_id' => $this->input->post('user_id'),
+            'renter_fname' => $this->input->post('fname'),
+            'renter_lname' => $this->input->post('lname'),
+            'renter_email' => $this->input->post('email'),
+            'address' => $this->input->post('address'),
+            'total_amount' => $this->input->post('total_amount'),
+            'payment_method' => $this->input->post('paymentMethod'),
+            'card_name' => $this->input->post('card_name'),
+            'card_no' => $this->input->post('card_no'),
+            'card_expiry' => $this->input->post('card_expiration'),
+            'card_cvv' => $this->input->post('card_cvv'),
+
+            'total_days' => $this->input->post('duration'),
+            'pickup_date' => $this->input->post('pickup'),
+            'dropoff_date' => $this->input->post('dropoff'),
+        ];
+        // return $this->db->insert('bookings', $data);
+        if ($this->db->insert('bookings', $data)) {
+            $this->session->set_flashdata('booking-success', 'Booking is being processed!');
+        } else {
+            $this->session->set_flashdata('booking-error', 'Booking failed');
+        }
+        redirect('home');
+    }
 }
 ?>
