@@ -27,6 +27,7 @@ class Home extends CI_Controller {
 
                 if($user_id){
                     $user_data = array(
+                        'user_id' => $user_id['user_id'],
                         'fname' => $user_id['fname'],
                         'lname' => $user_id['lname'],
                         'fullname' => $user_id['fname'] . ' ' . $user_id['lname'],
