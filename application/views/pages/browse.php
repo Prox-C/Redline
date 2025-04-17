@@ -541,7 +541,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <?php if ($this->session->flashdata('validation-error')): ?>
       Toast.fire({
         icon: 'warning',
-        title: 'Please fill up all the fields.'
+        text: 'Please fill up all the fields.'
       });
 
       var modalID = '<?= $this->session->flashdata('validation-error'); ?>';
@@ -552,7 +552,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <?php if ($this->session->flashdata('password-mismatch')): ?>
       Toast.fire({
         icon: 'warning',
-        title: 'Passwords do not match'
+        text: 'Passwords do not match'
       });
       var modalID = '<?= $this->session->flashdata('password-mismatch'); ?>';
       var modal2 = new bootstrap.Modal(document.getElementById(modalID));
@@ -563,7 +563,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <?php if ($this->session->flashdata('error')): ?>
       Toast.fire({
         icon: 'error',
-        title: '<?= $this->session->flashdata('error'); ?>'
+        text: '<?= $this->session->flashdata('error'); ?>'
       });
     <?php endif; ?>
 
@@ -577,7 +577,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <?php if ($this->session->flashdata('login-failed')): ?>
       Toast.fire({
         icon: 'error',
-        title: '<?= $this->session->flashdata('login-failed'); ?>'
+        text: '<?= $this->session->flashdata('login-failed'); ?>'
       });
     <?php endif; ?>
 

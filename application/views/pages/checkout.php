@@ -288,19 +288,19 @@
 
               <div class="col-md-6">
                 <label for="cc-number" class="form-label">Credit card number</label>
-                <input type="text" class="form-control" name="card_no" value="<?= set_value('card_no') ?>" placeholder="16-digit card number" required>
+                <input type="text" class="form-control" name="card_no" value="<?= set_value('card_no') ?>" placeholder="16-digit card number" maxlength="19" required>
                 <?= form_error('card_no', '<div class="text-danger small">', '</div>') ?>
               </div>
 
               <div class="col-md-3">
                 <label for="cc-expiration" class="form-label">Expiration</label>
-                <input type="text" class="form-control" name="card_expiration" value="<?= set_value('card_expiration') ?>" placeholder="MM/YY" required>
+                <input type="text" class="form-control" name="card_expiration" value="<?= set_value('card_expiration') ?>" placeholder="MM/YY" maxlength="5">
                 <?= form_error('card_expiration', '<div class="text-danger small">', '</div>') ?>
               </div>
 
               <div class="col-md-3">
                 <label for="cc-cvv" class="form-label">CVV</label>
-                <input type="text" class="form-control" name="card_cvv" value="<?= set_value('card_cvv') ?>" placeholder="3-digit code" required>
+                <input type="text" class="form-control" name="card_cvv" value="<?= set_value('card_cvv') ?>" placeholder="3-digit code" maxlength="3" required>
                 <?= form_error('card_cvv', '<div class="text-danger small">', '</div>') ?>
               </div>
             </div>
@@ -352,7 +352,7 @@
     <?php if ($this->session->flashdata('validation-error')): ?>
       Toast.fire({
         icon: 'warning',
-        title: 'Please fill up all the fields.'
+        text: 'Please fill up all the fields.'
       });
     <?php endif; ?>
   </script>
