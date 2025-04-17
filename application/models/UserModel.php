@@ -169,11 +169,13 @@ class UserModel extends CI_Model {
             $user = $query->row_array();
             // Prepare session data
             $user_data = array(
-                'fname' => $user['fname'],
-                'lname' => $user['lname'],
-                'fullname' => $user['fname'] . ' ' . $user['lname'],
-                'role' => $user['role'],
-                'pfp' => $user['profile_pic'],
+                'user_id' => $user_id['user_id'],
+                'fname' => $user_id['fname'],
+                'lname' => $user_id['lname'],
+                'fullname' => $user_id['fname'] . ' ' . $user_id['lname'],
+                'email' => $user_id['email'],
+                'role' => $user_id['role'],
+                'pfp' => $user_id['profile_pic'],
                 'logged_in' => true
             );
             // Set session data

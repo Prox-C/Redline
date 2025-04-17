@@ -25,9 +25,6 @@ class User extends MY_Secured {
     public function viewCar($id) {
         $data['car'] = $this->CarModel->getCarByID($id);
         $data['unavailable_dates'] = $this->BookingModel->getUnavailableDates($id);
-        // echo "<pre>";
-        // print_r($data);
-        // echo "</pre>";
         $this->load->view('pages/view', $data);
     }    
 }
