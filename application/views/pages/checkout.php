@@ -13,13 +13,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="<?= base_url('assets/dist/css/adminlte.min.css?v=3.2.0') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/plugins/fontawesome-free/css/all.min.css') ?>">
-    
+
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Syne:wght@400..800&display=swap" rel="stylesheet">
 
     <link href="<?= base_url('assets/dist/css/bootstrap.min.css') ?>" rel="stylesheet">
+    <link rel="stylesheet" href="<?= base_url('assets/dist/css/loader.css')?>">
+
     
     <style>
     h1, h2, h4, h5, h6 {font-family: 'Syne', "sans-serif"; color: #282828}
@@ -150,6 +155,7 @@
     <link href="modals.css" rel="stylesheet">
   </head>
   <body class="bg-light">
+  <?php $this->load->view('partials/loader'); ?>
     <!-- Header -->
     <nav class="container-fluid sticky-top bg-white p-0">
       <header class="d-flex flex-wrap align-items-center justify-content-between px-4 py-4   m-0 border-bottom">
@@ -176,156 +182,157 @@
 
         <div class="row g-5">
         <div class="col-md-4 col-lg-5 order-last">
-            <?= form_open(base_url('book'))?>
-            <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <?php if (validation_errors()): ?>
+          <div class="alert alert-danger">
+            <?= validation_errors(); ?>
+          </div>
+        <?php endif; ?>
+
+        <?= form_open('book') ?>
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
             Booking Summary
-            <!-- <span class="badge bg-primary rounded-pill">3</span> -->
-            </h4>
-            <ul class="list-group mb-3">
+          </h4>
+          <ul class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between lh-sm">
-                <div>
-                <h6 class="my-0"><?= $car['brand'].' '.$car['model']?></h6>
+              <div>
+                <h6 class="my-0"><?= $car['brand'] . ' ' . $car['model'] ?></h6>
                 <small class="text-body-secondary">Car selected</small>
-                </div>
-                <span class="text-body-secondary">₱<?= $car['rate']?></span>
+              </div>
+              <span class="text-body-secondary">₱<?= $car['rate'] ?></span>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-sm">
-                <div>
+              <div>
                 <h6 class="my-0">Pickup Date</h6>
                 <small class="text-body-secondary">Rent start</small>
-                </div>
-                <span class="text-body-secondary"><?= date('F j, Y', strtotime($this->session->userdata('pickup-date'))); ?></span>
+              </div>
+              <span class="text-body-secondary"><?= date('F j, Y', strtotime($this->session->userdata('pickup-date'))) ?></span>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-sm">
-                <div>
+              <div>
                 <h6 class="my-0">Return Date</h6>
                 <small class="text-body-secondary">Rent end</small>
-                </div>
-                <span class="text-body-secondary"><?= date('F j, Y', strtotime($this->session->userdata('dropoff-date'))); ?></span>
+              </div>
+              <span class="text-body-secondary"><?= date('F j, Y', strtotime($this->session->userdata('dropoff-date'))) ?></span>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-sm">
-                <div>
-                  <h6 class="my-0">Rent Duration</h6>
-                  <small class="text-body-secondary">No. of days booked</small>
-                </div>
-                <span class="text-body-secondary"><?= $rent_duration?></span>
+              <div>
+                <h6 class="my-0">Rent Duration</h6>
+                <small class="text-body-secondary">No. of days booked</small>
+              </div>
+              <span class="text-body-secondary"><?= $rent_duration ?></span>
             </li>
-
             <li class="list-group-item d-flex justify-content-between">
               <div>
                 <h6 class="my-0">Total</h6>
               </div>
-              <span class="text-dark fw-bold">₱<?= $car['rate'] * $rent_duration;?></span>
+              <span class="text-dark fw-bold">₱<?= $car['rate'] * $rent_duration ?></span>
             </li>
-            </ul>
+          </ul>
 
-            <hr class="my-4">
-            <button class="w-100 btn btn-bd-primary btn-lg rounded-4" type="submit">Place booking</button>
+          <hr class="my-4">
+          <button class="w-100 btn btn-bd-primary btn-lg rounded-4" type="submit">Place booking</button>
+          </div>
 
-            <!-- <form class="card p-2">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Promo code">
-                <button type="submit" class="btn bg-secondary-subtle text-dark">Redeem</button>
-            </div>
-            </form> -->
-        </div>
-        <div class="col-md-6 col-lg-7">
+          <div class="col-md-6 col-lg-7">
             <h4 class="mb-3">Personal Information</h4>
             <div class="row g-3">
-                <div class="col-sm-6">
+              <div class="col-sm-6">
                 <label for="firstName" class="form-label">First name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="" value="<?= $this->session->userdata('fname')?>" required>
-                <div class="invalid-feedback">
-                    Valid first name is required.
-                </div>
-                </div>
+                <input type="text" class="form-control" name="fname" value="<?= set_value('fname', $this->session->userdata('fname')) ?>" required>
+                <?= form_error('fname', '<div class="text-danger small">', '</div>') ?>
+              </div>
 
-                <div class="col-sm-6">
+              <div class="col-sm-6">
                 <label for="lastName" class="form-label">Last name</label>
-                <input type="text" class="form-control" id="lastName" placeholder="" value="<?= $this->session->userdata('lname')?>" required>
-                <div class="invalid-feedback">
-                    Valid last name is required.
-                </div>
-                </div>
+                <input type="text" class="form-control" name="lname" value="<?= set_value('lname', $this->session->userdata('lname')) ?>" required>
+                <?= form_error('lname', '<div class="text-danger small">', '</div>') ?>
+              </div>
 
-                <div class="col-12">
+              <div class="col-12">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="you@example.com" value="<?= $this->session->userdata('email')?>">
-                <div class="invalid-feedback">
-                    Please enter a valid email address for shipping updates.
-                </div>
-                </div>
+                <input type="email" class="form-control" name="email" value="<?= set_value('email', $this->session->userdata('email')) ?>">
+                <?= form_error('email', '<div class="text-danger small">', '</div>') ?>
+              </div>
 
-                <div class="col-12 mb-4">
+              <div class="col-12 mb-4">
                 <label for="address" class="form-label">Address</label>
-                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
-                <div class="invalid-feedback">
-                    Please enter your shipping address.
-                </div>
-                </div>
-
+                <input type="text" class="form-control" name="address" value="<?= set_value('address') ?>" required>
+                <?= form_error('address', '<div class="text-danger small">', '</div>') ?>
+              </div>
             </div>
 
             <hr class="my-4">
 
             <h4 class="mb-3">Billing Information</h4>
 
-            <div class="my-3"> 
+            <div class="my-3">
               <label class="form-label d-block mb-2">Mode of payment</label>
-
-              <div class="btn-group w-100 gap-3" role="group" aria-label="Payment method">
-                <input type="radio" class="btn-check" name="paymentMethod" id="credit" autocomplete="off" checked required>
+              <div class="btn-group w-100 gap-3" role="group" aria-label="payment_method">
+                <input type="radio" class="btn-check" name="paymentMethod" id="credit" autocomplete="off" value="Credit Card"
+                  <?= set_radio('paymentMethod', 'Credit Card', TRUE) ?> required>
                 <label class="btn btn-outline-dark w-50 rounded-3" for="credit">Credit card</label>
 
-                <input type="radio" class="btn-check" name="paymentMethod" id="debit" autocomplete="off" required>
+                <input type="radio" class="btn-check" name="paymentMethod" id="debit" autocomplete="off" value="Debit Card"
+                  <?= set_radio('paymentMethod', 'Debit Card') ?> required>
                 <label class="btn btn-outline-dark w-50 rounded-3" for="debit">Debit card</label>
+              </div>
+              <?= form_error('paymentMethod', '<div class="text-danger small mt-1">', '</div>') ?>
+            </div>
+
+            <div class="row gy-3">
+              <div class="col-md-6">
+                <label for="cc-name" class="form-label">Name on card</label>
+                <input type="text" class="form-control" name="card_name" value="<?= set_value('card_name') ?>" placeholder="Full name as displayed on card" required>
+                <?= form_error('card_name', '<div class="text-danger small">', '</div>') ?>
+              </div>
+
+              <div class="col-md-6">
+                <label for="cc-number" class="form-label">Credit card number</label>
+                <input type="text" class="form-control" name="card_no" value="<?= set_value('card_no') ?>" placeholder="16-digit card number" required>
+                <?= form_error('card_no', '<div class="text-danger small">', '</div>') ?>
+              </div>
+
+              <div class="col-md-3">
+                <label for="cc-expiration" class="form-label">Expiration</label>
+                <input type="text" class="form-control" name="card_expiration" value="<?= set_value('card_expiration') ?>" placeholder="MM/YY" required>
+                <?= form_error('card_expiration', '<div class="text-danger small">', '</div>') ?>
+              </div>
+
+              <div class="col-md-3">
+                <label for="cc-cvv" class="form-label">CVV</label>
+                <input type="text" class="form-control" name="card_cvv" value="<?= set_value('card_cvv') ?>" placeholder="3-digit code" required>
+                <?= form_error('card_cvv', '<div class="text-danger small">', '</div>') ?>
               </div>
             </div>
 
+            <!-- Hidden fields -->
+            <input type="hidden" name="car_id" value="<?= $car['id'] ?>">
+            <input type="hidden" name="user_id" value="<?= $this->session->userdata('user_id') ?>">
+            <input type="hidden" name="duration" value="<?= $rent_duration ?>">
+            <input type="hidden" name="total_amount" value="<?= $car['rate'] * $rent_duration ?>">
+            <input type="hidden" name="pickup" value="<?= $this->session->userdata('pickup-date') ?>">
+            <input type="hidden" name="dropoff" value="<?= $this->session->userdata('dropoff-date') ?>">
+          </div>
+          <?= form_close() ?>
 
-            <div class="row gy-3">
-                <div class="col-md-6">
-                <label for="cc-name" class="form-label">Name on card</label>
-                <input type="text" class="form-control" id="cc-name" placeholder="Full name as displayed on card" required>
-                <div class="invalid-feedback">
-                    Name on card is required
-                </div>
-                </div>
 
-                <div class="col-md-6">
-                <label for="cc-number" class="form-label">Credit card number</label>
-                <input type="text" class="form-control" id="cc-number" placeholder="16-digit card number" required>
-                <div class="invalid-feedback">
-                    Credit card number is required
-                </div>
-                </div>
-
-                <div class="col-md-3">
-                <label for="cc-expiration" class="form-label">Expiration</label>
-                <input type="text" class="form-control" id="cc-expiration" placeholder="MM/YY" required>
-                <div class="invalid-feedback">
-                    Expiration date required
-                </div>
-                </div>
-
-                <div class="col-md-3">
-                <label for="cc-cvv" class="form-label">CVV</label>
-                <input type="text" class="form-control" id="cc-cvv" placeholder="3-digit code" required>
-                <div class="invalid-feedback">
-                    Security code required
-                </div>
-                </div>
-            </div>
-            <?= form_close()?>
         </div>
     </div>
 
+    <script src="<?= base_url('assets/dist/js/loader.js')?>"></script>
   </body>
+<!-- JQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<!-- Chart JS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Bootstrap 5.3 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<!-- AdminLTE App -->
-<script src="<?= base_url('assets/dist/js/adminlte.min.js?v=3.2.0') ?>"></script>
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<!-- Flatpickr -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 
 
 <script>
@@ -333,4 +340,20 @@
       $('[data-bs-toggle="tooltip"]').tooltip();
   });
 </script>
+
+<script>
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end', // Top-right corner
+      showConfirmButton: false,
+      timer: 4000
+    });
+
+    <?php if ($this->session->flashdata('validation-error')): ?>
+      Toast.fire({
+        icon: 'warning',
+        title: 'Please fill up all the fields.'
+      });
+    <?php endif; ?>
+  </script>
 </html>
