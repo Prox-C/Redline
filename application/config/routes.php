@@ -83,4 +83,4 @@ $route['home'] = 'User/getCars';
 $route['search-cars'] = 'Home/searchCars';
 $route['view-car/(:num)'] = 'User/viewCar/$1';
 $route['checkout'] = 'Book/checkout';
-// $route['checkout'] = 'Book/checkout';
+$route['book'] = 'Book/index';
