@@ -261,10 +261,10 @@
 
   </head>
   <body class="bg-light-subtle">
+  <?php $this->load->view('partials/loader'); ?>
   <?= $this->session->set_userdata('current_view', 'pages/browse'); ?>
   <?php $this->load->view('templates/forms'); ?>
   <?php $this->load->view('templates/top-nav'); ?>
-  <?php $this->load->view('partials/loader'); ?>
 
 
   <div class="container px-4 pt-4">
@@ -535,7 +535,7 @@ document.addEventListener("DOMContentLoaded", function () {
       toast: true,
       position: 'top-end', // Top-right corner
       showConfirmButton: false,
-      timer: 4000
+      timer: 4500
     });
 
     <?php if ($this->session->flashdata('validation-error')): ?>
@@ -564,6 +564,13 @@ document.addEventListener("DOMContentLoaded", function () {
       Toast.fire({
         icon: 'error',
         title: '<?= $this->session->flashdata('error'); ?>'
+      });
+    <?php endif; ?>
+
+    <?php if ($this->session->flashdata('booking-success')): ?>
+      Toast.fire({
+        icon: 'info',
+        text: '<?= $this->session->flashdata('booking-success'); ?>'
       });
     <?php endif; ?>
 
