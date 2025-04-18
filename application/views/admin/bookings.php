@@ -59,15 +59,78 @@
                     <div class="card-body table-responsive p-0">
                         <table class="table table-valign-middle">
                             <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Email Address</th>
-                                    <th>Full Name</th>
-                                    <th>Age</th>
-                                    <th>Sex</th>
-                                    <th colspan="2" style="width: 5%;">Actions</th>
+                                <tr class="text-start">
+                                    <th style="width: 3%;">ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Car</th>
+                                    <th style="width: 12%;">Pickup</th>
+                                    <th style="width: 12%;">Dropoff</th>
+                                    <th>Total</th>
+                                    <th >Status</th>
+                                    <th style="width: 5%;" colspan="2">Actions</th>
                                 </tr>
                             </thead>
+                            <tbody>
+                              <?php
+                               if(!empty($bookings))
+                               {
+                                 foreach ($bookings as $booking)  
+                                 {  
+                                  $date = new DateTime($booking['pickup_date']); // or any date field
+                              ?>
+                              <tr class="text-start" style="font-size: 14px">
+                                <td><?= $booking['booking_id']?></td>
+                                <td><?= $booking['renter_fname'].' '.$booking['renter_lname']?></td>
+                                <td><?= $booking['renter_email']?></td>
+                                <td><?= $booking['brand'].' '.$booking['model']?></td>
+                                <td><?= date('F j, Y', strtotime($booking['pickup_date'])); ?></td>
+                                <td><?= date('F j, Y', strtotime($booking['dropoff_date'])); ?></td>
+                                <td>₱<?= number_format($booking['total_amount'], 0, '.', ',') ?></td>
+                                <td>
+                                  <?php
+                                    if($booking['status'] == 'pending')
+                                    {
+                                      echo '<span class="badge bg-warning-subtle text-warning px-2">Pending</span>';
+                                    }
+                                    elseif($booking['status'] == 'confirmed')
+                                    {
+                                      echo '<span class="badge bg-success-subtle text-success">Confirmed</span>';
+                                    }
+                                    elseif($booking['status'] == 'cancelled')
+                                    {
+                                      echo '<span class="badge bg-danger">Cancelled</span>';
+                                    }
+                                    elseif($booking['status'] == 'completed')
+                                    {
+                                      echo '<span class="badge bg-primary">Completed</span>';
+                                    }
+                                  ?>
+                                </td>
+                                <td class="">
+                                  <a href="#" class="link-icon txt-pri" data-bs-toggle="modal" data-bs-target="#viewBookingModal<?= $booking['booking_id']?>">
+                                    <i class="fas fa-eye" data-bs-toggle="modal" data-bs-target=""></i>
+                                  </a>
+                                </td>
+                                <td class="">
+                                  <a href="#" class="link-icon text-warning" data-bs-toggle="modal" data-bs-target="#viewBookingModal<?= $booking['booking_id']?>">
+                                    <i class="fas fa-edit" data-bs-toggle="modal" data-bs-target=""></i>
+                                  </a>
+                                </td>
+                              </tr>
+                              <?php
+                                  }
+                                } 
+                                else
+                                {
+                              ?>
+                                  <tr>
+                                    <td colspan="8" class="text-center">Wow, such empty.</td> 
+                                  </tr>
+                                  <?php
+                                } 
+                              ?>
+                            </tbody>
                         <table>
                     </div>
                 </div>
