@@ -10,6 +10,7 @@ class Admin extends MY_Secured {
         parent::__construct();
         $this->load->model('CarModel');
         $this->load->model('UserModel');
+        $this->load->model('BookingModel');
     }
 
     public function dashboard() {
@@ -155,9 +156,12 @@ class Admin extends MY_Secured {
 
     // BOOKINGS MANAGEMENT
     public function getBookings() {
+        $data['bookings'] = $this->BookingModel->getAllBookings();
         $this->load->view('templates/admin-header');
         $this->load->view('templates/sidebar');
-        $this->load->view('admin/bookings');
+
+
+        $this->load->view('admin/bookings', $data);
         $this->load->view('templates/admin-footer');
     }
 
@@ -235,5 +239,6 @@ class Admin extends MY_Secured {
         }
     }
 
+    //BOOKING MANAGEMENT
 
 }
