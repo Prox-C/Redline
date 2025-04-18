@@ -24,6 +24,17 @@ class BookingModel extends CI_Model {
         return $unavailable;
     }
 
+    public function getAllBookings() {
+        $this->db->select('bookings.*, cars.brand, cars.model');
+        $this->db->from('bookings');
+        $this->db->join('cars', 'cars.id = bookings.car_id');
+        $this->db->order_by('bookings.status', 'ASC'); // or 'DESC'
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    
+    
+
     public function addBooking(){
          // Gather booking data
          $data = [
