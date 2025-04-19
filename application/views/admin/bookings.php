@@ -107,9 +107,9 @@
                                     }
                                   ?>
                                 </td>
-                                <td class="">
-                                  <a href="#" class="link-icon txt-pri" data-bs-toggle="modal" data-bs-target="#viewBookingModal<?= $booking['booking_id']?>">
-                                    <i class="fas fa-eye" data-bs-toggle="modal" data-bs-target=""></i>
+                                <td class="align-middle">
+                                  <a href="#" class="link-icon txt-pri">
+                                    <i class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#bookingDetailsModal_<?= $booking['booking_id'];?>"></i>
                                   </a>
                                 </td>
                                 <td class="">
@@ -118,6 +118,33 @@
                                   </a>
                                 </td>
                               </tr>
+                               <!-- Booking Details Modal -->
+                               <div class="modal fade" tabindex="-1" id="bookingDetailsModal_<?= $booking['booking_id'];?>" aria-hidden="true">
+                                  <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content rounded-4 shadow">
+                                      <div class="modal-header px-5 pt-5 pb-0 border-bottom-0">
+                                      <div class="fs-small">
+                                          Booking ID: <?= $booking['booking_id']?>
+                                      </div>                                        
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body px-5 pt-0 pb-5">
+                                        <h2 class="p-0 mb-3"><?= $booking['brand'].' '.$booking['model']?></h2>
+                                        <span class="fw-light text-muted"><em>From <?= date('F j, Y', strtotime($booking['pickup_date'])); ?> to <?= date('F j, Y', strtotime($booking['dropoff_date'])); ?> • <?= $booking['total_days']?> days</em></span>
+                                        <div class="row p-0 mt-5">
+                                          <div class="col-md-6 d-flex flex-column bg-light rounded-3 p-3">
+                                            <label class="w-100" for="">Client Information</label>
+                                            <span class="w-100 border-bottom py-1 m-0 align-middle">Name: <?= $booking['renter_fname'].' '.$booking['renter_lname']?></span>
+                                            <span class="w-100 border-bottom py-1 m-0 align-middle">Email: <?= $booking['renter_email']?></span>
+                                            <span class="w-100 border-bottom py-1 m-0 align-middle">Account ID: <?= $booking['user_id']?></span>
+                                            <span class="w-100 py-1 m-0 align-middle">Address: <?= $booking['address']?></span>
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
                               <?php
                                   }
                                 } 

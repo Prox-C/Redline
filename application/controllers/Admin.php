@@ -159,10 +159,10 @@ class Admin extends MY_Secured {
         $data['bookings'] = $this->BookingModel->getAllBookings();
         $this->load->view('templates/admin-header');
         $this->load->view('templates/sidebar');
-
-
         $this->load->view('admin/bookings', $data);
         $this->load->view('templates/admin-footer');
+        $this->load->view('templates/validation-alerts');
+
     }
 
     // STAFF MANAGEMENT
