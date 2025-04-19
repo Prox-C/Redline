@@ -123,21 +123,60 @@
                                   <div class="modal-dialog modal-dialog-centered modal-lg">
                                     <div class="modal-content rounded-4 shadow">
                                       <div class="modal-header px-5 pt-5 pb-0 border-bottom-0">
-                                      <div class="fs-small">
+                                      <div class="px-2 fs-small">
                                           Booking ID: <?= $booking['booking_id']?>
                                       </div>                                        
                                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                       </div>
                                       <div class="modal-body px-5 pt-0 pb-5">
-                                        <h2 class="p-0 mb-3"><?= $booking['brand'].' '.$booking['model']?></h2>
-                                        <span class="fw-light text-muted"><em>From <?= date('F j, Y', strtotime($booking['pickup_date'])); ?> to <?= date('F j, Y', strtotime($booking['dropoff_date'])); ?> • <?= $booking['total_days']?> days</em></span>
-                                        <div class="row p-0 mt-5">
+                                        
+                                        <div class="col-12 d-flex flex-row align-items-center justify-content-between">
+                                          <h2 class="p-0 mb-3"><?= $booking['brand'].' '.$booking['model']?></h2>
+                                          <?php 
+                                            switch($booking['status'])
+                                            {
+                                              case 'pending':
+                                                echo '<span class="fs-5 badge bg-warning-subtle text-warning px-3 rounded-3">Pending</span>';
+                                                break;
+                                              case 'confirmed':
+                                                echo '<span class="fs-5 badge bg-success-subtle text-success px-3 rounded-3">Confirmed</span>';
+                                                break;
+                                              case 'cancelled':
+                                                echo '<span class="fs-5 badge bg-danger px-3 rounded-3">Cancelled</span>';
+                                                break;
+                                              case 'completed':
+                                                echo '<span class="fs-5 badge bg-primary px-3 rounded-3">Completed</span>';
+                                                break;
+                                            }
+                                          ?>
+                                        </div>
+                                        <div class="col-12 d-flex flex-row align-items-center justify-content-between">
+                                        <span class="fw-light text-muted">
+                                          <em>
+                                            From <?= date('F j, Y', strtotime($booking['pickup_date'])); ?> 
+                                            to <?= date('F j, Y', strtotime($booking['dropoff_date'])); ?> • 
+                                            <?= $booking['total_days'] ?> <?= ($booking['total_days'] == 1) ? 'day' : 'days' ?>
+                                          </em>
+                                        </span>
+                                        <span class="text-end">Booking total: <span class="txt-pri">₱<?= number_format($booking['total_amount'], 0, '.', ',') ?></span></span>
+                                        </div>
+                                       
+                                        <div class="row p-0 mt-5 flex-md-nowrap gap-2">
                                           <div class="col-md-6 d-flex flex-column bg-light rounded-3 p-3">
                                             <label class="w-100" for="">Client Information</label>
                                             <span class="w-100 border-bottom py-1 m-0 align-middle">Name: <?= $booking['renter_fname'].' '.$booking['renter_lname']?></span>
                                             <span class="w-100 border-bottom py-1 m-0 align-middle">Email: <?= $booking['renter_email']?></span>
                                             <span class="w-100 border-bottom py-1 m-0 align-middle">Account ID: <?= $booking['user_id']?></span>
-                                            <span class="w-100 py-1 m-0 align-middle">Address: <?= $booking['address']?></span>
+                                            <span class="w-100 border-bottom py-1 m-0 align-middle">Address: <?= $booking['address']?></span>
+                                            <span class="w-100 py-1 m-0 align-middle">Mobile: <?= $booking['contact_number']?></span>
+                                          </div>
+                                          <div class="col-md-6 d-flex flex-column bg-light rounded-3 p-3">
+                                            <label class="w-100" for="">Payment Details</label>
+                                            <span class="w-100 border-bottom py-1 m-0 align-middle">Payment Method: <?= $booking['payment_method']?></span>
+                                            <span class="w-100 border-bottom py-1 m-0 align-middle">Card Name: <?= $booking['card_name']?></span>
+                                            <span class="w-100 border-bottom py-1 m-0 align-middle">Card No.: <?= $booking['card_no']?></span>
+                                            <span class="w-100 border-bottom py-1 m-0 align-middle">Expiry: <?= $booking['card_expiry']?></span>
+                                            <span class="w-100 py-1 m-0 align-middle">CVV: <?= $booking['card_cvv']?></span>
 
                                           </div>
                                         </div>
