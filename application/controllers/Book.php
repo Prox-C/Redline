@@ -53,6 +53,7 @@ class Book extends MY_Secured {
         $this->form_validation->set_rules('fname', 'First Name', 'required');
         $this->form_validation->set_rules('lname', 'Last Name', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+        $this->form_validation->set_rules('number', 'Email', 'required|numeric');
         $this->form_validation->set_rules('address', 'Address', 'required');
         $this->form_validation->set_rules('paymentMethod', 'Payment Method', 'required');
         $this->form_validation->set_rules('card_name', 'Name on Card');

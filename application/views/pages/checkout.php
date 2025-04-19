@@ -248,10 +248,16 @@
                 <?= form_error('lname', '<div class="text-danger small">', '</div>') ?>
               </div>
 
-              <div class="col-12">
+              <div class="col-6">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" name="email" value="<?= set_value('email', $this->session->userdata('email')) ?>">
                 <?= form_error('email', '<div class="text-danger small">', '</div>') ?>
+              </div>
+
+              <div class="col-6">
+                <label for="number" class="form-label">Phone Number</label>
+                <input type="text" class="form-control" name="number" value="<?=  set_value('number')?>" placeholder="Enter mobile no." autocomplete="off">
+                <?= form_error('number', '<div class="text-danger small">', '</div>') ?>
               </div>
 
               <div class="col-12 mb-4">

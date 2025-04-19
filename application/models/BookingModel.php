@@ -43,6 +43,7 @@ class BookingModel extends CI_Model {
             'renter_fname' => $this->input->post('fname'),
             'renter_lname' => $this->input->post('lname'),
             'renter_email' => $this->input->post('email'),
+            'contact_number' => $this->input->post('number'),
             'address' => $this->input->post('address'),
             'total_amount' => $this->input->post('total_amount'),
             'payment_method' => $this->input->post('paymentMethod'),
