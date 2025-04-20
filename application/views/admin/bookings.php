@@ -68,7 +68,7 @@
                                     <th style="width: 12%;">Dropoff</th>
                                     <th>Total</th>
                                     <th >Status</th>
-                                    <th style="width: 5%;" colspan="2">Actions</th>
+                                    <th style="width: 5%;">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -107,14 +107,9 @@
                                     }
                                   ?>
                                 </td>
-                                <td class="align-middle">
+                                <td class="align-middle text-center">
                                   <a href="#" class="link-icon txt-pri">
                                     <i class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#bookingDetailsModal_<?= $booking['booking_id'];?>"></i>
-                                  </a>
-                                </td>
-                                <td class="align-middle">
-                                  <a href="#" class="link-icon text-warning">
-                                    <i class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#updateStatusModal_<?= $booking['booking_id'];?>"></i>
                                   </a>
                                 </td>
                               </tr>
@@ -132,23 +127,32 @@
                                         
                                         <div class="col-12 d-flex flex-row align-items-center justify-content-between">
                                           <h2 class="p-0 mb-3"><?= $booking['brand'].' '.$booking['model']?></h2>
-                                          <?php 
-                                            switch($booking['status'])
-                                            {
-                                              case 'pending':
-                                                echo '<span class="fs-5 badge bg-warning-subtle text-warning px-3 rounded-3">Pending</span>';
-                                                break;
-                                              case 'confirmed':
-                                                echo '<span class="fs-5 badge bg-success-subtle text-success px-3 rounded-3">Confirmed</span>';
-                                                break;
-                                              case 'cancelled':
-                                                echo '<span class="fs-5 badge bg-danger-subtle text-danger px-3 rounded-3">Cancelled</span>';
-                                                break;
-                                              case 'completed':
-                                                echo '<span class="fs-5 badge bg-primary-subtle text-primary px-3 rounded-3">Completed</span>';
-                                                break;
-                                            }
-                                          ?>
+                                          <div class="d-flex flex-row align-items-center gap-2">
+                                            <?php 
+                                              switch($booking['status'])
+                                              {
+                                                case 'pending':
+                                                  echo '<span class="fs-5 badge bg-warning-subtle text-warning px-3 rounded-3">Pending</span>';
+                                                  break;
+                                                case 'confirmed':
+                                                  echo '<span class="fs-5 badge bg-success-subtle text-success px-3 rounded-3">Confirmed</span>';
+                                                  break;
+                                                case 'cancelled':
+                                                  echo '<span class="fs-5 badge bg-danger-subtle text-danger px-3 rounded-3">Cancelled</span>';
+                                                  break;
+                                                case 'completed':
+                                                  echo '<span class="fs-5 badge bg-primary-subtle text-primary px-3 rounded-3">Completed</span>';
+                                                  break;
+                                              }
+                                            ?>
+                                            <a href="#" 
+                                              class="d-flex align-items-center text-secondary fs-5 ms-2" 
+                                              data-bs-toggle="modal" 
+                                              data-bs-target="#updateStatusModal_<?= $booking['booking_id']; ?>">
+                                              <i class="fas fa-pen"></i>
+                                            </a>
+                                          </div>
+                                          
                                         </div>
                                         <div class="col-12 d-flex flex-row align-items-center justify-content-between">
                                         <span class="fw-light text-muted">
@@ -178,6 +182,7 @@
                                             <span class="w-100 border-bottom py-1 m-0 align-middle">Expiry: <?= $booking['card_expiry']?></span>
                                             <span class="w-100 py-1 m-0 align-middle">CVV: <?= $booking['card_cvv']?></span>
                                           </div>
+                                           
                                         </div>
                                       </div>
                                     </div>
@@ -203,6 +208,14 @@
                                           </select>
                                           <button type="submit" class="btn btn-lg bg-dark rounded-4 w-100">Update</button>
                                         <?= form_close()?>
+                                        <button type="button" 
+                                                class="btn btn-lg bg-secondary-subtle mt-2 text-dark rounded-4 w-100" 
+                                                data-bs-dismiss="modal"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#bookingDetailsModal_<?= $booking['booking_id']; ?>">
+                                          Cancel 
+                                        </button>
+
                                       </div>
                                       <!-- <div class="modal-footer flex-nowrap p-0">
                                       </div> -->
