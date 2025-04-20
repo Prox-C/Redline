@@ -66,6 +66,7 @@ $route['admin/new-car'] = 'Admin/newCar';
 $route['admin/addCar'] = 'Admin/addCar';
 
 $route['admin/bookings'] = 'Admin/getBookings';
+$route['admin/updateStatus/(:num)'] = 'Admin/updateStatus/$1';
 
 $route['admin/clients'] = 'Admin/getClients';
 $route['admin/registerClient'] = 'Admin/registerClient';
