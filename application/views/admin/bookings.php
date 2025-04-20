@@ -112,14 +112,14 @@
                                     <i class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#bookingDetailsModal_<?= $booking['booking_id'];?>"></i>
                                   </a>
                                 </td>
-                                <td class="">
-                                  <a href="#" class="link-icon text-warning" data-bs-toggle="modal" data-bs-target="#viewBookingModal<?= $booking['booking_id']?>">
-                                    <i class="fas fa-edit" data-bs-toggle="modal" data-bs-target=""></i>
+                                <td class="align-middle">
+                                  <a href="#" class="link-icon text-warning">
+                                    <i class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#updateStatusModal_<?= $booking['booking_id'];?>"></i>
                                   </a>
                                 </td>
                               </tr>
-                               <!-- Booking Details Modal -->
-                               <div class="modal fade" tabindex="-1" id="bookingDetailsModal_<?= $booking['booking_id'];?>" aria-hidden="true">
+                                <!-- Booking Details Modal -->
+                                <div class="modal fade" tabindex="-1" id="bookingDetailsModal_<?= $booking['booking_id'];?>" aria-hidden="true">
                                   <div class="modal-dialog modal-dialog-centered modal-lg">
                                     <div class="modal-content rounded-4 shadow">
                                       <div class="modal-header px-5 pt-5 pb-0 border-bottom-0">
@@ -177,13 +177,43 @@
                                             <span class="w-100 border-bottom py-1 m-0 align-middle">Card No.: <?= $booking['card_no']?></span>
                                             <span class="w-100 border-bottom py-1 m-0 align-middle">Expiry: <?= $booking['card_expiry']?></span>
                                             <span class="w-100 py-1 m-0 align-middle">CVV: <?= $booking['card_cvv']?></span>
-
                                           </div>
                                         </div>
                                       </div>
                                     </div>
+
+                                    <!-- Edit Status Modal -->
                                   </div>
                                 </div>
+                                
+                                <!-- Edit Status Modal -->
+                                <div class="modal fade modal-sheet" tabindex="-1" aria-hidden="true"role="dialog" id="updateStatusModal_<?php echo $booking['booking_id'];?>">
+                                  <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content rounded-4 shadow">
+                                      <div class="modal-body p-5 text-center">
+                                        <h4 class="mb-3">Booking Status</h4>
+                                          <input type="hidden" name="update_user" value="<?php echo $booking['booking_id']; ?>">
+                                          <select name="status" class="form-select form-select-lg mb-3 rounded-3 h-100 m-0" aria-label=".form-select-lg example">
+                                              <option class="d-none" disabled>Status</option>
+                                              <option class="text-warning" value="Pending" <?= $booking['status'] == 'pending' ? 'selected' : '' ?>>Pending</option>
+                                              <option class="text-success" value="Confirmed" <?= $booking['status'] == 'confirmed' ? 'selected' : '' ?>>Confirmed</option>
+                                              <option class="text-danger" value="Cancelled" <?= $booking['status'] == 'cancelled' ? 'selected' : '' ?>>Cancelled</option>
+                                              <option class="text-primary"value="Completed" <?= $booking['status'] == 'completed' ? 'selected' : '' ?>>Completed</option>
+                                          </select>
+                                            <button class="btn btn-lg bg-dark rounded-4 w-100">Update</button>
+
+
+
+                                      </div>
+                                      <!-- <div class="modal-footer flex-nowrap p-0">
+                                        
+                                      </div> -->
+                                    </div>
+                                  </div>
+                                </div>
+
+
+                                
                               <?php
                                   }
                                 } 
