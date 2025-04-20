@@ -99,11 +99,11 @@
                                     }
                                     elseif($booking['status'] == 'cancelled')
                                     {
-                                      echo '<span class="badge bg-danger">Cancelled</span>';
+                                      echo '<span class="badge bg-danger-subtle text-danger">Cancelled</span>';
                                     }
                                     elseif($booking['status'] == 'completed')
                                     {
-                                      echo '<span class="badge bg-primary">Completed</span>';
+                                      echo '<span class="badge bg-primary-subtle text-primary">Completed</span>';
                                     }
                                   ?>
                                 </td>
@@ -142,10 +142,10 @@
                                                 echo '<span class="fs-5 badge bg-success-subtle text-success px-3 rounded-3">Confirmed</span>';
                                                 break;
                                               case 'cancelled':
-                                                echo '<span class="fs-5 badge bg-danger px-3 rounded-3">Cancelled</span>';
+                                                echo '<span class="fs-5 badge bg-danger-subtle text-danger px-3 rounded-3">Cancelled</span>';
                                                 break;
                                               case 'completed':
-                                                echo '<span class="fs-5 badge bg-primary px-3 rounded-3">Completed</span>';
+                                                echo '<span class="fs-5 badge bg-primary-subtle text-primary px-3 rounded-3">Completed</span>';
                                                 break;
                                             }
                                           ?>
@@ -192,6 +192,7 @@
                                     <div class="modal-content rounded-4 shadow">
                                       <div class="modal-body p-5 text-center">
                                         <h4 class="mb-3">Booking Status</h4>
+                                        <?= form_open('admin/updateStatus/'.$booking['booking_id'])?>
                                           <input type="hidden" name="update_user" value="<?php echo $booking['booking_id']; ?>">
                                           <select name="status" class="form-select form-select-lg mb-3 rounded-3 h-100 m-0" aria-label=".form-select-lg example">
                                               <option class="d-none" disabled>Status</option>
@@ -200,20 +201,15 @@
                                               <option class="text-danger" value="Cancelled" <?= $booking['status'] == 'cancelled' ? 'selected' : '' ?>>Cancelled</option>
                                               <option class="text-primary"value="Completed" <?= $booking['status'] == 'completed' ? 'selected' : '' ?>>Completed</option>
                                           </select>
-                                            <button class="btn btn-lg bg-dark rounded-4 w-100">Update</button>
-
-
-
+                                          <button type="submit" class="btn btn-lg bg-dark rounded-4 w-100">Update</button>
+                                        <?= form_close()?>
                                       </div>
                                       <!-- <div class="modal-footer flex-nowrap p-0">
-                                        
                                       </div> -->
                                     </div>
                                   </div>
                                 </div>
 
-
-                                
                               <?php
                                   }
                                 } 
