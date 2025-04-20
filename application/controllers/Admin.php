@@ -165,6 +165,15 @@ class Admin extends MY_Secured {
 
     }
 
+    public function updateStatus($id) {
+        if ($this->input->server('REQUEST_METHOD') === 'POST') {
+            $this->BookingModel->updateStatus($id);
+            $this->session->set_flashdata('success', 'Booking status updated!');
+            redirect('admin/bookings');
+        }
+    }
+    
+
     // STAFF MANAGEMENT
     public function getManagers() { 
         $data['mngr'] = $this->UserModel->getManagers();

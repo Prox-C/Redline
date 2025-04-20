@@ -33,8 +33,6 @@ class BookingModel extends CI_Model {
         return $query->result_array();
     }
     
-    
-
     public function addBooking(){
          // Gather booking data
          $data = [
@@ -64,5 +62,12 @@ class BookingModel extends CI_Model {
         }
         redirect('home');
     }
+
+    public function updateStatus($id) {
+        $status = $this->input->post('status');
+        $this->db->where('booking_id', $id);
+        return $this->db->update('bookings', ['status' => $status]);
+    }
+    
 }
 ?>
