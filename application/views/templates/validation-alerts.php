@@ -17,10 +17,8 @@
         modal.show();
     <?php endif; ?>
     
-
-
-        // Check for flash data success
-        <?php if ($this->session->flashdata('success')): ?>
+    // Check for flash data success
+    <?php if ($this->session->flashdata('success')): ?>
         Toast.fire({
         icon: 'success',
         title: '<?= $this->session->flashdata('success'); ?>'
