@@ -257,6 +257,12 @@
       bottom: 1px;
     }
 
+    .nav-icon {
+      height: 20px;
+      position: relative;
+      bottom: 2px ;
+    }
+
     </style>
 
   </head>
