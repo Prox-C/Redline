@@ -79,7 +79,10 @@
                                  {  
                                   $date = new DateTime($booking['pickup_date']); // or any date field
                               ?>
-                              <tr class="text-start" style="font-size: 14px">
+                              <tr 
+                              class="text-start <?php if($booking['status']=='cancelled' || $booking['status']=='completed'){echo '';}?>" 
+                              style="font-size: 14px"
+                              >
                                 <td><?= $booking['booking_id']?></td>
                                 <td><?= $booking['renter_fname'].' '.$booking['renter_lname']?></td>
                                 <td><?= $booking['renter_email']?></td>
