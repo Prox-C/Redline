@@ -12,7 +12,7 @@
         <div class="d-flex align-items-center gap-3">
             <!-- Navigation Links -->
             <div class="d-none d-md-flex gap-3">
-                <a href="<?= base_url('admin/bookings') ?>" class="nav-link px-2 text-white align-middle">
+                <a href="<?= base_url('bookings/'.$this->session->userdata('user_id')) ?>" class="nav-link px-2 text-white align-middle">
                 <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon me-1" fill="currentColor" viewBox="0 0 256 256"><path d="M240,104H229.2L201.42,41.5A16,16,0,0,0,186.8,32H69.2a16,16,0,0,0-14.62,9.5L26.8,104H16a8,8,0,0,0,0,16h8v80a16,16,0,0,0,16,16H64a16,16,0,0,0,16-16v-8h96v8a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16V120h8a8,8,0,0,0,0-16ZM80,152H56a8,8,0,0,1,0-16H80a8,8,0,0,1,0,16Zm120,0H176a8,8,0,0,1,0-16h24a8,8,0,0,1,0,16ZM44.31,104,69.2,48H186.8l24.89,56Z"></path></svg>
                     Bookings
                 </a>
