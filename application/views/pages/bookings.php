@@ -188,7 +188,7 @@
     <nav class="container-fluid sticky-top bg-white p-0">
       <header class="d-flex flex-wrap align-items-center justify-content-between px-4 py-4   m-0 border-bottom">
         <div class="col-1 d-flex align-items-center justify-content-start"> 
-            <button onclick="history.back()" class="btn btn-sm border-secondary rounded-circle text-align-center"><svg class="fab-icon" xmlns="http://www.w3.org/2000/svg" height="18px" fill="currentColor" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H69l51.52,51.51a12,12,0,0,1-17,17l-72-72a12,12,0,0,1,0-17l72-72a12,12,0,0,1,17,17L69,116H216A12,12,0,0,1,228,128Z"></path></svg></button>
+            <button onclick="window.location='<?= base_url('home')?>'" class="btn btn-sm border-secondary rounded-circle text-align-center"><svg class="fab-icon" xmlns="http://www.w3.org/2000/svg" height="18px" fill="currentColor" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H69l51.52,51.51a12,12,0,0,1-17,17l-72-72a12,12,0,0,1,0-17l72-72a12,12,0,0,1,17,17L69,116H216A12,12,0,0,1,228,128Z"></path></svg></button>
         </div>
         <div class="col-10 d-flex align-items-center justify-content-center">
             <h5 class="m-0 p-0">My Bookings</h5>
@@ -285,7 +285,7 @@
             <div class="accordion-body pb-0">
               <?php foreach ($bookings as $booking): ?>
                 <?php if ($booking['status'] === 'completed'): ?>
-                  <div class="card bg-light p-3 rounded-3 mb-3 text-muted elevation-0 booking-card">
+                  <div class="card bg-light p-3 rounded-3 mb-3 text-muted elevation-0 booking-card" onclick="window.location='<?= base_url('view-booking/' . $booking['booking_id']); ?>'">
                     <div class="row g-3 align-items-center">
                       <div class="col-12 col-md-auto">
                         <img src="<?= base_url('assets/images/cars/' . $booking['thumbnail']) ?>" class="img-fluid rounded-2" style="max-width: 140px;" alt="...">
