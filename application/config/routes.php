@@ -86,5 +86,6 @@ $route['view-car/(:num)'] = 'User/viewCar/$1';
 $route['checkout'] = 'Book/checkout';
 $route['book'] = 'Book/index';
 
-// Nav Links
+// Bookings
 $route['bookings/(:num)'] = 'Book/getClientBookings/$1';
+$route['view-booking/(:num)'] = 'Book/getBooking/$1';
