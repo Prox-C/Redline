@@ -42,6 +42,16 @@ class BookingModel extends CI_Model {
         $query = $this->db->get();
         return $query->result_array();
     }
+
+    public function getBookingDetails($booking_id) {
+        $this->db->select('bookings.*, cars.brand, cars.model, cars.thumbnail');
+        $this->db->from('bookings');
+        $this->db->join('cars', 'cars.id = bookings.car_id');
+        $this->db->where('bookings.booking_id', $booking_id); // filter by booking ID
+        $query = $this->db->get();
+        return $query->row_array(); // since you're expecting one booking
+    }
+    
     
     public function addBooking(){
          // Gather booking data
