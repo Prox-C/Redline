@@ -32,7 +32,6 @@
     logo-text {font-family: 'Syne', "sans-serif"; font-weight: 900;}
     * {font-family: 'Space Grotesk', "sans-serif";}
 
-
       .small-box.brand-dark {background: #c5211c; color: #fefefe}
       .small-box.brand-primary {background: #EA4335; color: #fefefe}
       .small-box.brand-secondary {background: #f59b65; color: #fefefe}
@@ -183,12 +182,13 @@
     <link href="modals.css" rel="stylesheet">
   </head>
   <body class="bg-light">
+  <?php $this->load->view('templates/forms'); ?>
   <?php $this->load->view('partials/loader'); ?>
     <!-- Header -->
     <nav class="container-fluid sticky-top bg-white p-0">
       <header class="d-flex flex-wrap align-items-center justify-content-between px-4 py-4   m-0 border-bottom">
         <div class="col-1 d-flex align-items-center justify-content-start"> 
-            <button onclick="history.back()" class="btn btn-sm border-secondary rounded-circle text-align-center"><svg class="fab-icon" xmlns="http://www.w3.org/2000/svg" height="18px" fill="currentColor" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H69l51.52,51.51a12,12,0,0,1-17,17l-72-72a12,12,0,0,1,0-17l72-72a12,12,0,0,1,17,17L69,116H216A12,12,0,0,1,228,128Z"></path></svg></button>
+            <button onclick="window.location='<?= base_url('bookings/'.$this->session->userdata('user_id'))?>'" class="btn btn-sm border-secondary rounded-circle text-align-center"><svg class="fab-icon" xmlns="http://www.w3.org/2000/svg" height="18px" fill="currentColor" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H69l51.52,51.51a12,12,0,0,1-17,17l-72-72a12,12,0,0,1,0-17l72-72a12,12,0,0,1,17,17L69,116H216A12,12,0,0,1,228,128Z"></path></svg></button>
         </div>
         <div class="col-10 d-flex align-items-center justify-content-center">
             <h5 class="m-0 p-0">Booking Details</h5>
@@ -198,8 +198,63 @@
       </header>
     </nav>
 
-    <div class="container p-5">
+    <?php 
+    if($booking['status'] == 'pending'){
+    ?>
+      <div class="col-12 bg-warning-subtle py-1 text-center">
+        Your booking is being processed. Please wait for the admin to approve your booking.
+      </div>
+    <?php 
+    } else if($booking['status']=='confirmed'){ 
+    ?>
+      <div class="col-12 bg-success-subtle py-1 text-center">
+        Your booking has been Approved. Pickup on <?= date('F j, Y', strtotime($booking['pickup_date'])); ?>.
+      </div>
+    <?php 
+    } 
+    ?>
 
+
+    <div class="container p-5">
+      <div class="card p-5 rounded-4">
+        <div class="col-12 m-0 p-0 d-flex flex-row align-items-center justify-content-between">
+          <p class="m-0 text-light text-muted">Booking ID: <?= $booking['booking_id']?></p>
+          <p class="m-0 text-light text-muted text-end">Booked on: <?= date('F j, Y', strtotime($booking['created_at'])); ?></p>
+        </div>
+        <h1><?= $booking['brand'].' '.$booking['model']?></h1>
+        <label class="mt-3">Booking Summary</label>
+        <div class="col-12 m-0 py-1 p-0 border-bottom d-flex align-items-center justify-content-between">
+          <span>Daily Rate</span>
+          <span class="text-muted fw-medium">₱<?= $booking['rate']?></span>
+        </div>
+        <div class="col-12 m-0 py-1 p-0 border-bottom d-flex align-items-center justify-content-between">
+          <span>Pickup Date</span>
+          <span class="text-muted fw-medium"><?= date('F j, Y', strtotime($booking['pickup_date'])); ?></span>
+        </div>
+        <div class="col-12 m-0 py-1 p-0 border-bottom d-flex align-items-center justify-content-between">
+          <span>Dropoff Date</span>
+          <span class="text-muted fw-medium"><?= date('F j, Y', strtotime($booking['dropoff_date'])); ?></span>
+        </div>
+        <div class="col-12 m-0 py-1 p-0 border-bottom d-flex align-items-center justify-content-between">
+          <span>Duration</span>
+          <span class="text-muted fw-medium"><?= $booking['total_days']?> days</span>
+        </div>
+        <div class="col-12 m-0 py-1 p-0 d-flex align-items-center justify-content-between">
+          <span>Amount to pay</span>
+          <span class="txt-pri fw-bold txt-pri">₱<?= number_format($booking['total_amount'], 0, '.', ',') ?></span>
+        </div>
+
+        <?php if ($booking['status'] == 'cancelled'): ?>
+            <button class="btn bg-secondary-subtle border-0 mt-3 mx-0 rounded-4" disabled>Cancelled</button>
+        <?php elseif ($booking['status'] == 'completed'): ?>
+            <button class="btn bg-secondary-subtle border-0  mt-3 mx-0 rounded-4" disabled>Completed</button>
+        <?php elseif ($booking['status'] == 'confirmed'): ?>
+            <button class="btn bg-secondary-subtle border-0  mt-3 mx-0 rounded-4" disabled>Confirmed</button>
+        <?php else: ?>
+            <button class="btn bg-danger mt-3 mx-0 rounded-4" data-bs-toggle="modal" data-bs-target="#cancelBookingModal">Cancel Booking</button>
+        <?php endif; ?>
+
+      </div>
     </div>
 
 
