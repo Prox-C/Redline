@@ -89,3 +89,4 @@ $route['book'] = 'Book/index';
 // Bookings
 $route['bookings/(:num)'] = 'Book/getClientBookings/$1';
 $route['view-booking/(:num)'] = 'Book/getBooking/$1';
+$route['cancel-booking/(:num)'] = 'Book/cancelBooking/$1';
