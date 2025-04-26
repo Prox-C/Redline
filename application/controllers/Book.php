@@ -86,6 +86,11 @@ class Book extends MY_Secured {
         $this->load->view('pages/bookings', $data);
     }
 
+    public function getBooking($booking_id) {
+        $data['booking'] = $this->BookingModel->getBookingDetails($booking_id);
+        $this->load->view('pages/booking-details', $data);
+    }
+
 
     
 }
