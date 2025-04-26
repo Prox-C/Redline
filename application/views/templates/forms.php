@@ -256,5 +256,23 @@
   </div>
 </div>
 
+<!-- Cancel Booking -->
+<div class="modal fade modal-sheet" tabindex="-1" aria-hidden="true"role="dialog" id="cancelBookingModal">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-body p-4 text-center">
+        <h5 class="mb-2">Cancel Booking</h5>
+        <p class="mb-0">Are you sure you want to cancel this booking?<br>This action cannot be undone.</p>
+      </div>
+      <div class="modal-footer flex-nowrap p-0">
+        <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 text-muted border-end" data-bs-dismiss="modal">Cancel</button>
+        <a role="button" class="d-flex align-tems-center justify-content-center fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 text-danger" href="<?= base_url('cancel-booking/'.$booking['booking_id'])?>">Yes</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 
