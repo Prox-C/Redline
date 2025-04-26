@@ -253,7 +253,7 @@
             <div class="accordion-body pb-1">
               <?php foreach ($bookings as $booking): ?>
                 <?php if ($booking['status'] === 'cancelled'): ?>
-                  <div class="card bg-light p-3 rounded-3 mb-3 text-muted elevation-0 booking-card">
+                  <div class="card bg-light p-3 rounded-3 mb-3 text-muted elevation-0 booking-card" onclick="window.location='<?= base_url('view-booking/' . $booking['booking_id']); ?>'">
                     <div class="row g-3 align-items-center">
                       <div class="col-12 col-md-auto">
                         <img src="<?= base_url('assets/images/cars/' . $booking['thumbnail']) ?>" class="img-fluid rounded-2" style="max-width: 140px;" alt="...">
