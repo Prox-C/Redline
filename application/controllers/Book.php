@@ -91,6 +91,12 @@ class Book extends MY_Secured {
         $this->load->view('pages/booking-details', $data);
     }
 
+    public function cancelBooking($booking_id) {
+        $this->BookingModel->cancelBooking($booking_id);
+        $this->session->set_flashdata('cancel-success', 'Booking cancelled successfully!');
+        redirect(base_url('view-booking/'.$booking_id)); // Redirect to bookings page or any other page
+    }
+
 
     
 }
