@@ -211,7 +211,7 @@
             <div class="accordion-body pb-1">
               <?php foreach ($bookings as $booking): ?>
                 <?php if ($booking['status'] === 'pending' || $booking['status'] === 'confirmed'): ?>
-                  <div class="card elevation-0 p-3 rounded-3 mb-3 booking-card" onclick="window.location='<?= 'view-booking/'.$booking['booking_id']?>'">
+                  <div class="card elevation-0 p-3 rounded-3 mb-3 booking-card" onclick="window.location='<?= base_url('view-booking/' . $booking['booking_id']); ?>'">
                     <div class="row g-3 align-items-center">
                       <div class="col-12 col-md-auto">
                         <img src="<?= base_url('assets/images/cars/' . $booking['thumbnail']) ?>" class="img-fluid rounded-2" style="max-width: 140px;" alt="...">
