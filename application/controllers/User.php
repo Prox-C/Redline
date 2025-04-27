@@ -27,4 +27,22 @@ class User extends MY_Secured {
         $data['unavailable_dates'] = $this->BookingModel->getUnavailableDates($id);
         $this->load->view('pages/view', $data);
     }    
+
+    public function searchCars() {
+        $search = $this->input->get('searchCar');
+        $start = $this->input->get('rentStart');
+        $end = $this->input->get('rentEnd');
+    
+        $this->session->set_userdata('pickup-date', $start);
+        $this->session->set_userdata('dropoff-date', $end);
+        $this->session->set_userdata('search-car', $search);
+    
+        $this->load->model('CarModel');
+        $cars = $this->CarModel->searchAvailableCars($search, $start, $end);
+    
+        $data['cars'] = $cars;
+        $data['results'] = count($cars); // count the number of results
+    
+        $this->load->view('pages/search', $data);
+    }
 }
