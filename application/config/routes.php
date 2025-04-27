@@ -61,27 +61,34 @@ $route['logout'] = 'Home/logout';
 /* Admin Panel */
 $route['admin/home'] = 'Admin/dashboard';
 
+// Car Management
 $route['admin/cars'] = 'Admin/getAllCars';
 $route['admin/new-car'] = 'Admin/newCar';
 $route['admin/addCar'] = 'Admin/addCar';
+$route['admin/update-car/(:num)'] = 'Admin/editCar/$1';
+$route['admin/updateCar/(:num)'] = 'Admin/updateCar/$1';
+$route['admin/view/(:num)'] = 'Admin/viewCar/$1';
 
+// Booking Management
 $route['admin/bookings'] = 'Admin/getBookings';
 $route['admin/updateStatus/(:num)'] = 'Admin/updateStatus/$1';
 
+// Client Management
 $route['admin/clients'] = 'Admin/getClients';
 $route['admin/registerClient'] = 'Admin/registerClient';
 $route['admin/updateClient/(:num)'] = 'Admin/updateClient/$1';
 $route['admin/deleteClient/(:num)'] = 'Admin/deleteClient/$1';
 
+// Manager Management
 $route['admin/managers'] = 'Admin/getManagers';
 $route['admin/registerManager'] = 'Admin/registerManager';
 $route['admin/updateManager/(:num)'] = 'Admin/updateManager/$1';
 $route['admin/deleteManager/(:num)'] = 'Admin/deleteManager/$1';
 
 
-/* Client */
+/* User/Client */
 $route['home'] = 'User/getCars';
-$route['search-cars'] = 'Home/searchCars';
+$route['search-cars'] = 'User/searchCars';
 $route['view-car/(:num)'] = 'User/viewCar/$1';
 $route['checkout'] = 'Book/checkout';
 $route['book'] = 'Book/index';
