@@ -31,6 +31,12 @@ class Admin extends MY_Secured {
         $this->load->view('templates/validation-alerts');
     }
 
+    public function viewCar($id) {
+        $data['car'] = $this->CarModel->getCarByID($id);
+        $this->load->view('templates/validation-alerts');
+        $this->load->view('admin/view', $data);
+    } 
+
     public function addCar() {
         if ($this->input->server('REQUEST_METHOD') === 'POST') {
             // Load form validation library
@@ -76,9 +82,73 @@ class Admin extends MY_Secured {
         }
     }
     
+    public function updateCar($id) {
+        if ($this->input->server('REQUEST_METHOD') === 'POST') {
+            // Load form validation library
+            $this->load->library('form_validation');
+    
+            // Set validation rules
+            $this->form_validation->set_rules('brand-select', 'Brand', 'required');
+            $this->form_validation->set_rules('model', 'Model', 'required|trim|min_length[2]');
+            $this->form_validation->set_rules('description', 'Description', 'required|trim');
+            $this->form_validation->set_rules('power', 'Power', 'required|integer');
+            $this->form_validation->set_rules('speed', 'Top Speed', 'required|integer');
+            $this->form_validation->set_rules('capacity', 'Seats', 'required|integer');
+            $this->form_validation->set_rules('transmission', 'Transmission', 'required');
+            $this->form_validation->set_rules('fuel', 'Fuel Type', 'required');
+            $this->form_validation->set_rules('rate', 'Rate per day', 'required|numeric');
+            $this->form_validation->set_rules('status', 'Status', 'required');
+    
+            // Check validation
+            if ($this->form_validation->run() == FALSE) {
+                // Reload form with validation errors
+                $data['car'] = $this->CarModel->getCarByID($id);
+                $this->load->view('admin/update-car', $data);
+            } else {
+                // File upload configuration
+                $config['upload_path']   = './assets/images/cars/';
+                $config['allowed_types'] = 'jpg|jpeg|png';
+                $config['max_size']      = 2048; // 2MB
+                $config['encrypt_name']  = TRUE; // Secure file name
+    
+                $this->load->library('upload', $config);
+    
+                // Check if user uploaded a new file
+                if (!empty($_FILES['image']['name'])) {
+                    if ($this->upload->do_upload('image')) {
+                        $uploadData = $this->upload->data();
+                        $imageFileName = $uploadData['file_name'];
+                    } else {
+                        // Upload failed, reload with error
+                        $error = $this->upload->display_errors();
+                        $this->session->set_flashdata('error', $error);
+    
+                        $data['car'] = $this->CarModel->getCarByID($id);
+                        $this->load->view('admin/update-car', $data);
+                        return;
+                    }
+                } else {
+                    // No new file uploaded, keep the existing image
+                    $imageFileName = $this->input->post('existing_image');
+                }
+    
+                // Finally update the car
+                $this->CarModel->updateCar($imageFileName, $id);
+            }
+        }
+    }
+    
+
     public function newCar() {
         $this->load->view('admin/new-car');
     }
+
+    public function editCar($id) {
+        $data['car'] = $this->CarModel->getCarByID($id);
+        $this->load->view('admin/update-car', $data);
+    }
+
+    
 
     // CLIENT MANAGEMENT
     public function getClients() { //this function returns client management pafe along with the addinf fom
@@ -247,7 +317,4 @@ class Admin extends MY_Secured {
             $this->UserModel->deleteManager($id);
         }
     }
-
-    //BOOKING MANAGEMENT
-
 }
