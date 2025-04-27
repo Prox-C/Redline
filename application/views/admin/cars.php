@@ -43,7 +43,7 @@
             { 
           ?>
           
-          <div class="col-12 col-sm-6 col-lg-4 mx-0 px-2" onclick="window.location='view'">
+          <div class="col-12 col-sm-6 col-lg-4 mx-0 px-2" onclick="window.location='<?= base_url('admin/view/'.$car['id'])?>'">
             <div class="car card rounded-4 p-0 overflow-hidden mx-0">
               <div class="card-body px-4">
                 <div class="row d-flex align-items-center justify-content-between p-0 mb-2">
