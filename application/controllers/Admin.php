@@ -151,7 +151,7 @@ class Admin extends MY_Secured {
     
 
     // CLIENT MANAGEMENT
-    public function getClients() { //this function returns client management pafe along with the addinf fom
+    public function getClients() { 
         $data['cl'] = $this->UserModel->getClients();
 
         $this->load->view('templates/admin-header');
