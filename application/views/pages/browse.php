@@ -32,6 +32,10 @@
     * {font-family: 'Space Grotesk', "sans-serif";}
     .txt-pri {color: #EA4335 !important}
 
+    .header-logo {
+      height: 45px;
+    }
+
       .info-box-icon.brand-dark {background: #B71C1C; color: #fefefe}
       .info-box-icon.brand-primary {background: #D32F2F; color: #fefefe}
       .info-box-icon.brand-secondary {background: #F33226; color: #fefefe}

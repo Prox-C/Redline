@@ -30,6 +30,10 @@
     .txt-pri {color: #EA4335}
     .txt-pri:hover {color: #EA4335}
 
+    .header-logo {
+      height: 45px;
+    }
+
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
