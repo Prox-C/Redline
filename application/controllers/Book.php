@@ -9,6 +9,7 @@ class Book extends MY_Secured {
         $this->allow_guests = false; // Allow non-logged-in users
         parent::__construct();
         $this->load->model('BookingModel');
+        $this->load->model('LikeModel');
     }
 
     public function index() {
@@ -97,6 +98,20 @@ class Book extends MY_Secured {
         redirect(base_url('view-booking/'.$booking_id)); // Redirect to bookings page or any other page
     }
 
+    public function toggleLikeCar($car_id) {
+        $user_id = $this->session->userdata('user_id');
+        if($this->LikeModel->isLiked($user_id, $car_id)){
+            $this->LikeModel->removeLike($user_id, $car_id);
+        }
+        else {
+            $this->LikeModel->addLike($user_id, $car_id);
+        }
+        redirect(base_url('view-car/'.$car_id));
+    }
 
-    
+    public function getLiked(){
+        $user_id = $this->session->userdata('user_id');
+        $data['cars'] = $this->LikeModel->getLikedCars($user_id);
+        
+    }
 }
