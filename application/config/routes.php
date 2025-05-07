@@ -100,3 +100,4 @@ $route['cancel-booking/(:num)'] = 'Book/cancelBooking/$1';
 
 // Likes
 $route['toggleLike/(:num)'] = 'Book/toggleLikeCar/$1';
+$route['likes/(:num)'] = 'Book/getLikes/$1';
