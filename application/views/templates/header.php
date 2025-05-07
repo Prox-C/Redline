@@ -2,7 +2,8 @@
       <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between px-4  py-3 mb-4 border-bottom">
         <div class="col-md-3 mb-2 mb-md-0">
           <a href="" class="d-inline-flex link-body-emphasis text-decoration-none">
-            <h3 style="font-family: 'NikkyouSans';" class="txt-pri fw-normal">レッドライン</h3>
+            <img src="assets/images/system/logo.png" alt="" class="header-logo m-0 p-0">
+            <!-- <h3 style="font-family: 'NikkyouSans';" class="txt-pri fw-normal h-100 bg-info d-flex">レッドライン</h3> -->
           </a>
         </div>
 
