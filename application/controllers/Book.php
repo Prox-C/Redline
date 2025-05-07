@@ -109,9 +109,8 @@ class Book extends MY_Secured {
         redirect(base_url('view-car/'.$car_id));
     }
 
-    public function getLiked(){
-        $user_id = $this->session->userdata('user_id');
+    public function getLikes($user_id){
         $data['cars'] = $this->LikeModel->getLikedCars($user_id);
-        
+        $this->load->view('pages/likes', $data);
     }
 }
