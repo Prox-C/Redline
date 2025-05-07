@@ -11,6 +11,7 @@ class User extends MY_Secured {
         $this->load->model('CarModel');
         $this->load->model('UserModel');
         $this->load->model('BookingModel');
+        $this->load->model('LikeModel');
     }
 
     public function getCars() {  
@@ -24,6 +25,7 @@ class User extends MY_Secured {
 
     public function viewCar($id) {
         $data['car'] = $this->CarModel->getCarByID($id);
+        $data['liked'] = $this->LikeModel->isLiked($this->session->userdata('user_id'), $id);
         $data['unavailable_dates'] = $this->BookingModel->getUnavailableDates($id);
         $this->load->view('pages/view', $data);
     }    
