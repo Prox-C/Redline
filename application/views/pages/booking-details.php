@@ -215,8 +215,8 @@
     ?>
 
 
-    <div class="container p-5">
-      <div class="card p-5 rounded-4">
+    <div class="container p-lg-5 p-4">
+      <div class="card p-lg-5 p-4 rounded-4">
         <div class="col-12 m-0 p-0 d-flex flex-row align-items-center justify-content-between">
           <p class="m-0 text-light text-muted">Booking ID: <?= $booking['booking_id']?></p>
           <p class="m-0 text-light text-muted text-end">Booked on: <?= date('F j, Y', strtotime($booking['created_at'])); ?></p>
