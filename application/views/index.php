@@ -154,7 +154,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background:rgb(235, 235, 235);
+        /* background:rgb(235, 235, 235); */
         padding: 10px 0 10px 0;
     }
 
@@ -200,6 +200,11 @@
         font-weight: normal;
         font-style: normal;
     }
+
+    .feature-icon-small {
+      width: 48px;
+      height: 48px;
+    }
     </style>
 
     
@@ -211,7 +216,7 @@
 
   </head>
 
-  <body>
+  <body class="bg-light">
   <?= $this->session->set_userdata('current_view', 'index'); ?>
 
     <!-- Forms -->
@@ -220,14 +225,14 @@
     <!-- Header -->
     <?php $this->load->view('templates/header'); ?>
 
-    <section id="hero">
-      <div class="container-fluid">
-        <div class="row flex-lg-row-reverse align-items-center border-bottom p-5">
+    <section id="hero bg-light m-0">
+      <div class="container-fluid bg-light">
+        <div class="row flex-lg-row-reverse align-items-center border-bottom p-5 mt-5">
           <div class="col-sm-12 col-lg-6 d-flex justify-content-center align-items-center">
             <img src="assets/images/supra-hero.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" loading="lazy">
           </div>
           <div class="col-lg-6">
-            <span class="badge bg-danger-subtle text-danger text-md fs-5 rounded-3 mb-2">Redline Rentals</span>
+            <img src="assets/images/system/logo.png" style="height: 60px; margin-right: 4px; position: relative; bottom: 3px" alt=""><span class="badge bg-danger-subtle text-danger text-md fs-6 rounded-3 mb-2">JDM Car Rental</span>
             <h2 class="display-6 fw-bold text-body-emphasis lh-1 mb-3">Speed through the fast lane with <span class="txt-pri">style</span> and <span class="txt-pri">spirit</span></h2>
             <p class="lead mb-4">
             An exclusive high-octane car rental platform for enthusiasts who crave the raw, unfiltered thrill of classic JDM legends.
@@ -241,9 +246,13 @@
                 Learn more
                 <svg class="ms-2 cta-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"  viewBox="0 0 256 256"><path d="M108,84a16,16,0,1,1,16,16A16,16,0,0,1,108,84Zm128,44A108,108,0,1,1,128,20,108.12,108.12,0,0,1,236,128Zm-24,0a84,84,0,1,0-84,84A84.09,84.09,0,0,0,212,128Zm-72,36.68V132a20,20,0,0,0-20-20,12,12,0,0,0-4,23.32V168a20,20,0,0,0,20,20,12,12,0,0,0,4-23.32Z"></path></svg>
               </button>
+              
             </div>
+           
           </div>
+        
         </div>
+
       </div>
      
     </section>
@@ -253,12 +262,12 @@
         <div class="container-fluid border-bottom"> 
             <div class="row py-10">
               <div class="col-12 text-center">
-                <h2 class="display-6 text-dark fw-semibold mt-3">Brands</h2>
+                <h2 class="display-6 text-dark fw-semibold mt-5">Our Fleet</h2>
                 <p class="lead mb-4 ">The best of japanese ingenuity - all in one place.</p>
               </div>
             </div>
             <div class="row">
-              <div class="col-12 bg-white">
+              <div class="col-12">
                   <!-- Carousel Container -->
                   <div class="brand-carousel">
                   <div class="brand-track" style="margin-bottom: 30px;">
@@ -285,41 +294,59 @@
     </section>
 
     <!-- Process -->
-     <section id="process">
-      <div class="container px-4 py-5" id="hanging-icons">
-        <h3 class="text-center">Speed through the fast lane with <span class="txt-pri">style</span> and <span class="txt-pri">spirit</span>.</h3>
-        <p class="text-center">Immerse into the rich and expressive JDM car culture in 3 easy steps:</p>
-        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-          <div class="col d-flex align-items-start">
-            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 p-2 rounded-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#2d2d2d" viewBox="0 0 256 256"><path d="M168,112a56,56,0,1,1-56-56A56,56,0,0,1,168,112Zm61.66,117.66a8,8,0,0,1-11.32,0l-50.06-50.07a88,88,0,1,1,11.32-11.31l50.06,50.06A8,8,0,0,1,229.66,229.66ZM112,184a72,72,0,1,0-72-72A72.08,72.08,0,0,0,112,184Z"></path></svg>
+     <div class="container px-4 py-5">
+    <!-- <h2 class="pb-2 border-bottom">Features with title</h2> -->
+    
+    <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+      <div class="col d-flex flex-column align-items-start gap-2">
+        <h2 class="fw-bold text-body-emphasis">Left-aligned title explaining these awesome features</h2>
+        <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+        <a href="#" class="btn btn-primary btn-lg">Primary button</a>
+      </div>
+      
+      <div class="col">
+        <div class="row row-cols-1 row-cols-sm-2 g-4">
+          <!-- Feature 1 -->
+          <div class="col d-flex flex-column gap-2">
+            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-4">
+              <i class="bi bi-collection"></i>
             </div>
-            <div>
-              <h3 class="fs-2 text-body-emphasis">Browse</h3>
-              <p>Explore our curated collection of JDM classics.  Search and select the car that perfectly fits your style and performance needs.</p>
-            </div>
+            <h4 class="fw-semibold mb-0 text-body-emphasis">Browse</h4>
+            <p class="text-body-secondary">Discover your perfect JDM match from our expertly curated collection of iconic classics.</p>
           </div>
-          <div class="col d-flex align-items-start">
-            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 p-2 rounded-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#2d2d2d" viewBox="0 0 256 256"><path d="M184,32H72A16,16,0,0,0,56,48V224a8,8,0,0,0,12.24,6.78L128,193.43l59.77,37.35A8,8,0,0,0,200,224V48A16,16,0,0,0,184,32Z"></path></svg>
+          
+          <!-- Feature 2 -->
+          <div class="col d-flex flex-column gap-2">
+            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-4">
+              <i class="bi bi-gear-fill"></i>
             </div>
-            <div>
-              <h3 class="fs-2 text-body-emphasis">Book</h3>
-              <p>Reserve your chosen car. Choose between the convenience of online booking or the personal touch of an in-store experience. </p>
-            </div>
+            <h4 class="fw-semibold mb-0 text-body-emphasis">Book</h4>
+            <p class="text-body-secondary">Secure your dream ride online or in-store with our hassle-free reservation system.</p>
           </div>
-          <div class="col d-flex align-items-start">
-            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 p-2 rounded-3 ">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#2d2d2d" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM49.63,168H90.45l17,45.58A88.35,88.35,0,0,1,49.63,168ZM128,156a16,16,0,1,1,16-16A16,16,0,0,1,128,156Zm20.46,57.59L165.55,168h40.82A88.34,88.34,0,0,1,148.46,213.59ZM128,96a136.38,136.38,0,0,0-88,32.33V128a88,88,0,0,1,176,0v.33A136.38,136.38,0,0,0,128,96Z"></path></svg>
+          
+          <!-- Feature 3 -->
+          <div class="col d-flex flex-column gap-2">
+            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-4">
+              <i class="bi bi-speedometer2"></i>
             </div>
-            <div>
-              <h3 class="fs-2 text-body-emphasis">Drive</h3>
-              <p>Head to one of our branches, pick up your car, and immerse yourself in the pure thrill of driving a true JDM icon. </p>
+            <h4 class="fw-semibold mb-0 text-body-emphasis">Drive</h4>
+            <p class="text-body-secondary">Experience the authentic thrill of Japanese engineering as you take command of a true JDM legend.</p>
+          </div>
+          
+          <!-- Feature 4 -->
+          <div class="col d-flex flex-column gap-2">
+            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-4">
+              <i class="bi bi-table"></i>
             </div>
+            <h4 class="fw-semibold mb-0 text-body-emphasis">Connect</h4>
+            <p class="text-body-secondary">Rate your experience, share your journey, and become part of our growing community of JDM enthusiasts.</p>
           </div>
         </div>
       </div>
-     </section>
+    </div>
+  </div>
+
+
 
      <!-- Footer -->
     <!-- <div class="b-example-divider"></div> -->
