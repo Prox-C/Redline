@@ -198,7 +198,7 @@
       </header>
     </nav>
 
-    <div class="container p-5">
+    <div class="container p-lg-5 p-3">
       <div class="accordion" id="bookingsAccordion">
         <!-- Active Bookings -->
         <div class="accordion-item">
