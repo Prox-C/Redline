@@ -411,7 +411,7 @@
 
   <?php 
     if($this->session->userdata('logged_in')){
-      $this->load->view('templates/fab');
+     $this->load->view('templates/fab');
     }
   ?>
   <script src="<?= base_url('assets/dist/js/loader.js')?>"></script>
